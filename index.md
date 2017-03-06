@@ -1,3 +1,10 @@
+<html>
+<head>
+<title>my site</title>
+
+<head>
+<body>
+
 <script>
   (function() {
     var cx = '005900458493526325031:f7q7hqbim3s';
@@ -12,6 +19,5 @@
 <gcse:search></gcse:search>
 
 
-
-
-
+</body>
+</html>

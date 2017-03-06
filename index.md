@@ -1,4 +1,4 @@
-<html>
+
 <head>
 <title>my site</title>
 
@@ -18,6 +18,6 @@
 </script>
 <gcse:search></gcse:search>
 
-
 </body>
-</html>
+
+---

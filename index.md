@@ -1,6 +1,4 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/Village-Protocol/_/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+# Welcome to GitHub Pages
 
 # Header 1
 ## Header 2
@@ -14,7 +12,7 @@ You can use the [editor on GitHub](https://github.com/Village-Protocol/_/edit/ma
 
 **Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
+
 ```
 
 

@@ -1,7 +1,3 @@
-
-<head>
-<title>my site</title>
-
 <head>
 <body>
 
@@ -29,4 +25,4 @@
 </script>
 </body>
 
----
+

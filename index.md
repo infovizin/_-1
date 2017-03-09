@@ -24,6 +24,11 @@
   ga('send', 'pageview');
 
 </script>
+---
+layout: default
+comments: true
+# other options
+---
 </body>
 
 

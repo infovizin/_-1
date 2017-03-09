@@ -45,7 +45,6 @@
         (d.head || d.body).appendChild(s);
     })();
 </script>
-    <script id="dsq-count-scr" src="//village-protocol.disqus.com/count.js" async></script>
 </body>
 
 

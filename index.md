@@ -26,6 +26,8 @@
 
 <div class="fb-page" data-href="https://www.facebook.com/Village-Protocol-392737247770294/" data-tabs="about" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Village-Protocol-392737247770294/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Village-Protocol-392737247770294/">Village Protocol</a></blockquote></div>
 
+<a class="twitter-timeline" href="https://twitter.com/VillageProtocol/lists/india">A Twitter List by TwitterDev</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

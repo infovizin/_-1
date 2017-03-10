@@ -1,4 +1,3 @@
-<head>
 <style>
 
 .sidenav {
@@ -41,7 +40,7 @@
   .sidenav a {font-size: 18px;}
 }
 </style>
-</head>
+
 <body>
 
 <div id="mySidenav" class="sidenav">

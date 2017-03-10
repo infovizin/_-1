@@ -40,9 +40,6 @@ Search Here!
 <h3>
 Follow on Facebook!
 </h3>
-<br>
-
-
 <div class="fb-page" data-href="https://www.facebook.com/Village-Protocol-392737247770294/" data-tabs="about" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Village-Protocol-392737247770294/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Village-Protocol-392737247770294/">Village Protocol</a></blockquote></div>
 
 

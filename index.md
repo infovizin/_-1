@@ -78,7 +78,7 @@ body {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
 <script>
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";

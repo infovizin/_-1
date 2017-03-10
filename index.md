@@ -2,6 +2,7 @@
 <style>
 body {
     font-family: "Lato", sans-serif;
+    transition: background-color .5s;
 }
 
 .sidenav {
@@ -38,6 +39,11 @@ body {
     margin-left: 50px;
 }
 
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -47,6 +53,13 @@ body {
 
 
 <body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="https://village-protocol.github.io/_/twitter.html">Tweets</a>
+  <a href="#">Charts</a>
+</div>
+
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>

@@ -9,7 +9,6 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-
 <script>
   (function() {
     var cx = '005900458493526325031:f7q7hqbim3s';
@@ -22,7 +21,6 @@
   })();
 </script>
 <gcse:search></gcse:search>
-<div class="fb-like" data-href="https://www.facebook.com/Village-Protocol-392737247770294/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 
 <br>
 

@@ -25,9 +25,11 @@
 </script>
 <gcse:search></gcse:search>
 
-<hr>
+
 <div class="fb-page" data-href="https://www.facebook.com/Village-Protocol-392737247770294/" data-tabs="about" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Village-Protocol-392737247770294/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Village-Protocol-392737247770294/">Village Protocol</a></blockquote></div>
 
+
+<a href="https://village-protocol.github.io/_/twitter.html">What's happening now!</a>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -39,7 +41,7 @@
   ga('send', 'pageview');
 
 </script>
-<hr>
+
 <div id="disqus_thread"></div>
 <script>
     /**

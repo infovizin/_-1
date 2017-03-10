@@ -1,9 +1,5 @@
 <head>
 <style>
-body {
-    font-family: "Lato", sans-serif;
-    transition: background-color .5s;
-}
 
 .sidenav {
     height: 100%;
@@ -39,10 +35,6 @@ body {
     margin-left: 50px;
 }
 
-#main {
-    transition: margin-left .5s;
-    padding: 16px;
-}
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}

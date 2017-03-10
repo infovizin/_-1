@@ -1,7 +1,6 @@
 
 <body>
 
-<hr>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -26,6 +25,7 @@
 </script>
 <gcse:search></gcse:search>
 
+<hr>
 <div class="fb-page" data-href="https://www.facebook.com/Village-Protocol-392737247770294/" data-tabs="about" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Village-Protocol-392737247770294/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Village-Protocol-392737247770294/">Village Protocol</a></blockquote></div>
 
 
@@ -39,6 +39,7 @@
   ga('send', 'pageview');
 
 </script>
+<hr>
 <div id="disqus_thread"></div>
 <script>
     /**

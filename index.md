@@ -61,7 +61,6 @@ body {
   <a href="https://village-protocol.github.io/_/legend.png">Map Legend</a>
 </div>
 
-<h3>Search Engine for Government Updates</h3>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -81,6 +80,9 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 </script>
+
+<h3>Search Engine for Government Updates</h3>
+
 <script>
   (function() {
     var cx = '005900458493526325031:f7q7hqbim3s';

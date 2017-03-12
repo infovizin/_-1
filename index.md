@@ -57,7 +57,8 @@ body {
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="https://village-protocol.github.io/_/twitter.html">Tweets</a>
-  <a href="#">Charts</a>
+   <a href="https://village-protocol.github.io/_/map.html">Map</a>
+  <a href="https://village-protocol.github.io/_/legend.png">Map Legend</a>
 </div>
 
 

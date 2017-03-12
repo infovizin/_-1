@@ -80,9 +80,9 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 </script>
-
+<center>
 <h3>Search Engine for Government Updates</h3>
-
+</center>
 <script>
   (function() {
     var cx = '005900458493526325031:f7q7hqbim3s';

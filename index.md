@@ -61,7 +61,7 @@ body {
   <a href="https://village-protocol.github.io/_/legend.png">Map Legend</a>
 </div>
 
-
+<h3>Search Engine for Government Updates</h3>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];

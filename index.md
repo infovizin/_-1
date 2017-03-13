@@ -40,7 +40,7 @@ body {
 }
 
 #main {
-    transition: margin-left .5s;
+    transition: margin-left .95s;
     padding: 16px;
 }
 

@@ -54,6 +54,7 @@ body {
 
 <body>
 
+
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="https://village-protocol.github.io/_/twitter.html">Tweets</a>
@@ -62,6 +63,16 @@ body {
   <a href="https://drive.google.com/file/d/0B8b-H-hFs5u4bEhIS1kwZ0pfd2M/view?usp=sharing">2013 Elections</a>
 </div>
 
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
 
 <br>
 <br>
@@ -91,16 +102,6 @@ body {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-</script>
 
 <div class="fb-page" data-href="https://www.facebook.com/Village-Protocol-392737247770294/" data-height="70" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Village-Protocol-392737247770294/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Village-Protocol-392737247770294/">Facebook</a></blockquote></div>
 

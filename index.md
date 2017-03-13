@@ -63,7 +63,8 @@ body {
 </div>
 
 
-
+<br>
+<br>
 <center>
 <h3>Search Engine for Government Updates</h3>
 </center>
@@ -80,8 +81,6 @@ body {
 </script>
 <gcse:search></gcse:search>
 
-<br>
-<br>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

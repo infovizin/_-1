@@ -63,6 +63,24 @@ body {
 </div>
 
 
+
+<center>
+<h3>Search Engine for Government Updates</h3>
+</center>
+<script>
+  (function() {
+    var cx = '005900458493526325031:f7q7hqbim3s';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -82,23 +100,6 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 </script>
-<center>
-<h3>Search Engine for Government Updates</h3>
-</center>
-<script>
-  (function() {
-    var cx = '005900458493526325031:f7q7hqbim3s';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:search></gcse:search>
-
-
 
 <div class="fb-page" data-href="https://www.facebook.com/Village-Protocol-392737247770294/" data-height="70" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Village-Protocol-392737247770294/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Village-Protocol-392737247770294/">Facebook</a></blockquote></div>
 

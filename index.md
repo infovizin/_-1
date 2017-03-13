@@ -63,7 +63,7 @@ body {
   <a href="https://drive.google.com/file/d/0B8b-H-hFs5u4bEhIS1kwZ0pfd2M/view?usp=sharing">2013 Elections</a>
 </div>
 
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#080315; </span>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
 <script>
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";

@@ -60,6 +60,7 @@ body {
   <a href="https://village-protocol.github.io/_/twitter.html">Tweets</a>
    <a href="https://village-protocol.github.io/_/map.html">Map</a>
   <a href="https://village-protocol.github.io/_/legend.png">Map Legend</a>
+    <a href="https://village-protocol.github.io/_/rss.html">Government Updates</a>
   <a href="https://drive.google.com/file/d/0B8b-H-hFs5u4bEhIS1kwZ0pfd2M/view?usp=sharing">2013 Elections</a>
 </div>
 
@@ -77,7 +78,7 @@ function closeNav() {
 <br>
 <br>
 <center>
-<h3>Search Engine for Government Updates</h3>
+<h3>Search Engine for Government Information</h3>
 </center>
 <script>
   (function() {

@@ -1,4 +1,3 @@
-<head>
 <style>
 body {
     font-family: "Lato", sans-serif;
@@ -49,7 +48,6 @@ body {
   .sidenav a {font-size: 18px;}
 }
 </style>
-</head>
 
 
 <body>

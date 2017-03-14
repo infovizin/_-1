@@ -107,7 +107,7 @@ function closeNav() {
 }(document, 'script', 'facebook-jssdk'));</script>
 
 
-<div class="fb-page" data-href="https://www.facebook.com/Village-Protocol-392737247770294/" data-height="70" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Village-Protocol-392737247770294/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Village-Protocol-392737247770294/">Facebook</a></blockquote></div>
+<div class="fb-page" data-href="https://www.facebook.com/Village-Protocol-392737247770294/" data-height="70" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Village-Protocol-392737247770294/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Village-Protocol-392737247770294/">Facebook</a></blockquote></div>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

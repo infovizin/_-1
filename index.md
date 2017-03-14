@@ -77,9 +77,17 @@ function closeNav() {
 
 <br>
 <br>
+<br>
+<br>
+<br>
 <center>
 <h3>Search Engine for Government Information</h3>
 </center>
+<br>
+<br>
+<br>
+<br>
+<br>
 <script>
   (function() {
     var cx = '005900458493526325031:f7q7hqbim3s';

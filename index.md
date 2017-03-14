@@ -84,10 +84,6 @@ function closeNav() {
 <h3>Search Engine for Government Information</h3>
 </center>
 <br>
-<br>
-<br>
-<br>
-<br>
 <script>
   (function() {
     var cx = '005900458493526325031:f7q7hqbim3s';
@@ -101,6 +97,11 @@ function closeNav() {
 </script>
 <gcse:search></gcse:search>
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

@@ -78,8 +78,6 @@ function closeNav() {
 <br>
 <br>
 <br>
-<br>
-<br>
 <center>
 <h3>Search Engine for Government Information</h3>
 </center>
@@ -97,8 +95,6 @@ function closeNav() {
 </script>
 <gcse:search></gcse:search>
 
-<br>
-<br>
 <br>
 <br>
 <br>

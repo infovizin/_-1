@@ -77,8 +77,8 @@ function closeNav() {
 <br>
 <br>
 <center>
-<h3>Search Engine for Government Information</h3>
-<p>Village Protocol is a free Search Engine for searching information from various government departments and ministries.</p>
+<h3>Simplifying Search</h3>
+<p>Village Protocol search engine gives you the most relevant information from various government departments and ministries.</p>
 </center>
 <br>
 <script>

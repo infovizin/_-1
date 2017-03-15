@@ -91,7 +91,7 @@ function closeNav() {
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-<gcse:search></gcse:search>
+<gcse:search  linktarget="_parent"></gcse:search>
 
 <br>
 <br>

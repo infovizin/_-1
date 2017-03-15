@@ -73,10 +73,10 @@ function closeNav() {
 }
 </script>
 
-<br>
+
 <br>
 <center>
-<h3>Simplifying Search</h3>
+<h2>Simplifying Search</h2>
 <p>Village Protocol search engine gives you the most relevant information from various government departments and ministries.</p>
 </center>
 <br>
@@ -94,7 +94,6 @@ function closeNav() {
 <gcse:search  linktarget="_parent"></gcse:search>
 
 
-<br>
 <br>
 
 <div id="fb-root"></div>

@@ -79,7 +79,6 @@ function closeNav() {
 <h2>Simplifying Search</h2>
 <p>Village Protocol search engine gives you the most relevant information from various government departments and ministries.</p>
 </center>
-<br>
 <script>
   (function() {
     var cx = '005900458493526325031:f7q7hqbim3s';

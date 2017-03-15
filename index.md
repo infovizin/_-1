@@ -73,7 +73,7 @@ function closeNav() {
 }
 </script>
 
-
+<br>
 <br>
 <center>
 <h2>Simplifying Search</h2>

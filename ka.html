@@ -2,17 +2,17 @@
 <html>
 <head>
 <meta name="viewport"></meta>
-<title>Karnataka Demographics</title>
+<title>ka_asmbly - Google Fusion Tables</title>
 <style type="text/css">
 html, body, #googft-mapCanvas {
-  height: 100%;
+  height: 300px;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 500px;
 }
 </style>
 
-<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyBaJ98ELcVv4SDHtc3Z8AxfvdTIjV7CImA"></script>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyBaJ98ELcVv4SDHtc3Z8AxfvdTIjV7CImA&amp;libraries=visualization"></script>
 
 <script type="text/javascript">
   function initialize() {
@@ -27,24 +27,22 @@ html, body, #googft-mapCanvas {
     mapDiv.style.width = isMobile ? '100%' : '500px';
     mapDiv.style.height = isMobile ? '100%' : '300px';
     var map = new google.maps.Map(mapDiv, {
-      center: new google.maps.LatLng(15.258264968919903, 76.55155908203119),
-      zoom: 10,
+      center: new google.maps.LatLng(13.849518575923817, 77.177640359375),
+      zoom: 7,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
-    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend-open'));
-    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
 
     layer = new google.maps.FusionTablesLayer({
       map: map,
       heatmap: { enabled: false },
       query: {
-        select: "col0",
+        select: "col18",
         from: "1eRLdS1wf1qCD-UeRyL35u5YaC8wd0dcqD3tlvzgZ",
         where: ""
       },
       options: {
         styleId: 3,
-        templateId: 5
+        templateId: 3
       }
     });
 
@@ -68,20 +66,7 @@ html, body, #googft-mapCanvas {
 
   google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-93166938-1', 'auto');
-  ga('send', 'pageview');
-
-
-</script>
-  
-  </head>
+</head>
 
 <body>
   <div id="googft-mapCanvas"></div>

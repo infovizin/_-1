@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+['BELLARY', 'Hadagalli', 'INC', 'P.T.PARAMESHWARANAIK', 59336],
+['BELLARY', 'Hadagalli', 'BJP', 'B.CHANDRANAIK', 18526],
+['BELLARY', 'Hadagalli', 'KJP', 'MADHUNAIK L', 18178],
+['BELLARY', 'Hadagalli', 'BSRCP', 'HEMANHTKUMAR BHARATI', 10300],
+['BELLARY', 'Hadagalli', 'JD(S)', 'DR.L.P.NAIK KATARI', 3861],
+['BELLARY', 'Hadagalli', 'IND', 'HARISH KUMAR V', 2098],
+['BELLARY', 'Hadagalli', 'BSP', 'K.UCHHENGAPPA', 1113],
+['BELLARY', 'Hadagalli', 'CPI(ML)(L)', 'B.J.RAGHAVENDRANAIK', 927],
+['BELLARY', 'Hadagalli', 'ANC', 'A.K.HONNURAPPA', 885],
+['BELLARY', 'Hadagalli', 'IND', 'RAMANAJANEYA .T', 875],
+['BELLARY', 'Hagaribommanahalli', 'JD(S)', 'BHEEMANAIK LBP', 51972],
+['BELLARY', 'Hagaribommanahalli', 'BJP', 'K NEMARAJA NAIK', 51847],
+['BELLARY', 'Hagaribommanahalli', 'INC', 'MARENNA L', 23860],
+['BELLARY', 'Hagaribommanahalli', 'KJP', 'DODDA RAMANNA', 5836],
+['BELLARY', 'Hagaribommanahalli', 'BSRCP', 'EKAMBRESH NAIK', 2555],
+['BELLARY', 'Hagaribommanahalli', 'IND', 'MOHAN DASARI', 1963],
+['BELLARY', 'Hagaribommanahalli', 'IND', 'RAVIKUMAR V', 1522],
+['BELLARY', 'Hagaribommanahalli', 'IND', 'MANASVI', 1071],
+['BELLARY', 'Hagaribommanahalli', 'BSP', 'NAGARAJA V', 1017],
+['BELLARY', 'Hagaribommanahalli', 'JD(U)', 'AROGYA SWAMY B', 860],
+['BELLARY', 'Hagaribommanahalli', 'IND', 'BHEEMAPPA POOJARA', 727],
+['BELLARY', 'Hagaribommanahalli', 'IND', 'V PAVANA KUMARA', 598],
+['BELLARY', 'Hagaribommanahalli', 'IND', 'H GOPALA', 502],
+['BELLARY', 'Hagaribommanahalli', 'ANC', 'KOTRESHAPPA M', 496],
+['BELLARY', 'Vijayanagara', 'BJP', 'ANAND SINGH', 69995],
+['BELLARY', 'Vijayanagara', 'INC', 'H.ABDUL WAHAB', 39358],
+['BELLARY', 'Vijayanagara', 'BSRCP', 'B L RANI SAMYUKTHA', 6406],
+['BELLARY', 'Vijayanagara', 'IND', 'MOHAMMED ABDUL LATEEF', 1039],
+['BELLARY', 'Vijayanagara', 'CPM', 'BHASKAR REDDY', 944],
+['BELLARY', 'Vijayanagara', 'BSP', 'GANESH', 937],
+['BELLARY', 'Vijayanagara', 'IND', 'S.M MANOHARA', 877],
+['BELLARY', 'Vijayanagara', 'IND', 'BASAVARAJ NALATHVAD', 801],
+['BELLARY', 'Vijayanagara', 'KJP', 'B.VEERESH', 618],
+['BELLARY', 'Vijayanagara', 'IND', 'Y PAMPAPATHI', 612],
+['BELLARY', 'Vijayanagara', 'JD(S)', 'K BASAVARAJA', 611],
+['BELLARY', 'Vijayanagara', 'IND', 'G. DEVANANDA', 355],
+['BELLARY', 'Vijayanagara', 'IND', 'D VEERANAGOUDA', 322],
+['BELLARY', 'Vijayanagara', 'IND', 'A VIJAYAKUMAR', 307],
+['BELLARY', 'Vijayanagara', 'IND', 'P NAGARAJA', 284],
+['BELLARY', 'Vijayanagara', 'IND', 'DR. EMMANVEL R.G', 283],
+['BELLARY', 'Vijayanagara', 'IND', 'M GHOUSIYA KHAN', 265],
+['BELLARY', 'Vijayanagara', 'IND', 'DEVAKUMAR', 238],
+['BELLARY', 'Vijayanagara', 'PPOI', 'MANJUNATHA. V', 235],
+['BELLARY', 'Vijayanagara', 'IND', 'AMEEN BASHA SAB', 226],
+['BELLARY', 'Kampli', 'BSRCP', 'T.H. SURESH BABU', 70858],
+['BELLARY', 'Kampli', 'IND', 'J.N. GANESH', 36462],
+['BELLARY', 'Kampli', 'INC', 'GUJJAL NAGARAJA', 12197],
+['BELLARY', 'Kampli', 'KJP', 'BASAVARAJU H.D.', 5494],
+['BELLARY', 'Kampli', 'JD(S)', 'S. VEERESH', 5199],
+['BELLARY', 'Kampli', 'IND', 'PARVATAMMA H.L.', 3223],
+['BELLARY', 'Kampli', 'CPM', 'SHIVASHANKAR BADANAHATTI', 2342],
+['BELLARY', 'Kampli', 'BJP', 'B. SHIVAKUMAR', 1928],
+['BELLARY', 'Kampli', 'IND', 'B. KARIYAPPA NAYAKA', 1788],
+['BELLARY', 'Kampli', 'BSP', 'V. SOMASHEKAR', 786],
+['BELLARY', 'Siruguppa', 'INC', 'B.M. NAGARAJA', 65490],
+['BELLARY', 'Siruguppa', 'BJP', 'M.S. SOMALINGAPPA', 43676],
+['BELLARY', 'Siruguppa', 'BSRCP', 'H.M. MALLIKARJUN', 7272],
+['BELLARY', 'Siruguppa', 'JD(S)', 'B. ERANNA', 3183],
+['BELLARY', 'Siruguppa', 'KJP', 'K. NARASIMHA NAYAKA', 2254],
+['BELLARY', 'Siruguppa', 'IND', 'B.S. MALLIKARJUN NAYAKA', 1638],
+['BELLARY', 'Siruguppa', 'BSP', 'NARI MAREPPA', 1574],
+['BELLARY', 'Siruguppa', 'LSP', 'N. KALINGAPPA', 1045],
+['BELLARY', 'Siruguppa', 'KRRS', 'DESAI JADEPPA', 645],
+['BELLARY', 'Bellary', 'BSRCP', 'B. SREERAMULU', 74854],
+['BELLARY', 'Bellary', 'INC', 'ASUNDI VANNURAPPA', 41560],
+['BELLARY', 'Bellary', 'JD(S)', 'MEENALLI TAYANNA', 3958],
+['BELLARY', 'Bellary', 'BJP', 'HULUGAPPA PONNURU', 2478],
+['BELLARY', 'Bellary', 'KJP', 'PANDU BYALACHINTE', 2347],
+['BELLARY', 'Bellary', 'IND', 'B. SREENIVASULU', 1097],
+['BELLARY', 'Bellary', 'IND', 'ALIVELU', 815],
+['BELLARY', 'Bellary', 'SUCI', 'A. DEVADAS', 726],
+['BELLARY', 'Bellary', 'BSP', 'V MAREPPA', 579],
+['BELLARY', 'Bellary', 'IND', 'NINGAPPA TOLAMAMIDI', 526],
+['BELLARY', 'Bellary', 'IND', 'S. VENUGOPAL', 478],
+['BELLARY', 'Bellary', 'IND', 'BHUGULU DEVENDRAPPA', 453],
+['BELLARY', 'Bellary', 'AMJP', 'JALIHAL RUDRAPPA', 443],
+['BELLARY', 'Bellary City', 'INC', 'ANIL LAD', 52098],
+['BELLARY', 'Bellary City', 'BSRCP', 'S. MURALI KRISHNA', 33898],
+['BELLARY', 'Bellary City', 'JD(S)', 'MUNNA', 16285],
+['BELLARY', 'Bellary City', 'BJP', 'GUTTIGANURU VIRUPAKSHA GOUDA', 5646],
+['BELLARY', 'Bellary City', 'CPI', 'K NAGABHUSHANA RAO', 2508],
+['BELLARY', 'Bellary City', 'IND', 'J B JAYAMMA', 877],
+['BELLARY', 'Bellary City', 'IND', 'CHANDRASHEKAR NAIDU', 794],
+['BELLARY', 'Bellary City', 'SUCI', 'D NAGALAKSHMI', 652],
+['BELLARY', 'Bellary City', 'IND', 'P S GURURAJ', 536],
+['BELLARY', 'Bellary City', 'RPI(A)', 'PRUTHVIRAJ', 490],
+['BELLARY', 'Bellary City', 'IND', 'M SUJAN BABU', 459],
+['BELLARY', 'Bellary City', 'IND', 'D PARTHASARATHI', 444],
+['BELLARY', 'Bellary City', 'PPOI', 'ARUNACHALAM Y', 429],
+['BELLARY', 'Bellary City', 'IND', 'MEKALA ESHWARA REDDY', 427],
+['BELLARY', 'Bellary City', 'IND', 'SARMAS BEE', 412],
+['BELLARY', 'Bellary City', 'BSP', 'M. NARAYANA SWAMY', 411],
+['BELLARY', 'Bellary City', 'IND', 'P BANDE GOUDA', 353],
+['BELLARY', 'Bellary City', 'IND', 'VENKATESHA', 340],
+['BELLARY', 'Bellary City', 'AMJP', 'K. R RAVI KUMAR', 320],
+['BELLARY', 'Bellary City', 'IND', 'NAZEER HUSSAIN', 302],
+['BELLARY', 'Bellary City', 'IND', 'HAMPI RAMANA', 238],
+['BELLARY', 'Bellary City', 'IND', 'S NAZEER AHAMED', 236],
+['BELLARY', 'Bellary City', 'IND', 'APPANNANAVARA NATARAJA GOUDA', 235],
+['BELLARY', 'Bellary City', 'IND', 'N GANGIREDDY', 221],
+['BELLARY', 'Bellary City', 'IND', 'H D GOVINDA', 216],
+['BELLARY', 'Bellary City', 'IND', 'D LOKESHA KUMARA', 176],
+['BELLARY', 'Bellary City', 'IND', 'KHADER BASHA', 175],
+['BELLARY', 'Bellary City', 'IND', 'V SURYANARAYANA', 156],
+['BELLARY', 'Bellary City', 'IND', 'HANDI RAFIQ SAB', 137],
+['BELLARY', 'Sandur', 'INC', 'E.TUKARAM', 62246],
+['BELLARY', 'Sandur', 'JD(S)', 'DHANANJAYA.R', 27615],
+['BELLARY', 'Sandur', 'BSRCP', 'CHINNABASAPPA.G', 23359],
+['BELLARY', 'Sandur', 'KJP', 'B.RAVIPRAKASH', 4355],
+['BELLARY', 'Sandur', 'BJP', 'MARENNA.E.', 3314],
+['BELLARY', 'Sandur', 'CPI', 'HANUMANTAPPA', 2699],
+['BELLARY', 'Sandur', 'IND', 'P.PANDURANGAIAH', 1935],
+['BELLARY', 'Sandur', 'IND', 'SHIVARAMA BHIMAPPA', 1911],
+['BELLARY', 'Sandur', 'IND', 'G.VEERANAGOUDA', 950],
+['BELLARY', 'Kudligi', 'IND', 'B. NAGENDRA', 71477],
+['BELLARY', 'Kudligi', 'INC', 'S. VENKATESHA', 46674],
+['BELLARY', 'Kudligi', 'BJP', 'RAMAPPA', 2632],
+['BELLARY', 'Kudligi', 'IND', 'G. NATARAJA', 2321],
+['BELLARY', 'Kudligi', 'IND', 'B. SUBHASH CHANDRA', 2181],
+['BELLARY', 'Kudligi', 'KJP', 'DR.K.TARASALAPPA', 1628],
+['BELLARY', 'Kudligi', 'ANC', 'D. KARUNESH', 1135],
+['BELLARY', 'Kudligi', 'JD(S)', 'G KARAPPA', 1078],
+['BELLARY', 'Kudligi', 'IND', 'BASAVARAJ N.', 1012],
+['BELLARY', 'Kudligi', 'IND', 'ANJINAPPA KAJJERU', 890],
+['BELLARY', 'Kudligi', 'IND', 'APPAIAH', 815],
+['BELLARY', 'Kudligi', 'BSP', 'M KARIBASAPPA', 622],
+['BELLARY', 'Kudligi', 'SP', 'H.P.SHARANAPPA', 476],
+  
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+		 ['HASSAN','Shravanabelagola','JD(S)','C.N.BALAKRISHNA', 87185],
+['HASSAN','Shravanabelagola','INC','C.S.PUTTEGOWDA', 63043],
+['HASSAN','Shravanabelagola','BJP','MANJUNATH.C.N.(PATEL)', 1981],
+['HASSAN','Shravanabelagola','IND','M.RAMAIAH', 787],
+['HASSAN','Shravanabelagola','BSP','RANGASWAMY. M.R. MATHIGATTA.', 652],
+['HASSAN','Shravanabelagola','IND','K. KALENAHALLY KOVI BABANNA', 632],
+['HASSAN','Shravanabelagola','IND','ARJUN KUMAR .G.B.', 626],
+['HASSAN','Shravanabelagola','KRRS','ARALAPURA MANJEGOWDA  A.N.', 422],
+['HASSAN','Shravanabelagola','AKBRP','DINESH.P.SHRAVANABELAGOLA', 181],
+['HASSAN','Shravanabelagola','BSRCP','A.S.PREMADHARMAIAH.', 155],
+['HASSAN','Shravanabelagola','NPP','B. MOHAN KUMAR', 150],
+['HASSAN','Arsikere','JD(S)','K.M.SHIVALINGE GOWDA', 76579],
+['HASSAN','Arsikere','INC','B.SHIVARAMU', 46948],
+['HASSAN','Arsikere','KJP','DR: LOKESH D.G', 26312],
+['HASSAN','Arsikere','BJP','D.B.GANGADHAR DUMMENAHALLI', 2464],
+['HASSAN','Arsikere','IND','GANGADHARAPPA', 1557],
+['HASSAN','Arsikere','BDBRAJP','KUMARA BHOVI', 1335],
+['HASSAN','Arsikere','BSRCP','JAYANNA', 1244],
+['HASSAN','Arsikere','HND','N.P.RAJENDRAPRASAD', 745],
+['HASSAN','Arsikere','JD(U)','B.K.SOMASHEKAR', 605],
+['HASSAN','Arsikere','BSP','T.M.CHANDRASHEKARAIAH (DEVARAJ THIRUPATHIHALLI)', 561],
+['HASSAN','Arsikere','IND','AUTO RAVI (BONDA)', 519],
+['HASSAN','Belur','INC','Y.N RUDRESHA GOWDA', 48802],
+['HASSAN','Belur','JD(S)','K.S.LINGESHA', 41273],
+['HASSAN','Belur','KJP','H.M.VISWANATH', 22203],
+['HASSAN','Belur','BJP','ESHWARAHALLY LAKSHMANA', 10281],
+['HASSAN','Belur','BSP','GANGADHAR BAHUJAN', 5326],
+['HASSAN','Belur','IND','RAMANNA', 1499],
+['HASSAN','Belur','JD(U)','CHANNEGOWDA', 1023],
+['HASSAN','Belur','BSRCP','BUJENDRA. B.R.', 830],
+['HASSAN','Belur','IND','K.G.KUMARASWAMY KANAYAKANAHALLY', 641],
+['HASSAN','Belur','SP','DHANANJAYAMURTHY. K.B', 538],
+['HASSAN','Belur','IND','B.C.CHANDRASHEKARA ARADYA', 524],
+['HASSAN','Hassan','JD(S)','H.S.PRAKASH', 61306],
+['HASSAN','Hassan','INC','H.K.MAHESH', 57110],
+['HASSAN','Hassan','BJP','GURUPRASAD @ PICTURE PALACE GURUJI', 6083],
+['HASSAN','Hassan','IND','A.P.AHAMAD', 1299],
+['HASSAN','Hassan','IND','HEMAVATHI ANANTHA', 942],
+['HASSAN','Hassan','KRRS','KODIHALLY CHANDRASHEKAR', 901],
+['HASSAN','Hassan','SDPI','S.A.IBRAHIM (SOOFI)', 771],
+['HASSAN','Hassan','IND','H.S.MANJU (BANGARI)', 741],
+['HASSAN','Hassan','IND','SANTOSH.U.R.', 572],
+['HASSAN','Hassan','IND','RAVIKANTH.S.S. GOWDA', 382],
+['HASSAN','Hassan','BRPP','EJAS AHMED FAROOQI', 357],
+['HASSAN','Hassan','BSRCP','SALIM KHAN GORUR', 213],
+['HASSAN','Hassan','JD(U)','H.A.NANJE GOWDA  @ ASHOK RANGOLI', 209],
+['HASSAN','Hassan','BPJP','R.G.SATISH', 173],
+['HASSAN','Holenarasipur','JD(S)','H.D REVANNA', 92713],
+['HASSAN','Holenarasipur','INC','S.G. ANUPAMA', 62655],
+['HASSAN','Holenarasipur','BSP','M.C SHIVANNA', 1491],
+['HASSAN','Holenarasipur','BJP','G.T HEMANTH KUMAR', 1277],
+['HASSAN','Holenarasipur','IND','M.MAHESH ALIAS HARSHA', 1258],
+['HASSAN','Holenarasipur','IND','K.R NARAYANAGOWDA', 817],
+['HASSAN','Holenarasipur','KJP','YAMUNA H.L.', 746],
+['HASSAN','Holenarasipur','JD(U)','D.H SATHISHA', 494],
+['HASSAN','Holenarasipur','IND','K.KALENAHALLI KOVI BABANNA', 449],
+['HASSAN','Holenarasipur','BSRCP','SHOBHA', 363],
+['HASSAN','Arkalgud','INC','MANJU A', 61369],
+['HASSAN','Arkalgud','JD(S)','A.T RAMASWAMY', 52575],
+['HASSAN','Arkalgud','IND','H. YOGARAMESHA', 32477],
+['HASSAN','Arkalgud','KJP','S. PUTTASWAMY', 12259],
+['HASSAN','Arkalgud','IND','K.K YOGESHAPPA', 2789],
+['HASSAN','Arkalgud','BSP','B.C RAJESH', 2774],
+['HASSAN','Arkalgud','BJP','M.K NATARAJ', 1775],
+['HASSAN','Arkalgud','IND','H.S YOGESHA', 1021],
+['HASSAN','Arkalgud','SAJP','SHIVAKUMAR G A', 842],
+['HASSAN','Arkalgud','BDBRAJP','MANJUNATHA', 819],
+['HASSAN','Arkalgud','IND','K.B YOGEGOWDA', 713],
+['HASSAN','Arkalgud','JD(U)','RAJASHEKHARA', 444],
+['HASSAN','Arkalgud','BSRCP','G.S MURALIDHARA', 405],
+['HASSAN','Sakleshpur','JD(S)','KUMARASWAMY H.K.', 63602],
+['HASSAN','Sakleshpur','INC','D. MALLESH', 30533],
+['HASSAN','Sakleshpur','KJP','UMESH BELAGODU', 28117],
+['HASSAN','Sakleshpur','BJP','DR. H.R. NARAYANASWAMY', 7336],
+['HASSAN','Sakleshpur','BSP','KUMARGOURAV HETHUR', 4424],
+['HASSAN','Sakleshpur','IND','SANJAY BABU V.', 2069],
+['HASSAN','Sakleshpur','HND','PUTTAIAH', 1309],
+['HASSAN','Sakleshpur','IND','VALALAHALLI VEERESHA', 1032],
+['HASSAN','Sakleshpur','IND','R. DEVARAJU', 815],
+['HASSAN','Sakleshpur','JD(U)','VENKATESH', 669],
+['HASSAN','Sakleshpur','IND','GANGADHARA PRASAD', 580],
+
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

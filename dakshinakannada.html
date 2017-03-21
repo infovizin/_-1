@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+		 ['DAKSHINA KANNADA','Belthangady','INC','K. VASANTHA BANGERA', 74530],
+['DAKSHINA KANNADA','Belthangady','BJP','RANJAN G. GOWDA', 58789],
+['DAKSHINA KANNADA','Belthangady','CPM','B.M. BHAT', 4532],
+['DAKSHINA KANNADA','Belthangady','JD(S)','RAJASHREE S. HEGDE', 2682],
+['DAKSHINA KANNADA','Belthangady','KJP','SUKHESHA  KUMAR', 2673],
+['DAKSHINA KANNADA','Belthangady','BSP','CHENNAKESHAVA', 1747],
+['DAKSHINA KANNADA','Belthangady','JD(U)','VENKATESHA BENDE', 1276],
+['DAKSHINA KANNADA','Moodabidri','INC','K ABHAYACHANDRA', 53180],
+['DAKSHINA KANNADA','Moodabidri','BJP','UMANATHA KOTIAN', 48630],
+['DAKSHINA KANNADA','Moodabidri','JD(S)','AMARANATHA SHETTY K', 20471],
+['DAKSHINA KANNADA','Moodabidri','SDPI','ISMAIL B', 3523],
+['DAKSHINA KANNADA','Moodabidri','IND','ABHAYA KUMAR JAIN', 1650],
+['DAKSHINA KANNADA','Moodabidri','KJP','MICHEL LOBO', 1354],
+['DAKSHINA KANNADA','Mangalore City North','INC','B.A.MOHIUDDIN BAVA', 69897],
+['DAKSHINA KANNADA','Mangalore City North','BJP','KRISHNA.J.PALEMAR', 64524],
+['DAKSHINA KANNADA','Mangalore City North','SDPI','ABOOBAKKAR', 3323],
+['DAKSHINA KANNADA','Mangalore City North','KJP','RAMACHANDRA BAIKAMPADY', 2104],
+['DAKSHINA KANNADA','Mangalore City North','JD(S)','GULAM MOHAMMED', 1808],
+['DAKSHINA KANNADA','Mangalore City North','IND','H. VINAYA ACHARYA', 1536],
+['DAKSHINA KANNADA','Mangalore City North','NCP','SUPREETH KUMAR POOJARY', 1136],
+['DAKSHINA KANNADA','Mangalore City North','IND','MAXIM PINTO', 878],
+['DAKSHINA KANNADA','Mangalore City North','IND','MAHABALA SHETTY BHAGAMANDLA', 647],
+['DAKSHINA KANNADA','Mangalore City South','INC','J.R.LOBO', 67829],
+['DAKSHINA KANNADA','Mangalore City South','BJP','N. YOGISH BHAT', 55554],
+['DAKSHINA KANNADA','Mangalore City South','CPM','VASANTH  ACHARI', 3016],
+['DAKSHINA KANNADA','Mangalore City South','SDPI','JALEEL KRISHNAPURA', 1672],
+['DAKSHINA KANNADA','Mangalore City South','JD(S)','S.P.CHANGAPPA', 1672],
+['DAKSHINA KANNADA','Mangalore City South','KJP','DAYANANDA SHETTY', 657],
+['DAKSHINA KANNADA','Mangalore City South','IND','HABIB KHADER', 401],
+['DAKSHINA KANNADA','Mangalore City South','PPOI','DERICK PINTO', 377],
+['DAKSHINA KANNADA','Mangalore City South','IND','YOGISH SHETTY JEPPU', 298],
+['DAKSHINA KANNADA','Mangalore City South','IND','SACHIN HEGDE', 283],
+['DAKSHINA KANNADA','Mangalore City South','IND','YOGEESH NAIK', 258],
+['DAKSHINA KANNADA','Mangalore City South','IND','NOUSHAD MOHAMMED', 202],
+['DAKSHINA KANNADA','Mangalore City South','JD(U)','HARISH  ALVA', 96],
+['DAKSHINA KANNADA','Mangalore','INC','U T KHADER', 69450],
+['DAKSHINA KANNADA','Mangalore','BJP','CHANDRAHAS ULLAL', 40339],
+['DAKSHINA KANNADA','Mangalore','SDPI','MOHAMMED AKRAM HASAN', 4808],
+['DAKSHINA KANNADA','Mangalore','CPM','K KRISHNAPPA SALIAN', 3815],
+['DAKSHINA KANNADA','Mangalore','JD(S)','ABDUL AZIZ MALAR', 2152],
+['DAKSHINA KANNADA','Mangalore','IND','BAVA MOHAMMED', 810],
+['DAKSHINA KANNADA','Mangalore','KJP','K RAVEENDRA SHETTY', 729],
+['DAKSHINA KANNADA','Mangalore','IND','MAHAMMED HANEEF', 644],
+['DAKSHINA KANNADA','Mangalore','IND','FAROOQ U.H', 514],
+['DAKSHINA KANNADA','Mangalore','IND','KABHEER ULLALA', 402],
+['DAKSHINA KANNADA','Mangalore','IND','ALFRED D'SOUZA', 387],
+['DAKSHINA KANNADA','Mangalore','IND','ABDUL RAHIMAN', 263],
+['DAKSHINA KANNADA','Mangalore','IND','T ISMAIL', 248],
+['DAKSHINA KANNADA','Mangalore','IND','IBRAHIM', 200],
+['DAKSHINA KANNADA','Mangalore','JD(U)','HAMEED ULLAL', 166],
+['DAKSHINA KANNADA','Bantval','INC','B.RAMANATHA RAI', 81665],
+['DAKSHINA KANNADA','Bantval','BJP','RAJESH NAIK ULIPADY', 63815],
+['DAKSHINA KANNADA','Bantval','SDPI','ADVOCATE ABDUL MAJID', 6113],
+['DAKSHINA KANNADA','Bantval','JD(S)','KRISHNAPPA POOJARY KALLADKA', 1927],
+['DAKSHINA KANNADA','Bantval','RPI(A)','LOLAKSHA', 1511],
+['DAKSHINA KANNADA','Bantval','KJP','IBRAHIM KAILARA', 1157],
+['DAKSHINA KANNADA','Puttur','INC','SHAKUNTALA T SHETTY', 66345],
+['DAKSHINA KANNADA','Puttur','BJP','SANJEEVA MATANDOOR', 62056],
+['DAKSHINA KANNADA','Puttur','JD(S)','DINESH B N', 6625],
+['DAKSHINA KANNADA','Puttur','SDPI','ABUBAKKAR SIDDIK', 4442],
+['DAKSHINA KANNADA','Puttur','IND','SHEKAR MADAVU', 1834],
+['DAKSHINA KANNADA','Puttur','KJP','JAYARAM BHAT A MADAVU', 1506],
+['DAKSHINA KANNADA','Sullia','BJP','ANGARA. S', 65913],
+['DAKSHINA KANNADA','Sullia','INC','DR. B. RAGHU', 64540],
+['DAKSHINA KANNADA','Sullia','JD(S)','NANDARAJ SANKESH', 8551],
+['DAKSHINA KANNADA','Sullia','SDPI','M. KOOSAPPA', 2569],
+['DAKSHINA KANNADA','Sullia','IND','G. KUNHIRAMAN', 1380],
+['DAKSHINA KANNADA','Sullia','KJP','CHANDRAVATHI', 1001],
+['DAKSHINA KANNADA','Sullia','IND','A. ANGARA', 725],
+['DAKSHINA KANNADA','Sullia','IND','K. KUSHALA BELLARE', 705],
+['DAKSHINA KANNADA','Sullia','IND','KARUNESH. S', 682],
+
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

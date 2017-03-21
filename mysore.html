@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+['MYSORE','Periyapatna','INC','K.VENKATESH', 62045],
+['MYSORE','Periyapatna','JD(S)','K.MAHADEV', 59957],
+['MYSORE','Periyapatna','BSRCP','H.D.GANESH', 5669],
+['MYSORE','Periyapatna','BJP','R.T. SATHISH', 3731],
+['MYSORE','Periyapatna','BSP','KRISHNA', 2087],
+['MYSORE','Periyapatna','IND','K.S.SHASHIKUMAR', 1335],
+['MYSORE','Periyapatna','KJP','H.C.BASAVARAJU', 827],
+['MYSORE','Periyapatna','SAJP','NARAYANA', 656],
+['MYSORE','Krishnarajanagara','JD(S)','SA.RA.MAHESH', 81457],
+['MYSORE','Krishnarajanagara','INC','DODDASWAMEGOWDA', 66405],
+['MYSORE','Krishnarajanagara','KJP','BASANT .K.N', 3827],
+['MYSORE','Krishnarajanagara','BJP','M.P.KUMARA', 1860],
+['MYSORE','Krishnarajanagara','BSP','LAKSHMANA.D.', 1812],
+['MYSORE','Krishnarajanagara','IND','G.B.DHARMENDRA', 1416],
+['MYSORE','Krishnarajanagara','BSRCP','MAHADEVASWAMY', 690],
+['MYSORE','Hunsur','INC','H.P.MANJUNATH', 83930],
+['MYSORE','Hunsur','JD(S)','KUMARASWAMY', 43723],
+['MYSORE','Hunsur','IND','C.T.RAJANNA', 12637],
+['MYSORE','Hunsur','KJP','MANJUNATH URS M.C', 9011],
+['MYSORE','Hunsur','BJP','K.S.ANNAYANAYAK', 4229],
+['MYSORE','Hunsur','SDPI','N.PUTTANANJAYYA', 1745],
+['MYSORE','Hunsur','BSRCP','DYAVAPPANAYAKA', 1434],
+['MYSORE','Hunsur','IND','LOKESHA', 1292],
+['MYSORE','Hunsur','DPPS','HUNSUR.K.CHANDRASHEKAR', 915],
+['MYSORE','Hunsur','IND','K.REVANNA', 744],
+['MYSORE','Hunsur','IND','B.RAJANNA', 620],
+['MYSORE','Hunsur','IND','C.TAYAPPACHARYA', 451],
+['MYSORE','Hunsur','IND','THIMMEGOWDA', 446],
+['MYSORE','Hunsur','IND','H.M.MANJU', 319],
+['MYSORE','Heggadadevankote','JD(S)','CHIKKAMADU S', 48606],
+['MYSORE','Heggadadevankote','INC','CHIKKANNA', 36108],
+['MYSORE','Heggadadevankote','BJP','SIDDARAJU', 31248],
+['MYSORE','Heggadadevankote','BSP','J K GOPALA', 18269],
+['MYSORE','Heggadadevankote','KJP','DR H V KRISHNASWAMY', 11494],
+['MYSORE','Heggadadevankote','BSRCP','SOMANNA L', 3192],
+['MYSORE','Nanjangud','INC','V.SRINIVASA PRASAD', 50784],
+['MYSORE','Nanjangud','JD(S)','KALALE  N .KESHAVAMURTHY', 41843],
+['MYSORE','Nanjangud','KJP','S.MAHADEVAIAH', 28312],
+['MYSORE','Nanjangud','BJP','DR. SHIVARAMA', 7074],
+['MYSORE','Nanjangud','IND','M.SHIVARAM (MULLURU)', 2651],
+['MYSORE','Nanjangud','BSP','SRIKANTA', 2255],
+['MYSORE','Nanjangud','SAJP','GANGOTHRY RANGASWAMY', 1667],
+['MYSORE','Nanjangud','HND','SHRUNGARA SARJA', 1136],
+['MYSORE','Nanjangud','IND','N.RUKMINI', 1128],
+['MYSORE','Nanjangud','BSRCP','R.MADESHA', 886],
+['MYSORE','Nanjangud','IND','J.C.ITHIHAS', 744],
+['MYSORE','Nanjangud','CPIM','K.S.SRINIVASAMURTHY', 707],
+['MYSORE','Nanjangud','IND','K.MAHADEVAIAH', 682],
+['MYSORE','Nanjangud','HJP','SUBBAIAH', 600],
+['MYSORE','Nanjangud','JD(U)','SHIVANANDA. K.C.', 540],
+['MYSORE','Chamundeshwari','JD(S)','G.T. DEVE GOWDA', 75864],
+['MYSORE','Chamundeshwari','INC','M. SATHYANARAYANA', 68761],
+['MYSORE','Chamundeshwari','KJP','APPANNA M', 16799],
+['MYSORE','Chamundeshwari','BJP','A. HEMANTHKUMAR GOWDA', 8308],
+['MYSORE','Chamundeshwari','IND','SRINIVAS', 2433],
+['MYSORE','Chamundeshwari','IND','MELLAHALLI MAHADEVASWAMY', 1806],
+['MYSORE','Chamundeshwari','SJPA','KRISHNEGOWDA', 633],
+['MYSORE','Chamundeshwari','IND','MAHADEVAIAH', 567],
+['MYSORE','Chamundeshwari','SAJP','K. GOVINDA RAJU', 513],
+['MYSORE','Chamundeshwari','IND','C. MAHADEVU', 509],
+['MYSORE','Chamundeshwari','BSRCP','CHIDANANDA K.P', 452],
+['MYSORE','Chamundeshwari','IND','P. KARIGOWDA', 317],
+['MYSORE','Krishnaraja','INC','M.K.SOMASHEKAR', 52611],
+['MYSORE','Krishnaraja','BJP','S.A.RAMADAS', 46546],
+['MYSORE','Krishnaraja','KJP','H.V.RAJEEVA', 15573],
+['MYSORE','Krishnaraja','JD(S)','VASU.H', 7486],
+['MYSORE','Krishnaraja','LSP','NAVEENA.C.K', 1245],
+['MYSORE','Krishnaraja','BSP','C.MOHANKUMAR', 799],
+['MYSORE','Krishnaraja','IND','M PRADEEP KUMAR', 765],
+['MYSORE','Krishnaraja','SP','M.NATARAJ', 476],
+['MYSORE','Krishnaraja','IND','RAJANEESH.A.J', 454],
+['MYSORE','Krishnaraja','IND','G.S. HARISH', 367],
+['MYSORE','Krishnaraja','IND','M.S.BALAJI', 229],
+['MYSORE','Krishnaraja','SAJP','RAMACHANDRA', 210],
+['MYSORE','Krishnaraja','IND','P.JAYARAJA HEGADE', 208],
+['MYSORE','Krishnaraja','IND','M.MAHESH', 186],
+['MYSORE','Krishnaraja','IND','NASRULLA', 155],
+['MYSORE','Krishnaraja','JD(U)','N.R.RAGHU', 148],
+['MYSORE','Krishnaraja','IND','GURUSWAMY', 136],
+['MYSORE','Krishnaraja','IND','UDAYASANKARA H P', 130],
+['MYSORE','Krishnaraja','IND','H.S.NANJUNDASWAMY', 88],
+['MYSORE','Chamaraja','INC','VASU', 41930],
+['MYSORE','Chamaraja','JD(S)','H.S.SHANKARALINGE GOWDA', 29015],
+['MYSORE','Chamaraja','BJP','NAGENDRA', 26168],
+['MYSORE','Chamaraja','SDPI','SHABBIR MOHAMMED MUSTHAFA', 4601],
+['MYSORE','Chamaraja','KJP','ARUNA GOWDA M.', 4399],
+['MYSORE','Chamaraja','IND','H.S.MANJUNATHA SETTY', 636],
+['MYSORE','Chamaraja','IND','MAJEED AHMED', 489],
+['MYSORE','Chamaraja','IND','B. VASUDEVA', 408],
+['MYSORE','Chamaraja','IND','MANOJ KUMAR M.', 366],
+['MYSORE','Chamaraja','JD(U)','AKRAM PASHA', 280],
+['MYSORE','Chamaraja','IND','T. SHIVARAMU', 253],
+['MYSORE','Chamaraja','BSRCP','M. BHARATHI', 250],
+['MYSORE','Chamaraja','SUCI','UMADEVI M', 231],
+['MYSORE','Chamaraja','SP','HEMAVATHI M.S.', 223],
+['MYSORE','Chamaraja','IND','PRADEEP NAGARAJ', 203],
+['MYSORE','Chamaraja','IND','M. PANCHALINGU', 184],
+['MYSORE','Chamaraja','HND','M.V. SRINIVASA MITRA', 102],
+['MYSORE','Chamaraja','IND','ALI AHMED', 70],
+['MYSORE','Chamaraja','IND','AKEEL AHMEAD', 68],
+['MYSORE','Chamaraja','ANC','NAYAZ AHMED', 62],
+['MYSORE','Narasimharaja','INC','TANVEER SAIT', 38037],
+['MYSORE','Narasimharaja','SDPI','ABDUL MAJID K H', 29667],
+['MYSORE','Narasimharaja','JD(S)','S SATISH (SANDESH SWAMY)', 29180],
+['MYSORE','Narasimharaja','BJP','B.P.MANJUNATH', 12443],
+['MYSORE','Narasimharaja','KJP','FARID N K', 1750],
+['MYSORE','Narasimharaja','ADMK','R RAVINDRA KUMAR', 1001],
+['MYSORE','Narasimharaja','BSRCP','IKRAM SIDDIQUI', 784],
+['MYSORE','Narasimharaja','IND','C SWAMY', 593],
+['MYSORE','Narasimharaja','BDBRAJP','ASLAM PASHA ALIAS CHANDINI MANGALAMUKHI', 419],
+['MYSORE','Narasimharaja','IND','S SHANTHAPPA', 353],
+['MYSORE','Narasimharaja','JD(U)','AYUB KHAN', 336],
+['MYSORE','Narasimharaja','WPOI','MOHAMMED THAHER ALI', 323],
+['MYSORE','Narasimharaja','IND','J JAYARAJ', 321],
+['MYSORE','Narasimharaja','IND','R SHIVAKUMAR', 264],
+['MYSORE','Narasimharaja','IND','KHALEEL UR REHMAN SHARIF', 179],
+['MYSORE','Narasimharaja','IND','AKHIL AHMED', 114],
+['MYSORE','Varuna','INC','SIDDARAMAIAH', 84385],
+['MYSORE','Varuna','KJP','KAPU SIDDALINGASWAMY', 54744],
+['MYSORE','Varuna','JD(S)','CHELUVARAJ', 2686],
+['MYSORE','Varuna','BSP','SHIVAMAHADEVA', 2419],
+['MYSORE','Varuna','SAJP','G.M. GADKAR', 1454],
+['MYSORE','Varuna','IND','MASTER M.SURESH', 1427],
+['MYSORE','Varuna','IND','SIDDALINGASWAMY', 1383],
+['MYSORE','Varuna','RPI(A)','D. ESHWARA THOREMAVU', 1233],
+['MYSORE','Varuna','BDBRAJP','NIRMALAKUMARI', 1195],
+['MYSORE','Varuna','BJP','MAHENDRA.S.D', 1070],
+['MYSORE','Varuna','IND','TOPI BASAVARAJU.G.S', 1022],
+['MYSORE','Varuna','IND','RACHAPPAJI BILIGEREHUNDI', 980],
+['MYSORE','Varuna','IND','M. NAGENDRANAYAKA', 902],
+['MYSORE','Varuna','IND','SIDDARAJU .N.P', 593],
+['MYSORE','Varuna','IND','SIDDARAMAIAH', 533],
+['MYSORE','Varuna','SJPA','T.B.SADGURU', 484],
+['MYSORE','Varuna','IND','B.MAHADEVASWAMY', 448],
+['MYSORE','Varuna','IND','NANJUNDARAJU .H.N', 435],
+['MYSORE','Varuna','IND','Y.K.PRADEEPKUMAR', 432],
+['MYSORE','Varuna','BSRCP','GIRISH HALEPURA', 409],
+['MYSORE','Varuna','IND','CHANNAMAYIGOWDA', 392],
+['MYSORE','Varuna','AMJP','A.R.SWAMY', 366],
+['MYSORE','Varuna','IND','SRIKANTA', 364],
+['MYSORE','Varuna','IND','M.PUTTASWAMY', 364],
+['MYSORE','Varuna','IND','P.ESHWARASWAMY', 360],
+['MYSORE','Varuna','ABHM','RAJU', 345],
+['MYSORE','Varuna','IND','CHANNABASAVANNA', 216],
+['MYSORE','T.narasipur','INC','DR. H.C. MAHADEVAPPA', 53219],
+['MYSORE','T.narasipur','JD(S)','M.C.SUNDARESHAN', 52896],
+['MYSORE','T.narasipur','KJP','PUTTABASAVAIAH', 15204],
+['MYSORE','T.narasipur','BJP','C.RAMESH', 5175],
+['MYSORE','T.narasipur','IND','SAMPATHKUMAR', 1537],
+['MYSORE','T.narasipur','BDBRAJP','B.M.DODDAMADAIAH', 1226],
+['MYSORE','T.narasipur','IND','TALAKADU G.KEMPARAJU', 971],
+['MYSORE','T.narasipur','HND','SIDDAIAH', 844],
+['MYSORE','T.narasipur','IND','B.M. SRIKANTAVARDHAN', 836],
+['MYSORE','T.narasipur','BSRCP','M. MAHADEVU', 728],
+['MYSORE','T.narasipur','IND','B.C.SHANTHARAJU', 564],
+['MYSORE','T.narasipur','IND','SURENDRA B.P', 504],
+['MYSORE','T.narasipur','IND','MADAPPA', 465],
+['MYSORE','T.narasipur','IND','M. KUMAR KRANTI', 433],
+['MYSORE','T.narasipur','IND','NINGAIAH', 387],
+['MYSORE','T.narasipur','JD(U)','SRINIVASA', 304],
+
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

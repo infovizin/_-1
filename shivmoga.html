@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+	
+['SHIMOGA','Shimoga Rural','JD(S)','SHARADA POORYANAIK', 48639],
+['SHIMOGA','Shimoga Rural','KJP','G.BASAVANNAPPA', 38530],
+['SHIMOGA','Shimoga Rural','INC','KARIYANNA', 35640],
+['SHIMOGA','Shimoga Rural','BJP','K.G.KUMARA SWAMY', 12435],
+['SHIMOGA','Shimoga Rural','IND','SHIVARUDRAIAH SWAMY', 1874],
+['SHIMOGA','Shimoga Rural','IND','V.BHAGAVAN', 1499],
+['SHIMOGA','Shimoga Rural','JD(U)','L.CHANDRA NAIK', 1034],
+['SHIMOGA','Shimoga Rural','IND','N.T.SHIVAMURTHY', 1005],
+['SHIMOGA','Shimoga Rural','IND','M.GURUMURTHY', 770],
+['SHIMOGA','Shimoga Rural','BSP','VEERESHAPPA', 687],
+['SHIMOGA','Shimoga Rural','BSRCP','T.SHIVAKUMARA', 619],
+['SHIMOGA','Shimoga Rural','IND','RUDRESH', 556],
+['SHIMOGA','Bhadravati','JD(S)','APPAJI. M.J', 78370],
+['SHIMOGA','Bhadravati','IND','B.K.SANGAMESHWARA', 34271],
+['SHIMOGA','Bhadravati','INC','C.M. IBRAHIM', 22329],
+['SHIMOGA','Bhadravati','IND','HANUMANTHARAO', 2254],
+['SHIMOGA','Bhadravati','BJP','S.B. SHIVAJI RAO SINDHYA', 1779],
+['SHIMOGA','Bhadravati','IND','HANUMANTHAPPA', 1282],
+['SHIMOGA','Bhadravati','IND','AHAMED ALI', 1084],
+['SHIMOGA','Bhadravati','IND','VASUNDARA DEVI. P', 440],
+['SHIMOGA','Bhadravati','CPIM','COMREDE P. MURTHY', 381],
+['SHIMOGA','Bhadravati','IND','TEEPU SULTHAN', 255],
+['SHIMOGA','Bhadravati','BSP','SURESH', 223],
+['SHIMOGA','Bhadravati','IND','OMVIJAYA VAMSHI', 189],
+['SHIMOGA','Bhadravati','LSP','S. VENKATESHMURTHY', 158],
+['SHIMOGA','Bhadravati','JD(U)','KALPANA A NADIG SHARMA', 140],
+['SHIMOGA','Bhadravati','IND','B.G.C.KUMAR', 135],
+['SHIMOGA','Bhadravati','BSRCP','BALAKRISHNA. M', 133],
+['SHIMOGA','Bhadravati','IND','AKHIL AHMED', 133],
+['SHIMOGA','Shimoga','INC','K.B. PRASANNAKUMAR', 39355],
+['SHIMOGA','Shimoga','KJP','S. RUDREGOWDA', 39077],
+['SHIMOGA','Shimoga','BJP','K.S. ESHWARAPPA', 33462],
+['SHIMOGA','Shimoga','JD(S)','M. SRIKANTH', 21638],
+['SHIMOGA','Shimoga','SDPI','K.B. BASHEER AHMED', 3312],
+['SHIMOGA','Shimoga','IND','USHA JAYARAJ', 562],
+['SHIMOGA','Shimoga','IND','SYED SHAMEER', 432],
+['SHIMOGA','Shimoga','IND','MOHAMMAD FAZEEL', 388],
+['SHIMOGA','Shimoga','LJP','B.R. KARIBASAPPA', 330],
+['SHIMOGA','Shimoga','IND','A. YASEEN MUBARAK', 283],
+['SHIMOGA','Shimoga','JD(U)','MANJUNATH PATEL TYAJAVALLI', 250],
+['SHIMOGA','Shimoga','IND','GA.RA.SHRINIVAS', 247],
+['SHIMOGA','Shimoga','IND','SYED MAJAHAR', 164],
+['SHIMOGA','Shimoga','IND','MAHAMAD FAYAZ AHAMAD', 148],
+['SHIMOGA','Tirthahalli','INC','KIMMANE RATNAKAR', 37160],
+['SHIMOGA','Tirthahalli','KJP','R. M. MANJUNATHA GOWDA', 35817],
+['SHIMOGA','Tirthahalli','BJP','ARAGA JNANENDRA', 34446],
+['SHIMOGA','Tirthahalli','JD(S)','R. MADAN', 21295],
+['SHIMOGA','Tirthahalli','BSRCP','ASHOKAMURTHY', 5161],
+['SHIMOGA','Tirthahalli','IND','H. B. KIRAN KUMAR', 1627],
+['SHIMOGA','Tirthahalli','IND','JADUGAR NISCHAL .V. SHETTY', 1363],
+['SHIMOGA','Tirthahalli','BSP','KUNAJE MANJUNATHA GOWDA', 1062],
+['SHIMOGA','Tirthahalli','JD(U)','BEHALLI NAGARAJ .D.', 738],
+['SHIMOGA','Tirthahalli','IND','NAGESH HORABYLU', 546],
+['SHIMOGA','Shikaripura','KJP','B.S.YADIYURAPPA', 69126],
+['SHIMOGA','Shikaripura','INC','H.S.SHANTHAVEERAPPAGOWDA(SHANTANNA)', 44701],
+['SHIMOGA','Shikaripura','JD(S)','BALEGAR.H', 15007],
+['SHIMOGA','Shikaripura','BJP','S.H.MANJUNATHA', 2383],
+['SHIMOGA','Shikaripura','IND','RAJUNAIKA', 1447],
+['SHIMOGA','Shikaripura','IND','ESHWARAPPA. D.S.', 1288],
+['SHIMOGA','Shikaripura','IND','KOTESHWARA', 1157],
+['SHIMOGA','Shikaripura','IND','ERYANAIKA', 1132],
+['SHIMOGA','Shikaripura','IND','SAIFULLA.G', 936],
+['SHIMOGA','Shikaripura','BSRCP','J.PAKKIRAPPA', 608],
+['SHIMOGA','Shikaripura','IND','GIRISH.S', 433],
+['SHIMOGA','Shikaripura','BSP','HUVADIGARA SHEKARAPPA HITTALA', 348],
+['SHIMOGA','Sorab','JD(S)','S.MADHU BANGARAPPA', 58541],
+['SHIMOGA','Sorab','KJP','H.HALAPPA', 37316],
+['SHIMOGA','Sorab','INC','S.KUMARA  BANGARAPPA', 33176],
+['SHIMOGA','Sorab','BJP','CHIKKAVALI  NAGARAJAGOWDA', 5226],
+['SHIMOGA','Sorab','IND','H.BHEEMAPPA', 1514],
+['SHIMOGA','Sorab','IND','BASAVANYAPPA', 1343],
+['SHIMOGA','Sorab','IND','K.GURUMURTHY', 1081],
+['SHIMOGA','Sorab','BSRCP','B.CHANDRAPPAGOWDA', 1026],
+['SHIMOGA','Sorab','JD(U)','K.S.SATYANARAYANA', 940],
+['SHIMOGA','Sorab','BSP','GUDDAPPA', 512],
+['SHIMOGA','Sorab','IND','J.S.CHIDANANDAGOWDA', 484],
+['SHIMOGA','Sagar','INC','KAGODU THIMMAPPA', 71960],
+['SHIMOGA','Sagar','KJP','B.R. JAYANTH', 30712],
+['SHIMOGA','Sagar','JD(S)','GOPALAKRISHNA BELURU', 23217],
+['SHIMOGA','Sagar','BJP','SHARAVATHI C. RAO', 5355],
+['SHIMOGA','Sagar','LSP','T.R. KRISHNAPPA', 2302],
+['SHIMOGA','Sagar','IND','SURESHA. C.', 1385],
+['SHIMOGA','Sagar','IND','S. RAMACHANDRA', 597],
+['SHIMOGA','Sagar','BSP','K.N. VENKATESHA', 549],
+['SHIMOGA','Sagar','IND','MEGHARAJA. N. PUJARI', 532],
+['SHIMOGA','Sagar','BSRCP','GANESH. B. BELLI', 420],
+['SHIMOGA','Sagar','JD(U)','DINESH BARADAVALLI', 378],
+
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

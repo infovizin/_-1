@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+	
+['DHARWAD','Navalgund','JD(S)','N.H.KONARADDI', 44448],
+['DHARWAD','Navalgund','BJP','PATIL  MUNENAKOPPA SHANKAR', 41779],
+['DHARWAD','Navalgund','INC','GADDI KALLAPPA NAGAPPA', 30780],
+['DHARWAD','Navalgund','IND','SHIVANAND BASAPPA KARIGAR (MUDNUR)', 8901],
+['DHARWAD','Navalgund','KJP','DR: SHIRIYANNAVAR', 4028],
+['DHARWAD','Navalgund','IND','SUBHASHCHANDRAGOUDA BHIMANAGOUDA  PATIL (CHANDRAGOUDA)', 2356],
+['DHARWAD','Navalgund','BSRCP','SHAMBHULINGA C  SIDRAMASHETTAR', 1109],
+['DHARWAD','Navalgund','BSP','SAIDAPUR YELLAPPA DUNDUR', 935],
+['DHARWAD','Navalgund','IND','VIRUPAKSHAGOUDA SHIVANAGOUDA  KULKARNI', 782],
+['DHARWAD','Navalgund','IND','VINAYAKUMAR P MYAGERI', 465],
+['DHARWAD','Navalgund','RCMP','GURUSHANTHAPPA HANAMAPPA  CHALAWADI', 338],
+['DHARWAD','Navalgund','IND','R.D. RANGASWAMY', 317],
+['DHARWAD','Navalgund','LJP','CHANDRASHEKAR DEMAPPA BUGATI', 317],
+['DHARWAD','Navalgund','IND','DOCTOR MOHAMMADUSMAN MOHMMADGOUS', 285],
+['DHARWAD','Navalgund','IND','BASAVENNEVVA YELLAPPA KADROLLI', 275],
+['DHARWAD','Navalgund','JD(U)','METIGOUDRA  PRAKASHAGOUDA MALLANAGOUDA', 232],
+['DHARWAD','Kundgol','INC','CHANNABASAPPA SATYAPPA SHIVALLI', 52690],
+['DHARWAD','Kundgol','KJP','CHIKKANGOUDRA SIDDANGOUDA ISHWARGOUD', 31618],
+['DHARWAD','Kundgol','BJP','M R PATIL', 23641],
+['DHARWAD','Kundgol','JD(S)','AKKI MALLIKARJUN SAHADEVAPPA', 15613],
+['DHARWAD','Kundgol','IND','VEERUPAKSHAPPAGOUDA NAGANGOUDA FAKKIRAGOUDRA', 2309],
+['DHARWAD','Kundgol','BSRCP','VEERUPAKSHAPPA KALLIMANI', 869],
+['DHARWAD','Kundgol','IND','CHANNAPPA MALLAPPA KAMADOLLI', 694],
+['DHARWAD','Kundgol','BSP','KURUBAR CHANDRAPPA GANESHAPPA', 600],
+['DHARWAD','Kundgol','KMP','KIRAN FAKKIRAPPA SHETTEPPANAVAR', 576],
+['DHARWAD','Kundgol','IND','GOKAK JAILANI MAHABUBSAB', 498],
+['DHARWAD','Kundgol','NPP','KUTUBUDDIN IMAMSAB BELAGALI', 409],
+['DHARWAD','Dharwad','INC','VINAY KULKARNI', 53453],
+['DHARWAD','Dharwad','JD(S)','AMRUT AYYAPPA DESAI', 35133],
+['DHARWAD','Dharwad','KJP','ASHTAGI TAVANAPPA PAYAPPA', 21589],
+['DHARWAD','Dharwad','BJP','SEEMA ASHOK MASUTI', 16896],
+['DHARWAD','Dharwad','IND','SOMAPPA BASAPPA BENAKATTI', 2162],
+['DHARWAD','Dharwad','NCP','BASAVARAJ BUDIHAL', 811],
+['DHARWAD','Dharwad','IND','BASAVARAJ YALLAPPA PARASANNAVAR', 718],
+['DHARWAD','Dharwad','IND','MANJUNATH HANAMANTAPPA MANGALAGATTI', 578],
+['DHARWAD','Dharwad','BSRCP','YOGESHGOUDA NINGANGOUDA GOUDAR', 405],
+['DHARWAD','Dharwad','IND','NIJAMUDDIN (HANNU) ABDULNABI SOUDAGAR', 357],
+['DHARWAD','Dharwad','IND','PATIL BASAVARAJ NINGANAGOUDA', 343],
+['DHARWAD','Dharwad','IND','AZALFARIDA GOUSUSAB RONAD', 330],
+['DHARWAD','Dharwad','JD(U)','SHRISHAILAGOUDA GIRIYAPPAGOUDA KAMATAR', 243],
+['DHARWAD','Hubli-dharwad-East','INC','ABBAYYA PRASAD', 42353],
+['DHARWAD','Hubli-dharwad-East','BJP','VEERABHADRAPPA HALAHARAVI', 28831],
+['DHARWAD','Hubli-dharwad-East','KJP','BIJAWAD SHANKARAPPA KASHAPPA', 26312],
+['DHARWAD','Hubli-dharwad-East','JD(S)','ALKOD HANUMANTHAPPA Y', 8431],
+['DHARWAD','Hubli-dharwad-East','IND','VENKAPPA F SIDDANATH', 850],
+['DHARWAD','Hubli-dharwad-East','IND','GURUNATH SHANKER GABBUR', 669],
+['DHARWAD','Hubli-dharwad-East','BSP','NINGAPPA PIRAPPA MARAGANOOR', 628],
+['DHARWAD','Hubli-dharwad-East','BSRCP','BALLARY BABU SUNKAPPA', 606],
+['DHARWAD','Hubli-dharwad-East','RPI(A)','CHENNU MALLIGEWAD', 414],
+['DHARWAD','Hubli-dharwad-Central','BJP','JAGADISH SHETTAR', 58201],
+['DHARWAD','Hubli-dharwad-Central','INC','DR. MAHESH NALWAD', 40447],
+['DHARWAD','Hubli-dharwad-Central','JD(S)','SHAMS TABREZ SAMSI', 7898],
+['DHARWAD','Hubli-dharwad-Central','KJP','S. S. PATIL', 5481],
+['DHARWAD','Hubli-dharwad-Central','IND','SIRAJAHMED MULLA', 967],
+['DHARWAD','Hubli-dharwad-Central','BSP','PREMANATH CHIKKATUMBAL', 632],
+['DHARWAD','Hubli-dharwad-Central','IND','SAYAD SALAUDDIN SAYAD GOUSE MULLA', 588],
+['DHARWAD','Hubli-dharwad-Central','IND','VISHNUSA RAJANASA PAWAR', 523],
+['DHARWAD','Hubli-dharwad-Central','NCP','RENUKA SHINDE', 522],
+['DHARWAD','Hubli-dharwad-Central','IND','SHIDDALINGAPPA  RAWAPPA KAMPLI', 375],
+['DHARWAD','Hubli-dharwad-Central','IND','MANOJ BABURAO HANGAL', 346],
+['DHARWAD','Hubli-dharwad-Central','JD(U)','RAVI KALAL', 213],
+['DHARWAD','Hubli-dharwad-Central','IND','VISHAL MOHAN SUTAGATTI', 200],
+['DHARWAD','Hubli-dharwad-Central','IND','VINOD PAWAR', 194],
+['DHARWAD','Hubli-dharwad-Central','IND','GUDIPATI  JASHUVA', 194],
+['DHARWAD','Hubli-dharwad-Central','IND','JAFAR NANNESAB DHARAWAD', 168],
+['DHARWAD','Hubli-dharwad-Central','IUML','AJIJNAJ D MOMIN', 132],
+['DHARWAD','Hubli-dharwad-Central','IND','RAVI BASAPPA MUGAD', 117],
+['DHARWAD','Hubli-dharwad-Central','IND','BABAJAN MAKATUMHUSSAIN GHANTIWALE', 113],
+['DHARWAD','Hubli-dharwad- West','BJP','ARAVIND CHANDRAKANT BELLAD', 42003],
+['DHARWAD','Hubli-dharwad- West','INC','S. R. MOREY', 30821],
+['DHARWAD','Hubli-dharwad- West','JD(S)','ISMAIL TAMATGAR', 30312],
+['DHARWAD','Hubli-dharwad- West','KJP','MOHAN LIMBIKAI', 12216],
+['DHARWAD','Hubli-dharwad- West','IND','GURURAJ HUNASHIMARAD', 2471],
+['DHARWAD','Hubli-dharwad- West','BSRCP','DAMBAL HANUMANT', 1807],
+['DHARWAD','Hubli-dharwad- West','IND','SURESH VEERABHADRAPPA KATAGI', 1091],
+['DHARWAD','Hubli-dharwad- West','IND','LAXMAN BASAPPA DODDAMANI', 1066],
+['DHARWAD','Hubli-dharwad- West','LSP','NAGARAJ TIGADI', 843],
+['DHARWAD','Hubli-dharwad- West','IND','ISHWAR MALLAPPA SANIKOP', 821],
+['DHARWAD','Hubli-dharwad- West','IND','RATNAKAR NARAYAN RAIKAR', 799],
+['DHARWAD','Hubli-dharwad- West','NCP','VADIRAJ MADHUSUDHAN MANNARI(PANDURANGI)', 745],
+['DHARWAD','Hubli-dharwad- West','BSP','BAKKAYI LAXMAN CHANDRAPPA', 645],
+['DHARWAD','Hubli-dharwad- West','SUCI','H.G. DESAI', 339],
+['DHARWAD','Hubli-dharwad- West','IND','KUMAR DESAI RAYANAGOUDA DYAMANAGOUDA', 322],
+['DHARWAD','Hubli-dharwad- West','BhJD','RAJU KAMBLE', 241],
+['DHARWAD','Hubli-dharwad- West','IND','ANITA HORADI', 221],
+['DHARWAD','Hubli-dharwad- West','IND','ANWARSAB BASHASAB RAIBAG', 147],
+['DHARWAD','Kalghatgi','INC','SANTHOSH S LAD', 76802],
+['DHARWAD','Kalghatgi','KJP','NIMBANNAVAR CHANNAPPA MALLAPPA', 31141],
+['DHARWAD','Kalghatgi','JD(S)','P C SIDDANAGOUDAR', 12300],
+['DHARWAD','Kalghatgi','BJP','IRAPPA CHANNAPPA SALAGAR(VEERESH)', 6863],
+['DHARWAD','Kalghatgi','IND','HUSAINASAB MAHABOOBASAB TORGAL', 1908],
+['DHARWAD','Kalghatgi','IND','AKKI SHIVAPPA YALLAPPA', 1152],
+['DHARWAD','Kalghatgi','IND','BASAVA PRASAD JADHAV', 818],
+['DHARWAD','Kalghatgi','BSP','SHOBHA V BALLARI (HUKKERI)', 604],
+
+
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+	
+
+['RAICHUR','Raichur Rural','BJP','THIPPARAJU', 50497],
+['RAICHUR','Raichur Rural','INC','RAJA RAYAPPA NAIK', 47227],
+['RAICHUR','Raichur Rural','JD(S)','RAJA AMARESHWARA NAIK', 21584],
+['RAICHUR','Raichur Rural','KJP','R. MALLESH NAIK', 5861],
+['RAICHUR','Raichur Rural','BSP','VIJAYALAKSHMI MADAPANURA', 2568],
+['RAICHUR','Raichur Rural','IND','CHINNAYYA NAIK', 2529],
+['RAICHUR','Raichur Rural','IND','ANJANAYYA', 1258],
+['RAICHUR','Raichur Rural','CPIM','LALAPPA NAIK', 889],
+['RAICHUR','Raichur Rural','NPP','SWAMY', 854],
+['RAICHUR','Raichur Rural','BSRCP','KHASIM NAIK', 804],
+['RAICHUR','Raichur Rural','JD(U)','VEERANA GOUDA', 668],
+['RAICHUR','Raichur','JD(S)','DR. SHIVARAJ PATIL S.', 45263],
+['RAICHUR','Raichur','INC','SYED YASIN', 37392],
+['RAICHUR','Raichur','BJP','TRIVIKRAM JOSHI', 6186],
+['RAICHUR','Raichur','BSRCP','POOJA GANDHI', 1815],
+['RAICHUR','Raichur','KJP','BASAVARAJ  KALASA', 1365],
+['RAICHUR','Raichur','BSP','HARES SIDDIQ', 1274],
+['RAICHUR','Raichur','IND','BHEEMANA GOUDA', 717],
+['RAICHUR','Raichur','SUCI','APARNA. B.R.', 559],
+['RAICHUR','Raichur','IND','ZAFER MOHIUDDIN', 553],
+['RAICHUR','Raichur','IND','MOHD. SHAALAM HUSSAIN', 510],
+['RAICHUR','Raichur','IND','M.JAMEEL AHMED', 494],
+['RAICHUR','Raichur','CPIM','NOORJAHAN', 445],
+['RAICHUR','Raichur','JD(U)','NOOR MOHAMMAD', 441],
+['RAICHUR','Raichur','IND','JAYATEERTH', 432],
+['RAICHUR','Raichur','IND','CHAND PASHA', 428],
+['RAICHUR','Raichur','IND','M.CHAND ABDUL RUBB', 311],
+['RAICHUR','Raichur','IND','MEHRAJA BASHA', 261],
+['RAICHUR','Raichur','LSP','RAMANNA R.H.J.', 226],
+['RAICHUR','Raichur','PPOI','K.B.RAGHAVENDRA', 226],
+['RAICHUR','Raichur','WPOI','SYED MUJEEB', 221],
+['RAICHUR','Raichur','IND','V.H.MASTER', 167],
+['RAICHUR','Manvi','INC','G.HAMPAYYA SAHUKAR BALLATAGI', 50619],
+['RAICHUR','Manvi','JD(S)','RAJA VENKATAPPA NAYAK RAJA AMBANNA NAYAK', 43632],
+['RAICHUR','Manvi','KJP','GANGADHAR NAYAK', 14465],
+['RAICHUR','Manvi','BSRCP','BASANAGOUDA DADDAL', 4363],
+['RAICHUR','Manvi','BJP','AYYAMMA NAYAK', 2935],
+['RAICHUR','Manvi','IND','MARINAGAPPA  HARAVI', 1940],
+['RAICHUR','Manvi','CPIM','COM.V.MUDUKAPPA NAYAK NIRMANVI', 1294],
+['RAICHUR','Manvi','BSP','MALLAPPA BANGARI', 991],
+['RAICHUR','Manvi','JD(U)','SUSHEELAMMA R MUDUKAPPA NAYAK', 958],
+['RAICHUR','Manvi','IND','M.NAGARAJ MEDAR', 777],
+['RAICHUR','Devadurga','INC','A. VENKATESH NAIK', 62070],
+['RAICHUR','Devadurga','BJP','ARAKERA K SHIVANAGOUDA NAYAK', 58370],
+['RAICHUR','Devadurga','KJP','SHANTH GOWDA', 2747],
+['RAICHUR','Devadurga','BSRCP','ANJALA CHANNANAGOUDA', 2158],
+['RAICHUR','Devadurga','CPIM','BASAVARAJ NAYAK GUGERADODY', 1217],
+['RAICHUR','Devadurga','JD(U)','CHANNABASAVA', 860],
+['RAICHUR','Lingsugur','JD(S)','MANAPPA D.VAJJAL', 31737],
+['RAICHUR','Lingsugur','INC','D.S.HOOLAGERI', 30451],
+['RAICHUR','Lingsugur','BSRCP','SIDDU Y.BANDI', 25005],
+['RAICHUR','Lingsugur','KJP','H.B.MURARI', 18347],
+['RAICHUR','Lingsugur','BJP','T.R.NAIK', 13545],
+['RAICHUR','Lingsugur','IND','DR.RANGANATH', 2737],
+['RAICHUR','Lingsugur','CPIM','COMRADE CHINNAPPA KOTRIKI', 1232],
+['RAICHUR','Lingsugur','IND','YASHODHAR BHAJANTRI', 1171],
+['RAICHUR','Lingsugur','IND','NANDAPPA P BOMBAYKAR', 1101],
+['RAICHUR','Lingsugur','JD(U)','SHEKHARAPPA SHIVANGI', 969],
+['RAICHUR','Lingsugur','KRRS','SUBHAS Y CHAWAN', 940],
+['RAICHUR','Lingsugur','IND','BALARAMA', 868],
+['RAICHUR','Lingsugur','BSP','PAMPAPATHI GUDADUR', 757],
+['RAICHUR','Lingsugur','IND','DANAMMA SHIVASHANKARAPPA', 720],
+['RAICHUR','Sindhanur','INC','BADARLI HAMPANAGOUDA', 49213],
+['RAICHUR','Sindhanur','BSRCP','K.KARIYAPPA', 36197],
+['RAICHUR','Sindhanur','JD(S)','VENKATA RAO NADAGOUDA', 30895],
+['RAICHUR','Sindhanur','KJP','RAJASHEKHAR PATIL', 11692],
+['RAICHUR','Sindhanur','BJP','KOLLA SHESHAGIRIRAO', 10557],
+['RAICHUR','Sindhanur','IND','RAMANNA ELEKUDALAGI', 1176],
+['RAICHUR','Sindhanur','CPI','COM|| BASHUMIYA', 997],
+['RAICHUR','Sindhanur','CPIM','A.RAMESH PATIL BERGI', 868],
+['RAICHUR','Sindhanur','KMP','SYED SABIR NANA', 667],
+['RAICHUR','Sindhanur','IND','BASANAGOUDA', 657],
+['RAICHUR','Sindhanur','JD(U)','JAGIRDAR SHANTHAGOUDA', 651],
+['RAICHUR','Sindhanur','IND','BASAVARAJ BADARLI', 639],
+['RAICHUR','Sindhanur','IND','GOUDAPPA', 526],
+['RAICHUR','Sindhanur','BSP','M.K.JAGGESH', 473],
+['RAICHUR','Maski','INC','PRATAPGOWDA PATIL', 45552],
+['RAICHUR','Maski','KJP','MAHADEVAPPA GOWDA', 26405],
+['RAICHUR','Maski','BSRCP','SHEKHARAPPA TALWAR', 18197],
+['RAICHUR','Maski','BJP','SHANKARKUMARA MEDARA', 4264],
+['RAICHUR','Maski','JD(S)','AMARESH', 3488],
+['RAICHUR','Maski','IND','R RANGAPPA NAYAKA', 2877],
+['RAICHUR','Maski','SJPA','AMRESH NAYAKA', 2152],
+['RAICHUR','Maski','CPIM','NAGARAJ MEDAR', 1107],
+['RAICHUR','Maski','IND','TIRUPATI', 1036],
+['RAICHUR','Maski','BSP','NAGARAJA CHIGARI', 650],
+
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

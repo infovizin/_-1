@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+		['CHIKKABALLAPUR','Gauribidanur','INC','N H SHIVASHANKARA REDDY', 50131],
+['CHIKKABALLAPUR','Gauribidanur','IND','K JAIPALA REDDY', 44056],
+['CHIKKABALLAPUR','Gauribidanur','BJP','N M RAVINARAYANA REDDY', 31840],
+['CHIKKABALLAPUR','Gauribidanur','JD(S)','S V ASHWATHANARAYANA REDDY', 10957],
+['CHIKKABALLAPUR','Gauribidanur','BSRCP','K SOMASHEKAR', 3526],
+['CHIKKABALLAPUR','Gauribidanur','KJP','MURALIDAR P S', 1735],
+['CHIKKABALLAPUR','Gauribidanur','IND','SYED ABHUL KHASIM', 1702],
+['CHIKKABALLAPUR','Gauribidanur','PPOI','M RAMAKRISHNAIAH', 1105],
+['CHIKKABALLAPUR','Gauribidanur','BSP','RAJASHEKAR MADIGA', 952],
+['CHIKKABALLAPUR','Gauribidanur','IND','H ANANDA KUMARA', 875],
+['CHIKKABALLAPUR','Gauribidanur','CPM','C C ASHWATHAPPA', 709],
+['CHIKKABALLAPUR','Gauribidanur','IND','G N RAVI', 424],
+['CHIKKABALLAPUR','Gauribidanur','IND','H N RAMAKRISHNA REDDY', 399],
+['CHIKKABALLAPUR','Gauribidanur','IND','N H  SHIVASHANKARA REDDY', 305],
+['CHIKKABALLAPUR','Gauribidanur','JD(U)','K V SADASHIVAIAH', 237],
+['CHIKKABALLAPUR','Gauribidanur','IND','SREERAMA REDDY', 215],
+['CHIKKABALLAPUR','Bagepalli','IND','S.N SUBBAREDDY(CHINNAKAYALAPALLI)', 66227],
+['CHIKKABALLAPUR','Bagepalli','CPM','SRIRAMAREDDY G.V', 35472],
+['CHIKKABALLAPUR','Bagepalli','JD(S)','HARINATHAREDDY', 16779],
+['CHIKKABALLAPUR','Bagepalli','INC','N SAMPANGI', 15491],
+['CHIKKABALLAPUR','Bagepalli','IND','R.N. RAGHUNATH REDDY', 2478],
+['CHIKKABALLAPUR','Bagepalli','IND','VENKATARAVANA REDDY', 1666],
+['CHIKKABALLAPUR','Bagepalli','IND','S.N SUBBAREDDY', 1510],
+['CHIKKABALLAPUR','Bagepalli','IND','K.A SRINATH', 1184],
+['CHIKKABALLAPUR','Bagepalli','BJP','M NARAYANASWAMY (MNS)', 1084],
+['CHIKKABALLAPUR','Bagepalli','IND','SUBBIREDDY', 1074],
+['CHIKKABALLAPUR','Bagepalli','KJP','R. MUNIRAJU', 965],
+['CHIKKABALLAPUR','Bagepalli','BSRCP','H.V. SHIVASHANKAR', 793],
+['CHIKKABALLAPUR','Bagepalli','IND','ASHWATHREDDY', 646],
+['CHIKKABALLAPUR','Bagepalli','IND','HARI. R', 598],
+['CHIKKABALLAPUR','Bagepalli','IND','SUBBAREDDY', 565],
+['CHIKKABALLAPUR','Bagepalli','IND','KESHAVAREDDY M.V', 558],
+['CHIKKABALLAPUR','Bagepalli','IND','C. VENKATESH', 446],
+['CHIKKABALLAPUR','Bagepalli','JD(U)','V NARASIMHAMURTHY', 441],
+['CHIKKABALLAPUR','Bagepalli','IND','P.A SATYANARAYANAREDDY', 439],
+['CHIKKABALLAPUR','Bagepalli','IND','SUBHRAMANI', 341],
+['CHIKKABALLAPUR','Bagepalli','IND','BAVA FAKRUDDIN', 339],
+['CHIKKABALLAPUR','Bagepalli','IND','SUBBIREDDY', 309],
+['CHIKKABALLAPUR','Bagepalli','BSP','KRISHNAPPA NAYAKA', 256],
+['CHIKKABALLAPUR','Bagepalli','IND','M. JAVEED', 255],
+['CHIKKABALLAPUR','Bagepalli','IND','RAMANJANEYA', 223],
+['CHIKKABALLAPUR','Bagepalli','IND','VENKATASHIVAPPA', 199],
+['CHIKKABALLAPUR','Bagepalli','IND','BABU', 160],
+['CHIKKABALLAPUR','Chikkaballapur','INC','DR. K SUDHAKAR', 74914],
+['CHIKKABALLAPUR','Chikkaballapur','JD(S)','K P BACHEGOWDA', 59866],
+['CHIKKABALLAPUR','Chikkaballapur','BJP','A V BYREGOWDA', 3910],
+['CHIKKABALLAPUR','Chikkaballapur','BSRCP','S V LOKESH', 1692],
+['CHIKKABALLAPUR','Chikkaballapur','IND','SUDHAKARA', 1203],
+['CHIKKABALLAPUR','Chikkaballapur','KJP','DR. N LAKSHMIPATHI BABU', 1156],
+['CHIKKABALLAPUR','Chikkaballapur','BSP','M SOMASHEKAR', 1013],
+['CHIKKABALLAPUR','Chikkaballapur','IND','M VENKATESH (M.V. SIR)', 726],
+['CHIKKABALLAPUR','Chikkaballapur','IND','BACHEGOWDA', 575],
+['CHIKKABALLAPUR','Chikkaballapur','IND','AMEER MOHAMMED SADIQ', 536],
+['CHIKKABALLAPUR','Chikkaballapur','IND','G R NARAYAN SWAMY', 427],
+['CHIKKABALLAPUR','Chikkaballapur','IND','D A BACHEGOWDA', 325],
+['CHIKKABALLAPUR','Chikkaballapur','SAJP','M A BASHA', 195],
+['CHIKKABALLAPUR','Chikkaballapur','JD(U)','N MANJUNATH', 171],
+['CHIKKABALLAPUR','Sidlaghatta','JD(S)','M. RAJANNA', 77931],
+['CHIKKABALLAPUR','Sidlaghatta','INC','V. MUNIYAPPA', 62452],
+['CHIKKABALLAPUR','Sidlaghatta','KJP','D.R.SHIVAKUMAR GOWDA', 5838],
+['CHIKKABALLAPUR','Sidlaghatta','IND','RAJANNA.G.A', 2097],
+['CHIKKABALLAPUR','Sidlaghatta','BJP','J.V. SADASHIVA', 1914],
+['CHIKKABALLAPUR','Sidlaghatta','IND','V.MUNIYAPPA', 927],
+['CHIKKABALLAPUR','Sidlaghatta','BSP','DHANARAJA(MADIGA)', 890],
+['CHIKKABALLAPUR','Sidlaghatta','BSRCP','T.M NARAYANASWAMY(JUICE)', 507],
+['CHIKKABALLAPUR','Sidlaghatta','IND','K.KEMPAMMA', 468],
+['CHIKKABALLAPUR','Sidlaghatta','IND','GOVINDAPPA', 385],
+['CHIKKABALLAPUR','Sidlaghatta','JD(U)','P.SADIQ PASHA', 331],
+['CHIKKABALLAPUR','Chintamani','JD(S)','J.K.KRISHNAREDDY', 68950],
+['CHIKKABALLAPUR','Chintamani','IND','DR. M.C. SUDHAKAR', 67254],
+['CHIKKABALLAPUR','Chintamani','INC','VANI KRISHNAREDDY', 12665],
+['CHIKKABALLAPUR','Chintamani','BJP','SATHYANARAYANA MAHESH', 1911],
+['CHIKKABALLAPUR','Chintamani','IND','G.S. SUBASH', 1706],
+['CHIKKABALLAPUR','Chintamani','IND','HARI SUDHAKARA.V.', 1252],
+['CHIKKABALLAPUR','Chintamani','CPM','C. GOPINATH', 736],
+['CHIKKABALLAPUR','Chintamani','IND','T.S. SUDHAKARAREDDY', 692],
+['CHIKKABALLAPUR','Chintamani','IND','SHAFFI ULLA.D.S.', 629],
+['CHIKKABALLAPUR','Chintamani','IND','KRISHNAREDDY. J.K.', 604],
+['CHIKKABALLAPUR','Chintamani','KJP','T.R. KURLAREDDY', 487],
+['CHIKKABALLAPUR','Chintamani','IND','N.SRINIVAS', 468],
+['CHIKKABALLAPUR','Chintamani','IND','HANUMANTHAPPA', 323],
+['CHIKKABALLAPUR','Chintamani','BSP','SEETHAPPA. V', 232],
+['CHIKKABALLAPUR','Chintamani','JD(U)','M. KRISHNAREDDY (M.K.)', 204],
+
+
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

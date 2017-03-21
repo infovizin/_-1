@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+	['BIDAR','Basavakalyan','JD(S)','MALLIKARJUN SIDRAMAPPA KHUBA', 37494],
+['BIDAR','Basavakalyan','INC','B. NARAYANRAO', 21601],
+['BIDAR','Basavakalyan','BSRCP','M.G.MULEY', 18214],
+['BIDAR','Basavakalyan','KJP','ATTUR MALLAMMA PATIL', 17965],
+['BIDAR','Basavakalyan','BJP','SANJAY D PATWARI', 17431],
+['BIDAR','Basavakalyan','WPOI','SARDAR KHAN', 2742],
+['BIDAR','Basavakalyan','IND','JAGANATH PATIL', 2595],
+['BIDAR','Basavakalyan','IND','MALLAMMA BIRADAR', 1701],
+['BIDAR','Basavakalyan','BSP','ABDUL RAZAQ', 1489],
+['BIDAR','Basavakalyan','IND','SHAHAJIRAO', 896],
+['BIDAR','Basavakalyan','IND','SYED ANWAR (PEERAN)', 834],
+['BIDAR','Basavakalyan','IND','CHITAGUPPA MAHADEVI SHAMARAO', 798],
+['BIDAR','Basavakalyan','RPI','A.MILIND GURUJI', 673],
+['BIDAR','Basavakalyan','NPP','MALLIKARJUN', 553],
+['BIDAR','Basavakalyan','IND','MULEY DNYANESHWAR', 514],
+['BIDAR','Basavakalyan','IND','ARUNKUMAR', 355],
+['BIDAR','Basavakalyan','HJP','SYED GOUSE', 317],
+['BIDAR','Homnabad','INC','RAJASHEKHAR BASAVARAJ PATIL', 64694],
+['BIDAR','Homnabad','JD(S)','M. NASEENODDIN PATEL', 40194],
+['BIDAR','Homnabad','BSP','ANKUSH LINGAPPA CHITTA', 8093],
+['BIDAR','Homnabad','BJP','PADMAKAR PATIL', 6604],
+['BIDAR','Homnabad','KJP','MEER ASHREEFALI  MEER SYEDALI', 5695],
+['BIDAR','Homnabad','BSRCP','BANKREDDY PRABHUREDDY', 5238],
+['BIDAR','Homnabad','IND','RAVIKANTH K. HUGAR', 2076],
+['BIDAR','Homnabad','NPP','ISMAIL MAHEBOOBSAB', 1164],
+['BIDAR','Homnabad','IND','PARAMESHWAR RAMCHANDRA', 729],
+['BIDAR','Homnabad','IND','NARASAPPA LACHAPPA  MUTTANGI', 601],
+['BIDAR','Homnabad','IND','ASHOK CHANDRAKANT SAGAR', 560],
+['BIDAR','Homnabad','RPI(A)','LAXAMAN GURAPPA', 365],
+['BIDAR','Bidar South','KMP','ASHOK KHENY', 47763],
+['BIDAR','Bidar South','JD(S)','BANDEPPA KHASHEMPUR', 31975],
+['BIDAR','Bidar South','BSP','ABDUL MANNAN', 16015],
+['BIDAR','Bidar South','KJP','DR. SHAYALENDRA KASHINATH BELDALE', 11560],
+['BIDAR','Bidar South','INC','MEENAKSHI SANGRAM', 5105],
+['BIDAR','Bidar South','IND','AMRUTHRAO CHIMKODE', 1883],
+['BIDAR','Bidar South','BJP','DR. BASWARAJ PATIL', 1301],
+['BIDAR','Bidar South','LSP','DR. ABDUL KAREEM', 1156],
+['BIDAR','Bidar South','NDEP','ZAMEERUDDIN', 1002],
+['BIDAR','Bidar South','CPI','BABURAO HONNA', 999],
+['BIDAR','Bidar South','IND','ABRAHAM T.J.', 846],
+['BIDAR','Bidar South','BSRCP','PRAVEENKUMAR R.', 829],
+['BIDAR','Bidar South','ABML(S)','ALI KHAN (DON)', 794],
+['BIDAR','Bidar South','IND','SHARAFODDIN', 712],
+['BIDAR','Bidar South','IND','VASANTH', 604],
+['BIDAR','Bidar South','IND','NARSAPPA', 537],
+['BIDAR','Bidar South','RPI','SHANKAR MARUTI FIRANGE', 488],
+['BIDAR','Bidar South','ANC','BHASKER BABU PATERPALLI', 403],
+['BIDAR','Bidar South','IND','PRABHU', 350],
+['BIDAR','Bidar South','BPJP','HASIM', 310],
+['BIDAR','Bidar South','IND','BASHEERMIYA', 225],
+['BIDAR','Bidar','KJP','GURUPADAPPA NAGAMARPALLI', 50718],
+['BIDAR','Bidar','INC','RAHEEM KHAN', 48147],
+['BIDAR','Bidar','BJP','RAMESH KUMAR PANDE', 5888],
+['BIDAR','Bidar','JD(S)','DR. AMAR AVINASH YEROLKAR', 2420],
+['BIDAR','Bidar','PPOI','PANDARI', 1485],
+['BIDAR','Bidar','BSRCP','ANILKUMAR GUNDAPPA', 693],
+['BIDAR','Bidar','NDEP','KHAYAMUDDIN', 549],
+['BIDAR','Bidar','NCP','ABDUL FAYAZ KHAN', 429],
+['BIDAR','Bidar','IND','CHANDRASHEKER MADEPPA PASARGI', 362],
+['BIDAR','Bidar','IND','ABDUL JAMEEL KHAN', 362],
+['BIDAR','Bidar','IND','PRABHU', 288],
+['BIDAR','Bidar','IND','SAYED HAJI PASHA', 288],
+['BIDAR','Bidar','IND','S. S. ISLAM', 274],
+['BIDAR','Bidar','IND','ISHWAR HADHENAVAR', 258],
+['BIDAR','Bidar','IND','KONDIBA RAO GOPAL RAO PANDRE', 249],
+['BIDAR','Bidar','IND','SHAIKH HAJI', 228],
+['BIDAR','Bidar','IND','PENINA', 179],
+['BIDAR','Bidar','IND','ESHWAR KANARI', 154],
+['BIDAR','Bhalki','INC','ESHWARA KHANDRE', 58012],
+['BIDAR','Bhalki','KJP','SIDRAM D.K.', 48343],
+['BIDAR','Bhalki','BJP','PRAKASH KHANDRE', 29694],
+['BIDAR','Bhalki','IND','D.K. SONPHULE', 2414],
+['BIDAR','Bhalki','JD(S)','JANARDHAN', 2255],
+['BIDAR','Bhalki','IND','BHALKESHWAR', 1561],
+['BIDAR','Bhalki','BSP','ISMALASHA', 1102],
+['BIDAR','Bhalki','BSRCP','JAGANNATH JAMADAR', 1024],
+['BIDAR','Bhalki','IND','ASHOK', 1012],
+['BIDAR','Bhalki','IND','PRAKASH', 717],
+['BIDAR','Bhalki','IND','BABU PASHA', 489],
+['BIDAR','Bhalki','IND','NEELKANTH', 468],
+['BIDAR','Aurad','BJP','PRABHU B. CHAVAN', 61826],
+['BIDAR','Aurad','KJP','DHANAJI BHEEMA JADHAV', 38635],
+['BIDAR','Aurad','INC','GAIKAWAD VIJAYKUMAR', 15456],
+['BIDAR','Aurad','JD(S)','G.M. YATNOOR', 4892],
+['BIDAR','Aurad','NCP','ROOPCHAND RATHOD', 1225],
+['BIDAR','Aurad','BSP','DEVIDAS', 1151],
+['BIDAR','Aurad','IND','SULOCHANA', 1098],
+['BIDAR','Aurad','KMP','RAJU KADYAL', 1065],
+['BIDAR','Aurad','IND','KASTURBAI', 904],
+['BIDAR','Aurad','IND','SHAMANNA BAVGI', 814],
+['BIDAR','Aurad','IND','JAIRAJ CHATURE', 686],
+['BIDAR','Aurad','IND','RATANSING', 461],
+['BIDAR','Aurad','BSRCP','SHIVKUMAR BELDAL', 451],
+['BIDAR','Aurad','IND','DR. SHANKARRAO SONALWADI', 437],
+
+
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

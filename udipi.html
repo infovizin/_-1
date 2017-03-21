@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+		['UDUPI','Byndoor','INC','K.GOPALA POOJARY', 82277],
+['UDUPI','Byndoor','BJP','B.M. SUKUMAR SHETTY', 51128],
+['UDUPI','Byndoor','KJP','NAVEENCHANDRA UPPUNDA', 4177],
+['UDUPI','Byndoor','CPM','K.SHANKER', 2960],
+['UDUPI','Byndoor','IND','H. SURESH POOJRAY', 1611],
+['UDUPI','Byndoor','BSP','UDAYA KUMAR TALLUR', 1515],
+['UDUPI','Byndoor','JD(S)','SURAYYA BANU', 1023],
+['UDUPI','Byndoor','IND','SRIDHAR PEDEMANE', 957],
+['UDUPI','Byndoor','IND','LOKESH VITTAL BORKAR SIRSI', 630],
+['UDUPI','Byndoor','IND','DIVAKAR KOTIYAN', 620],
+['UDUPI','Byndoor','IND','ABDUL AZEEZ', 463],
+['UDUPI','Byndoor','IND','ABDUL HAZID', 395],
+['UDUPI','Byndoor','JD(U)','MANJUNATHA, K', 334],
+['UDUPI','Kundapura','IND','HALADY SRINIVASA SHETTY', 80563],
+['UDUPI','Kundapura','INC','MALLYADI SHIVARAMA SHETTY', 39952],
+['UDUPI','Kundapura','BJP','KISHORE KUMAR', 14524],
+['UDUPI','Kundapura','IND','SRINIVASA.H', 2442],
+['UDUPI','Kundapura','IND','MANJUNATH', 764],
+['UDUPI','Kundapura','JD(U)','KRISHNA BARATHCAL', 738],
+['UDUPI','Udupi','INC','PRAMOD MADHWARAJ', 86868],
+['UDUPI','Udupi','BJP','B. SUDHAKAR SHETTY', 47344],
+['UDUPI','Udupi','IND','ALEVOOR YOGEESH ACHARYA', 1472],
+['UDUPI','Udupi','JD(S)','BARKUR SATISH POOJARY', 1017],
+['UDUPI','Udupi','BSP','MANJUNATH. V.', 986],
+['UDUPI','Udupi','IND','THUKARAM KOTIAN', 498],
+['UDUPI','Udupi','IND','NASIR HUSSAIN', 245],
+['UDUPI','Kapu','INC','VINAY KUMAR SORAKE', 52782],
+['UDUPI','Kapu','BJP','LALAJI R.MENDON', 50927],
+['UDUPI','Kapu','JD(S)','VASANTH V.SALIAN', 4327],
+['UDUPI','Kapu','SDPI','ABDUL HAKEEM', 2171],
+['UDUPI','Kapu','IND','SRIKANTHA B.ACHARYA', 1174],
+['UDUPI','Kapu','IND','HAMEED', 1125],
+['UDUPI','Kapu','IND','VIJAYA KUMAR HEGDE.B', 467],
+['UDUPI','Kapu','IND','RONALD CASTELINO', 269],
+['UDUPI','Kapu','IND','RICHARD LOBO', 249],
+['UDUPI','Kapu','IND','KASIM', 208],
+['UDUPI','Kapu','IND','PRAVEEN KUMAR', 162],
+['UDUPI','Karkal','BJP','V.SUNILL KUMAR', 65039],
+['UDUPI','Karkal','INC','H.GOPAL BHANDARY', 60785],
+['UDUPI','Karkal','JD(S)','WALTER D'SOUZA', 1302],
+['UDUPI','Karkal','BSP','ANNA SUNIL SOANS', 878],
+['UDUPI','Karkal','IND','U.K. SYAD', 873],
+['UDUPI','Karkal','KJP','PRAVEEN POOJARI', 553],
+['UDUPI','Karkal','IND','K P PADMAVATHI', 478],
+['UDUPI','Karkal','IND','RIYAZ', 334],
+['UDUPI','Karkal','IND','GOPALA', 232],
+
+
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

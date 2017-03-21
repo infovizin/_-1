@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+	
+
+['DAVANGERE','Jagalur','INC','H.P.RAJESH', 77805],
+['DAVANGERE','Jagalur','KJP','S.V.RAMACHANDRA', 40915],
+['DAVANGERE','Jagalur','JD(S)','DR.G.RANGAIAH', 4325],
+['DAVANGERE','Jagalur','BJP','DR. ARUN KUMAR M, BASAPPA', 1845],
+['DAVANGERE','Jagalur','IND','S. HALAPPA', 1304],
+['DAVANGERE','Jagalur','IND','M.H.RAMANNA', 1079],
+['DAVANGERE','Jagalur','IND','G.N. BEEMAPPA', 985],
+['DAVANGERE','Jagalur','BSRCP','RAMESH  BABU .N.H', 684],
+['DAVANGERE','Jagalur','IND','T. MARANNA', 575],
+['DAVANGERE','Jagalur','IND','H.O.NARASIMHAMURTHY', 549],
+['DAVANGERE','Jagalur','IND','PRAKASH .B', 510],
+['DAVANGERE','Jagalur','CPI(ML)(L)','DODDAMANI  PRASAD', 458],
+['DAVANGERE','Jagalur','BSP','K.S.PRABHAU(KANANAKATTE)', 447],
+['DAVANGERE','Jagalur','JD(U)','M.V.ANJANEYA, ADVOCATE', 343],
+['DAVANGERE','Jagalur','SP','B.N.THIPPESWAMY', 325],
+['DAVANGERE','Harapanahalli','INC','M P RAVINDRA', 56954],
+['DAVANGERE','Harapanahalli','BJP','G KARUNAKARAREDDY', 48548],
+['DAVANGERE','Harapanahalli','KJP','N KOTRESH', 27997],
+['DAVANGERE','Harapanahalli','BSRCP','SIRAJ SHEIKH', 9687],
+['DAVANGERE','Harapanahalli','JD(S)','A G VISWANATH', 2294],
+['DAVANGERE','Harapanahalli','IND','RUDRESHA K H', 1279],
+['DAVANGERE','Harapanahalli','BSP','KENCHAPPA', 933],
+['DAVANGERE','Harapanahalli','CPI(ML)(L)','IDLI RAMAPPA', 831],
+['DAVANGERE','Harapanahalli','IND','CHAITHRA G', 430],
+['DAVANGERE','Harapanahalli','IND','MANSOOR BASHA R', 422],
+['DAVANGERE','Harapanahalli','IND','ABUBAKKAR SIDDIQ M', 348],
+['DAVANGERE','Harapanahalli','IND','CHANNAPPA', 276],
+['DAVANGERE','Harapanahalli','IND','GOWALER ERANNA', 224],
+['DAVANGERE','Harihar','JD(S)','H.S. SHIVASHANKAR', 59666],
+['DAVANGERE','Harihar','INC','S.RAMAPPA', 40613],
+['DAVANGERE','Harihar','KJP','HARISH B.P.', 37786],
+['DAVANGERE','Harihar','BJP','S.M. VEERESHA HANAGAVADI', 5959],
+['DAVANGERE','Harihar','BPJP','H. NAGARAJ PALEGAR', 1479],
+['DAVANGERE','Harihar','IND','B.P. HARISHA', 933],
+['DAVANGERE','Harihar','JD(U)','P.B. BEERAPPA', 747],
+['DAVANGERE','Harihar','BSRCP','S. K. BASAVARAJ', 736],
+['DAVANGERE','Harihar','NCP','V.T. BASAVARAJA', 632],
+['DAVANGERE','Harihar','CPI(ML)(L)','BEERAPPA RAJANAHALLI', 551],
+['DAVANGERE','Harihar','IND','ANSAR AHAMED', 511],
+['DAVANGERE','Harihar','BSP','E. RAZAQ ULLA MASADI', 358],
+['DAVANGERE','Harihar','IND','M. CHANNAPPA', 287],
+['DAVANGERE','Harihar','IND','M.G. VEERANA GOWDA', 265],
+['DAVANGERE','Harihar','IND','T.V. GAJENDRA GOWDA', 220],
+['DAVANGERE','Davanagere North','INC','S S MALLIKARJUNA', 88101],
+['DAVANGERE','Davanagere North','BJP','S A RAVINDRANATH', 30821],
+['DAVANGERE','Davanagere North','KJP','JAGADISH B S', 6764],
+['DAVANGERE','Davanagere North','JD(S)','T GANESHA DASAKARIYAPPA', 3537],
+['DAVANGERE','Davanagere North','IND','B GNANA PRAKASH', 1131],
+['DAVANGERE','Davanagere North','NCP','MOHAMMED JABI', 1003],
+['DAVANGERE','Davanagere North','BSP','ANNAPPA S H', 361],
+['DAVANGERE','Davanagere North','BSRCP','M BASAVARAJAIAH', 345],
+['DAVANGERE','Davanagere North','IND','RIZWAN SAB H B', 334],
+['DAVANGERE','Davanagere North','VJCP','H K KENCHAVEERAPPA', 280],
+['DAVANGERE','Davanagere North','JD(U)','H G MALLIKARJUNA', 260],
+['DAVANGERE','Davanagere North','IND','JAMEEL AHAMED BELLARY', 259],
+['DAVANGERE','Davanagere North','IND','N J NINGAPPA', 240],
+['DAVANGERE','Davanagere North','IND','A M VEERAIAH', 235],
+['DAVANGERE','Davanagere North','IND','M SAVITHA PRAKASH', 227],
+['DAVANGERE','Davanagere North','IND','MANJUNATHA', 169],
+['DAVANGERE','Davanagere North','IND','T R INDRAMMA', 137],
+['DAVANGERE','Davanagere North','IND','ANAJI ANJINAPPA', 130],
+['DAVANGERE','Davanagere North','SJPA','G C PATIL', 116],
+['DAVANGERE','Davanagere South','INC','SHAMANUR SHIVASHANKARAPPA', 66320],
+['DAVANGERE','Davanagere South','JD(S)','KAREKATTE SYED SAIFULLA', 26162],
+['DAVANGERE','Davanagere South','BJP','B LOKESH', 21282],
+['DAVANGERE','Davanagere South','KJP','B M SATISH', 3200],
+['DAVANGERE','Davanagere South','IND','SUBHAN SAB', 700],
+['DAVANGERE','Davanagere South','NCP','HIMAYATH ULLA', 645],
+['DAVANGERE','Davanagere South','IND','MOHAMAD BRUHAN', 399],
+['DAVANGERE','Davanagere South','BSP','BHAIRAJJARA KRISHNAPPA', 330],
+['DAVANGERE','Davanagere South','BSRCP','SHAFEEQ PANDIT', 257],
+['DAVANGERE','Davanagere South','IND','B R SALEEM BHAI', 223],
+['DAVANGERE','Davanagere South','IND','T R INDRAMMA', 214],
+['DAVANGERE','Davanagere South','IND','RAHAMATHULLA K C', 182],
+['DAVANGERE','Davanagere South','JD(U)','MUDDAPURADA RAHAMAN SAB', 174],
+['DAVANGERE','Davanagere South','SJPA','NANNUSAB SHEIKH SHENDI', 166],
+['DAVANGERE','Davanagere South','NPP','R MALATESH (GUPTA)', 156],
+['DAVANGERE','Mayakonda','INC','K.SHIVAMURTHY', 32435],
+['DAVANGERE','Mayakonda','KJP','N.LINGANNA', 31741],
+['DAVANGERE','Mayakonda','IND','ANANDAPPA.H.', 18355],
+['DAVANGERE','Mayakonda','BJP','BASAVARAJANAIK.M.', 17658],
+['DAVANGERE','Mayakonda','JD(S)','K.G.R.NAIK', 11596],
+['DAVANGERE','Mayakonda','IND','DR.Y.RAMAPPA', 9395],
+['DAVANGERE','Mayakonda','BSRCP','N.SRINIVASA NAIK', 3333],
+['DAVANGERE','Mayakonda','IND','DR:B.CHANDRANAIK', 2160],
+['DAVANGERE','Mayakonda','JD(U)','KIRAN KUMAR', 1023],
+['DAVANGERE','Mayakonda','IND','NAGARAJAPPA.M.', 1007],
+['DAVANGERE','Mayakonda','NCP','KRISHNAMURTHY.R.', 845],
+['DAVANGERE','Mayakonda','IND','P.SHANKARANAIK', 766],
+['DAVANGERE','Mayakonda','BSP','R.VASANTHA DAGINAKATTE', 713],
+['DAVANGERE','Mayakonda','HND','A.K.MANJAPPA', 700],
+['DAVANGERE','Mayakonda','KRRS','CHINNASAMUDRA SHEKARNAIK', 524],
+['DAVANGERE','Mayakonda','IND','DR:K.S.SHANKARNAIK', 511],
+['DAVANGERE','Mayakonda','IND','MALLIKARJUNA SWAMY.K.M.', 497],
+['DAVANGERE','Mayakonda','KCVP','HANUMANTHAPPA NAVILEHAL', 482],
+['DAVANGERE','Mayakonda','IND','JAYAPRAKASH.S.N.', 455],
+['DAVANGERE','Mayakonda','SP','VENKATASWAMY.L', 430],
+['DAVANGERE','Mayakonda','IND','MANJUNATHA.B.', 404],
+['DAVANGERE','Channagiri','INC','VADNAL RAJANNA', 53355],
+['DAVANGERE','Channagiri','KJP','K.MADAL VIRUPAKSHAPPA', 51582],
+['DAVANGERE','Channagiri','JD(S)','HODIGERE RAMESH', 28900],
+['DAVANGERE','Channagiri','BJP','H.S. SHIVAKUMAR', 4526],
+['DAVANGERE','Channagiri','BSRCP','AMEER AHMED KOGALURU', 1054],
+['DAVANGERE','Channagiri','IND','A C S CYCLIST BABU', 879],
+['DAVANGERE','Channagiri','LJP','JAYAMMA.L. DODDABBIGERE', 626],
+['DAVANGERE','Channagiri','BSP','R.MAMATHA', 621],
+['DAVANGERE','Channagiri','JD(U)','KAREKATTE MANJAPPA', 601],
+['DAVANGERE','Channagiri','IND','VASUDEVA NAIK K.C.', 481],
+['DAVANGERE','Channagiri','IND','B.SHIVAPPA', 445],
+['DAVANGERE','Channagiri','IND','HONNEMARADAHALLI CHANDRAPPAGOWDA', 315],
+['DAVANGERE','Honnali','INC','D. G SHANTANA GOWDA', 78789],
+['DAVANGERE','Honnali','KJP','M. P. RENUKACHARYA', 60051],
+['DAVANGERE','Honnali','BJP','DR|| RAJKUMAR H. P', 2549],
+['DAVANGERE','Honnali','SJPA','ASHA R.PATEL', 1563],
+['DAVANGERE','Honnali','IND','SAYEDAGOUSE H. P', 1435],
+['DAVANGERE','Honnali','JD(S)','M. R. MAHESH', 1340],
+['DAVANGERE','Honnali','BSRCP','K. RENUKACHARI', 1030],
+['DAVANGERE','Honnali','BSP','PARASHURAMA A. K', 549],
+['DAVANGERE','Honnali','IND','RAMESH JAGATHAP  D. V', 490],
+['DAVANGERE','Honnali','IND','DR. D. SEETHANAIKA', 461],
+['DAVANGERE','Honnali','IND','DR|| D. B. PRAKASH BASAVANA GOWDA', 329],
+['DAVANGERE','Honnali','JD(U)','T. L. RANGANATHA', 292],
+['DAVANGERE','Honnali','IND','M. RANGANATHA SWAMY', 241],
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

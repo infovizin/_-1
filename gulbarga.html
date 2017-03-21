@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+	
+['GULBARGA','Afzalpur','INC','MALIKAYYA VENKAYYA GUTTEDAR', 38093],
+['GULBARGA','Afzalpur','KJP','M.Y.PATIL', 32855],
+['GULBARGA','Afzalpur','JD(S)','VITTHAL HEROOR', 22847],
+['GULBARGA','Afzalpur','SP','GOVIND VISHWANATH BHAT', 14643],
+['GULBARGA','Afzalpur','BJP','DILIP R. PATIL', 10347],
+['GULBARGA','Afzalpur','IND','MALLAPPA M. SOLAPUR', 1829],
+['GULBARGA','Afzalpur','IND','SHRISHAIL SIDRAMAPPA KALKERI', 1364],
+['GULBARGA','Afzalpur','IND','SOMSHEKHAR J. DESHMUKH', 1171],
+['GULBARGA','Afzalpur','BSP','HUCHAPPA VATHAR GOUR', 1039],
+['GULBARGA','Afzalpur','IND','VIKRAM BHAT', 917],
+['GULBARGA','Afzalpur','IND','SIDRAMAPPA', 825],
+['GULBARGA','Afzalpur','IND','SHARANABASAPPA S. KALSHETTY', 780],
+['GULBARGA','Afzalpur','IND','M.S.PATIL', 682],
+['GULBARGA','Afzalpur','IND','CHANDRASHEKAR N. KARAJAGI', 631],
+['GULBARGA','Afzalpur','BSRCP','BASHA PATEL HASARGUNDAGI', 583],
+['GULBARGA','Jevargi','INC','AJAY DHARAM SINGH', 67038],
+['GULBARGA','Jevargi','BJP','DODDAPPA GOUDA S. PATIL NARIBOLA', 30338],
+['GULBARGA','Jevargi','JD(S)','KEDARLINGAYA HIREMATH', 24920],
+['GULBARGA','Jevargi','KJP','MALLIKARJUN DUNDAPPA GOUDA', 11865],
+['GULBARGA','Jevargi','BSRCP','BAILLAPPA M. NELOGI', 3066],
+['GULBARGA','Jevargi','IND','LAXMIKANT RAMARAO KULKARNI', 1956],
+['GULBARGA','Jevargi','CPI',' MAHESHKUMAR RATHOD', 1638],
+['GULBARGA','Jevargi','IND','BHEEMAYYA SOMAYYA', 938],
+['GULBARGA','Jevargi','BSP','HUSSAIN PATEL IJERI', 907],
+['GULBARGA','Jevargi','IND','DEVARAJ M. YEDIHALLI', 563],
+['GULBARGA','Jevargi','IND','KOUSARBEGAM MAKUBUL PATEL', 401],
+['GULBARGA','Jevargi','IND','AYYAPPA', 382],
+['GULBARGA','Jevargi','IND','KALLALING ESHWARAPPA HUGAR', 330],
+['GULBARGA','Jevargi','SP','AKTAR PARVEEN NADAGOUDA', 221],
+['YADGIR','Shorapur','INC','RAJA VENKATAPPA NAYAK', 65033],
+['YADGIR','Shorapur','JD(S)','NARASIMHANAYAK (RAJUGOUDA)', 60958],
+['YADGIR','Shorapur','KJP','SHIVARAJ MALLESHI', 8239],
+['YADGIR','Shorapur','IND','RAMANAGOUDA BHIMARAYAGOUDA', 3250],
+['YADGIR','Shorapur','BJP','MADANGOPAL NAYAK', 3249],
+['YADGIR','Shorapur','BSRCP','NANDKUMAR MALIPATIL', 2005],
+['YADGIR','Shorapur','IND','PRABHULINGA SIDDAPUR J', 993],
+['YADGIR','Shorapur','IND','BASAVARAJ', 985],
+['YADGIR','Shorapur','JD(U)','RAMALINGAPPA (RAMUNAYAK)', 771],
+['YADGIR','Shorapur','IND','CHANDRASHEKHAR NAYAK', 724],
+['YADGIR','Shahapur','KJP','GURU PATIL SHIRAVAL', 54924],
+['YADGIR','Shahapur','INC','SHARANABASAPPAGOUDA DARSHANPUR', 49128],
+['YADGIR','Shahapur','JD(S)','SHARANAPPA SALADAPUR', 12159],
+['YADGIR','Shahapur','IND','AMARANNA', 2225],
+['YADGIR','Shahapur','IND','BHIMAPPA', 2128],
+['YADGIR','Shahapur','BSRCP','SHANKARANNA G.VANIKYAL', 1796],
+['YADGIR','Shahapur','BJP','VEERANNAGOUDA', 1484],
+['YADGIR','Shahapur','BSP','MOHAMMED ANVAR PASHA', 1138],
+['YADGIR','Shahapur','IND','APPASAHEB GOUDA', 1070],
+['YADGIR','Shahapur','IND','BASAVARAJ PADUKOTE', 1066],
+['YADGIR','Yadgir','INC','DR. MAALAKAREDDY', 40434],
+['YADGIR','Yadgir','KJP','VEER BASWANT REDDY', 31330],
+['YADGIR','Yadgir','JD(S)','ABDUL NABI KADLOOR', 23977],
+['YADGIR','Yadgir','BSRCP','MOULALI ANPUR', 12721],
+['YADGIR','Yadgir','BJP','CHANDRASHEKAR GOUDA MAGNOOR', 3556],
+['YADGIR','Yadgir','IND','SIDDRAMAPPA', 3141],
+['YADGIR','Yadgir','IND','BASANNAGOUDA NAIKAL', 1758],
+['YADGIR','Yadgir','IND','ANANTH REDDY KANDALLI', 1103],
+['YADGIR','Yadgir','IND','JALANDHAR RAO', 932],
+['YADGIR','Yadgir','BSP','BASAVARAJ', 826],
+['YADGIR','Gurmitkal','INC','BABURAO CHINCHANASOOR', 36051],
+['YADGIR','Gurmitkal','JD(S)','NAGANA GOUDA KANDAKURA', 34401],
+['YADGIR','Gurmitkal','KJP','VENKATAREDDY VISHWANATHREDDY MUDNAL', 32362],
+['YADGIR','Gurmitkal','BJP','GIRISH MATTENNAVAR', 9795],
+['YADGIR','Gurmitkal','IND','SHAIK MEHABOOB', 4432],
+['YADGIR','Gurmitkal','BSRCP','BABU CHAVHAN', 1860],
+['YADGIR','Gurmitkal','SP','SATHYANARAYANA YADAV', 1277],
+['YADGIR','Gurmitkal','BSP','SHIVALINGAPPA KINNURA', 1211],
+['YADGIR','Gurmitkal','IND','ANILKUMAR', 1120],
+['YADGIR','Gurmitkal','IND','SABANNA', 1087],
+['YADGIR','Gurmitkal','IND','KRISHNA BHIMARAO BADIGERA', 953],
+['YADGIR','Gurmitkal','IND','MALLIKARJUN M.KANTIMANI', 895],
+['YADGIR','Gurmitkal','IND','SHALINI LOUIS KORI', 824],
+['YADGIR','Gurmitkal','KMP','SANJIVKUMAR MADIVAL', 804],
+['YADGIR','Gurmitkal','IND','CHANDRASHEKHAR T. DASANKERI', 698],
+['YADGIR','Gurmitkal','LJP','DR. DEVANAND KOLI', 645],
+['YADGIR','Gurmitkal','IND','P.KANNAYYA', 615],
+['GULBARGA','Chittapur','INC','PRIYANK M. KHARGE', 69379],
+['GULBARGA','Chittapur','BJP','VALMIKI NAIK', 38188],
+['GULBARGA','Chittapur','KJP','GURUNATH', 9596],
+['GULBARGA','Chittapur','IND','RAJU MUKKANNA WADI', 1546],
+['GULBARGA','Chittapur','BSP','AYYAPPA RAMATEERTH', 1310],
+['GULBARGA','Chittapur','WPOI','DHANALAXMI RATHOD', 1103],
+['GULBARGA','Chittapur','IND','MAHESH KASHI', 982],
+['GULBARGA','Chittapur','JD(S)','TIPPANNA ODEYARAJ', 955],
+['GULBARGA','Chittapur','IND','RAMADEVI R MADGI', 657],
+['GULBARGA','Sedam','INC','DR SHARANPRAKASH PATIL', 53546],
+['GULBARGA','Sedam','BJP','RAJKUMAR PATIL', 41651],
+['GULBARGA','Sedam','JD(S)','MUKRAM KHAN', 27047],
+['GULBARGA','Sedam','KJP','VAIJNATH PATIL', 6148],
+['GULBARGA','Sedam','IND','VENKATESH MARUTI MENGAJI', 2034],
+['GULBARGA','Sedam','BSP','SHIVSHARNAPPA MAILARI', 1589],
+['GULBARGA','Sedam','IND','MOHAMMED ALI (BABA SAHEB)', 1141],
+['GULBARGA','Sedam','IND','MUKUND REDDY NAGAREDDY', 748],
+['GULBARGA','Sedam','IND','JAGANNATH REDDY NAGAREDDY GOTUR', 535],
+['GULBARGA','Sedam','JD(U)','SHANKAR BANDI', 420],
+['GULBARGA','Sedam','BSRCP',' KANNAYYA MADANA DESHMUKH', 412],
+['GULBARGA','Sedam','SP','AMRUTAPPA', 353],
+['GULBARGA','Sedam','IND','GUNDAPPA R. MUKRAMBI', 352],
+['GULBARGA','Chincholi','INC','DR UMESH G JADAV', 58599],
+['GULBARGA','Chincholi','KJP','SUNIL VALLYAPUR', 32539],
+['GULBARGA','Chincholi','BJP','RAMESH YAKAPUR', 12333],
+['GULBARGA','Chincholi','IND','SUNIL MOTHILAL', 3081],
+['GULBARGA','Chincholi','BSP','GOUTAM B BOMNALLI', 1374],
+['GULBARGA','Chincholi','IND','SANDEEP CHAWAN', 1288],
+['GULBARGA','Chincholi','JD(S)','MALLIKARJUN GAJRE', 1218],
+['GULBARGA','Chincholi','JD(U)','VENKATESHWARAO KUPAVAT', 678],
+['GULBARGA','Chincholi','IND','DR. OMRAJ RATTOD', 588],
+['GULBARGA','Chincholi','IND','BASAVARAJ. M. WADI', 529],
+['GULBARGA','Chincholi','SP','GOPAL L RATTOD', 448],
+['GULBARGA','Chincholi','BSRCP','VITHAL KERI AMBALGA', 308],
+['GULBARGA','Gulbarga Rural','INC','G.RAMKRISHNA', 40075],
+['GULBARGA','Gulbarga Rural','BJP','REVUNAYAK BELAMGI', 32866],
+['GULBARGA','Gulbarga Rural','KJP','BABURAO CHAUHAN', 26612],
+['GULBARGA','Gulbarga Rural','JD(S)','D.G.SAGAR', 8612],
+['GULBARGA','Gulbarga Rural','CPM','AMBALGI MARUTI MANPADE', 4694],
+['GULBARGA','Gulbarga Rural','BSRCP','BABUHONNA NAIK', 2113],
+['GULBARGA','Gulbarga Rural','SUCI','NIGANNA S. JAMBAGI', 1673],
+['GULBARGA','Gulbarga Rural','BSP','AMBARAYA S.BELAMGI', 1584],
+['GULBARGA','Gulbarga Rural','IND','SATISH BASAVARAJ SHINDE', 1426],
+['GULBARGA','Gulbarga Rural','IND','T.N.RATHOD', 805],
+['GULBARGA','Gulbarga Rural','RPI(A)','MASTAN C.DANDE', 693],
+['GULBARGA','Gulbarga Rural','BHPP','LAXMAN KISHAN RATHOD', 612],
+['GULBARGA','Gulbarga Rural','IND','NAGENDRAPPA HANMANTH VADDAR NANDIKUR', 589],
+['GULBARGA','Gulbarga Rural','IND','SHIVASHARANPPA', 556],
+['GULBARGA','Gulbarga Rural','IND','GOPINATH GHANU', 508],
+['GULBARGA','Gulbarga Dakshin','BJP','DATTATRAYA C. PATIL REVOOR (APPU GOUDA)', 36850],
+['GULBARGA','Gulbarga Dakshin','JD(S)','SHASHIL.G.NAMOSHI', 26880],
+['GULBARGA','Gulbarga Dakshin','INC','KAILASH VEERENDRA PATIL', 22074],
+['GULBARGA','Gulbarga Dakshin','KJP','S.K.KANTA', 22065],
+['GULBARGA','Gulbarga Dakshin','BSP','VASUDEV RAO BHEEMRAO', 1444],
+['GULBARGA','Gulbarga Dakshin','IND','POOJARI DHARMAVEER S. PATTAN', 708],
+['GULBARGA','Gulbarga Dakshin','IND','DINAKAR RAO NARAYAN RAO KULKARNI', 591],
+['GULBARGA','Gulbarga Dakshin','SAJP','R.D.KATTIMANI', 578],
+['GULBARGA','Gulbarga Dakshin','IND','GURUSHANT PATTEDAR', 558],
+['GULBARGA','Gulbarga Dakshin','IND','VENKATESH DOREPALLI', 555],
+['GULBARGA','Gulbarga Dakshin','IND','MAHAMD JAKEER HUSEN (BADEBAHI)', 534],
+['GULBARGA','Gulbarga Dakshin','IND','BASAVARAJ CHINCHOLLI', 463],
+['GULBARGA','Gulbarga Dakshin','SUCI','V. NAGAMMAL', 418],
+['GULBARGA','Gulbarga Dakshin','IUML','ABDUL HAMEED QURESHI', 379],
+['GULBARGA','Gulbarga Dakshin','IND','GURUDEVAPPA S. NARONI', 375],
+['GULBARGA','Gulbarga Dakshin','IND','ABDUL WAHAB KHAN', 351],
+['GULBARGA','Gulbarga Dakshin','IND','SYAD USMAN PASHA', 348],
+['GULBARGA','Gulbarga Dakshin','IND','VINOD KUMAR ANAVARKAR', 297],
+['GULBARGA','Gulbarga Dakshin','IND','SHASHIKANTH R.DIKSHITH', 296],
+['GULBARGA','Gulbarga Dakshin','IND','SANDEEP. S. PATIL', 292],
+['GULBARGA','Gulbarga Dakshin','IND','HANMANTHRAYA.M.PUJARI', 278],
+['GULBARGA','Gulbarga Dakshin','IND','KARIKAL SANJEEV KUMAR', 233],
+['GULBARGA','Gulbarga Dakshin','RPI(A)','A. B. HOSMANI', 231],
+['GULBARGA','Gulbarga Dakshin','INL','BASHEER ALAM', 222],
+['GULBARGA','Gulbarga Dakshin','NDEP','PARVATI JAGANNATH CHAVAN', 146],
+['GULBARGA','Gulbarga Dakshin','AIFB(S)','VEERESH G.RATHOD (ISHWAR)', 137],
+['GULBARGA','Gulbarga Uttar','INC','QAMAR UL ISLAM', 50498],
+['GULBARGA','Gulbarga Uttar','KJP','NASIR HUSSAIN USTAD', 30377],
+['GULBARGA','Gulbarga Uttar','BJP','RAJGOPAL REDDY', 18642],
+['GULBARGA','Gulbarga Uttar','JD(S)','SYED ZAFAR HUSSAIN', 1189],
+['GULBARGA','Gulbarga Uttar','IND','SYEDA RAZIYA BEGUM', 764],
+['GULBARGA','Gulbarga Uttar','SDPI','ABDUL RAHEEM PATEL', 654],
+['GULBARGA','Gulbarga Uttar','WPOI','ABDUL HAMEED FARAAN', 572],
+['GULBARGA','Gulbarga Uttar','IND','SHAMALA', 420],
+['GULBARGA','Gulbarga Uttar','IND','PRAKASH K.SUTAR', 397],
+['GULBARGA','Gulbarga Uttar','BSRCP','KALYANRAO AMBALGI', 339],
+['GULBARGA','Gulbarga Uttar','IND','VASANT', 330],
+['GULBARGA','Gulbarga Uttar','JD(U)','DATTATRAYA CHOWDHARY', 296],
+['GULBARGA','Gulbarga Uttar','IUML','MD NOOH', 194],
+['GULBARGA','Gulbarga Uttar','SP','SHAUKAT ALI', 167],
+['GULBARGA','Aland','KJP','B.R. PATIL', 67085],
+['GULBARGA','Aland','JD(S)','GUTTEDAR SUBHASH RUKMAYYA', 49971],
+['GULBARGA','Aland','INC','SIDDANNA MASTER SHEGAJI', 3912],
+['GULBARGA','Aland','IND','SHANKARAO R. PATIL', 2239],
+['GULBARGA','Aland','BJP','BASAVARAJ N. PAVADSHETTY', 2144],
+['GULBARGA','Aland','IND','BABURAO HANAMANT NAGURE', 1865],
+['GULBARGA','Aland','RSPS','D.K. KOKADE', 1336],
+['GULBARGA','Aland','BSRCP','UDAYAKUMAR G. BIRADAR', 835],
+['GULBARGA','Aland','SP','K.M. BURLE', 812],
+['GULBARGA','Aland','IND','KARABASHTI SIDRAMAPPA NAGAPPA', 734],
+['GULBARGA','Aland','IND','ZAHER ANSARI', 516],
+['GULBARGA','Aland','BSP','RAMCHANDRA SHANKRAO PATIL', 505],
+['GULBARGA','Aland','NCP','S.M. HIREMATH', 431],
+
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

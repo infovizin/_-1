@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+		['TUMKUR','Chiknayakanhalli','JD(S)','C.B.SURESHBABU', 60759],
+['TUMKUR','Chiknayakanhalli','KJP','J.C.MADHUSWAMY', 49620],
+['TUMKUR','Chiknayakanhalli','BJP','K.S.KIRANA KUMAR', 29150],
+['TUMKUR','Chiknayakanhalli','INC','SATHISH SASALU', 10344],
+['TUMKUR','Chiknayakanhalli','KRRS','KENKERE SATHISH', 2086],
+['TUMKUR','Chiknayakanhalli','BSP','CAPTAIN SOMASHEKAR', 1743],
+['TUMKUR','Chiknayakanhalli','IND','C.M.MANJULA NAGARAJU', 1725],
+['TUMKUR','Chiknayakanhalli','IND','RAMACHANDRAIAH BARAGURU', 1648],
+['TUMKUR','Chiknayakanhalli','BSRCP','DEVARAJU K.L', 1624],
+['TUMKUR','Chiknayakanhalli','JD(U)','G.PRAKASH', 1108],
+['TUMKUR','Chiknayakanhalli','WPOI','HANUMANTHARAMANAYAK', 1019],
+['TUMKUR','Tiptur','INC','K.SHADAKSHARI', 56817],
+['TUMKUR','Tiptur','BJP','B.C.NAGESH', 45215],
+['TUMKUR','Tiptur','KJP','LOKESHWARA', 28667],
+['TUMKUR','Tiptur','JD(S)','M.LINGARAJU (JAKKANAHALLI)', 6104],
+['TUMKUR','Tiptur','IND','VEERABHADRAIAH M.C.', 880],
+['TUMKUR','Tiptur','BSP','ABDULWAKEEL', 847],
+['TUMKUR','Tiptur','BSRCP','SUDHARSHAN K.G', 504],
+['TUMKUR','Tiptur','IND','H.L.MOHANKUMAR', 450],
+['TUMKUR','Tiptur','IND','L.P.YADUNANDANA', 415],
+['TUMKUR','Tiptur','IND','LINGADAHALLI RAJASHEKARA', 354],
+['TUMKUR','Turuvekere','JD(S)','M.T.KRISHNAPPA', 66089],
+['TUMKUR','Turuvekere','KJP','MASALA JAYARAM', 57164],
+['TUMKUR','Turuvekere','INC','GEETHA RAJANNA', 7513],
+['TUMKUR','Turuvekere','BJP','B.K.SOMASHEKARA', 3542],
+['TUMKUR','Turuvekere','IND','SHIVAKUMAR', 1121],
+['TUMKUR','Turuvekere','BSRCP','RAJASHEKARA  (HELICOPTER)', 1068],
+['TUMKUR','Turuvekere','IND','M. T. KRISHNAPPA', 851],
+['TUMKUR','Turuvekere','IND','CHETHAN RANGANATH', 743],
+['TUMKUR','Turuvekere','IND','H.MAHESHA', 722],
+['TUMKUR','Turuvekere','BSP','D.G.GOPALAIAH', 472],
+['TUMKUR','Turuvekere','IND','D.K.THIMMEGOWDA', 399],
+['TUMKUR','Turuvekere','IND','N.C.PRAKASH', 390],
+['TUMKUR','Kunigal','JD(S)','D. NAGARAJAIAH', 44575],
+['TUMKUR','Kunigal','BJP','D.KRISHNAKUMAR', 34943],
+['TUMKUR','Kunigal','INC','B.B. RAMASWAMYGOWDA', 33918],
+['TUMKUR','Kunigal','IND','C.N. RAVIKIRAN', 24604],
+['TUMKUR','Kunigal','RPI','DHANARAJ HERUR', 1280],
+['TUMKUR','Kunigal','KJP','B.V. PRAKASH', 1029],
+['TUMKUR','Kunigal','IND','A.L. NANJAPPA', 926],
+['TUMKUR','Kunigal','IND','V.T. JAYARAM', 833],
+['TUMKUR','Kunigal','BSRCP','N.R.LAKSHMINARAYANA', 437],
+['TUMKUR','Tumkur City','INC','DR. RAFEEQ AHMED S.', 43681],
+['TUMKUR','Tumkur City','KJP','G.B. JYOTHI GANESH', 40073],
+['TUMKUR','Tumkur City','JD(S)','N. GOVINDARAJU', 38322],
+['TUMKUR','Tumkur City','BJP','S. SHIVANNA(SOGADU)', 13159],
+['TUMKUR','Tumkur City','SDPI','MOHAMMED SADIQ JAMEEL (BANU)', 698],
+['TUMKUR','Tumkur City','IND','SYED WAJID AHMED', 552],
+['TUMKUR','Tumkur City','IND','RAHAMATH SHARIFF', 505],
+['TUMKUR','Tumkur City','BSRCP','SHIVARAMAIAH', 278],
+['TUMKUR','Tumkur City','IND','RAJANIKANTH  B.R.', 263],
+['TUMKUR','Tumkur City','IND','SUHAS S.L.', 259],
+['TUMKUR','Tumkur City','IND','M. SIDDALINGAIAH', 174],
+['TUMKUR','Tumkur City','JD(U)','B.T. SUNANDA', 144],
+['TUMKUR','Tumkur City','IND','NANJEGOWDA R.', 131],
+['TUMKUR','Tumkur City','IND','TOUFEEQ ULLA KHAN', 78],
+['TUMKUR','Tumkur Rural','BJP','B.SURESH GOWDA', 55029],
+['TUMKUR','Tumkur Rural','JD(S)','GOWRISHANKAR.D.C.', 53457],
+['TUMKUR','Tumkur Rural','KJP','H.NINGAPPA', 22709],
+['TUMKUR','Tumkur Rural','INC','AUDITOR NAGARAJU YALACHAVADI', 8599],
+['TUMKUR','Tumkur Rural','BSP','N.GANGAIAH', 1060],
+['TUMKUR','Tumkur Rural','IND','SIDDARAMEGOWDA.T.B.', 1041],
+['TUMKUR','Tumkur Rural','JD(U)','B.H.KALAIAH', 935],
+['TUMKUR','Tumkur Rural','IND','VIJAYAKUMAR N.', 662],
+['TUMKUR','Tumkur Rural','IND','K.V.SRINIVAS KALKERE', 637],
+['TUMKUR','Tumkur Rural','IND','MEHAR TAJ', 558],
+['TUMKUR','Tumkur Rural','IND','LAKSHMI', 530],
+['TUMKUR','Tumkur Rural','BSRCP','M.KUMBAIAH', 497],
+['TUMKUR','Tumkur Rural','IND','ANWAR', 410],
+['TUMKUR','Tumkur Rural','IND','DATTATREYA.M.J.', 338],
+['TUMKUR','Tumkur Rural','IND','D.LAKSHMAIAH', 263],
+['TUMKUR','Koratagere','JD(S)','SUDHAKARA LAL .P.R', 72229],
+['TUMKUR','Koratagere','INC','DR. G.PARAMESHWARA', 54074],
+['TUMKUR','Koratagere','KJP','CHANDRAIAH (VAALE CHANDRAIAH)', 15738],
+['TUMKUR','Koratagere','BJP','PEDDARAJU', 3088],
+['TUMKUR','Koratagere','IND','M.L. SANTHOSH', 1388],
+['TUMKUR','Koratagere','BSRCP','ANJANEYA', 1265],
+['TUMKUR','Koratagere','IND','NARASIMHAMURTHY', 1100],
+['TUMKUR','Koratagere','BSP','BULLA SUBBARAO', 989],
+['TUMKUR','Koratagere','IND','D. LALITHA KRISHNAMURTHY', 547],
+['TUMKUR','Koratagere','NPP','L. JANARDHANASWAMY', 519],
+['TUMKUR','Koratagere','IND','LAKSHMINARASAIAH', 482],
+['TUMKUR','Koratagere','IND','SHANTHAKUMAR. V', 454],
+['TUMKUR','Koratagere','IND','MUTTURAJU. P.M', 369],
+['TUMKUR','Gubbi','JD(S)','S R SHRINIVAS (VASU)', 58783],
+['TUMKUR','Gubbi','KJP','G.N. BETTASWAMY', 51539],
+['TUMKUR','Gubbi','INC','HONNAGIRIGOWDA', 18548],
+['TUMKUR','Gubbi','BJP','NATARAJA SAGARANAHALLY', 2396],
+['TUMKUR','Gubbi','BSRCP','G.K. HUCCHEGOWDA', 2233],
+['TUMKUR','Gubbi','IND','BETTASWAMY', 1798],
+['TUMKUR','Gubbi','JD(U)','H M UMESH', 767],
+['TUMKUR','Gubbi','IND','A R SRINIVASAMURTHY', 669],
+['TUMKUR','Gubbi','BSP','SHIVANNA MARANAHALLY', 583],
+['TUMKUR','Gubbi','IND','LOKESH  P.C', 569],
+['TUMKUR','Gubbi','IND','H.S.MALLIKARJUNAIAH', 545],
+['TUMKUR','Gubbi','IND','GIRIYAPPA H.H', 483],
+['TUMKUR','Gubbi','IND','C P VIJAYAKUMAR CHELURU', 426],
+['TUMKUR','Gubbi','IND','RAJANIKANTH B R', 320],
+['TUMKUR','Sira','INC','T B JAYACHANDRA', 74089],
+['TUMKUR','Sira','JD(S)','B.SATHYANARAYANA', 59408],
+['TUMKUR','Sira','BJP','B K MANJUNATHA', 18884],
+['TUMKUR','Sira','IND','SHASHI KUMAR.R', 1642],
+['TUMKUR','Sira','KJP','INTHIYAZ AHAMED', 1415],
+['TUMKUR','Sira','BSP','N RAJANNA', 1090],
+['TUMKUR','Sira','BSRCP','K.MUDALAGIRIYAPPA', 766],
+['TUMKUR','Sira','IND','B.A.MANJUNATHA', 471],
+['TUMKUR','Sira','IND','ERANNA.D.M', 395],
+['TUMKUR','Sira','IND','B.K.JAYACHANDRA', 354],
+['TUMKUR','Sira','JD(U)','R.JAYARAMAIAH', 340],
+['TUMKUR','Sira','LJP','SRINIVASA (SEENAPPA)', 330],
+['TUMKUR','Sira','IND','MARUTHI', 261],
+['TUMKUR','Pavagada','JD(S)','K.M.THIMMARAYAPPA', 68686],
+['TUMKUR','Pavagada','INC','H.V.VENKATESH', 63823],
+['TUMKUR','Pavagada','BJP','G.V.VIJAYARAJ', 5327],
+['TUMKUR','Pavagada','BSRCP','UGRANARASIMHAPPA', 1260],
+['TUMKUR','Pavagada','NCP','SEVENAIK (SHIVA)', 1236],
+['TUMKUR','Pavagada','KJP','PAVAGADA SRIRAM', 1229],
+['TUMKUR','Pavagada','IND','HANUMANTHARAYA.O', 1072],
+['TUMKUR','Pavagada','BSP','NAGARATHNAMMA', 1045],
+['TUMKUR','Pavagada','IND','MRUTHYUNJAYA', 501],
+['TUMKUR','Pavagada','IND','K.VENKATESH', 431],
+['TUMKUR','Pavagada','JD(U)','K.GOPALA', 272],
+['TUMKUR','Pavagada','IND','MADLETAPPA', 269],
+['TUMKUR','Pavagada','IND','GANGADHAR', 229],
+['TUMKUR','Madhugiri','INC','KYATASANDRA N.RAJANNA', 75086],
+['TUMKUR','Madhugiri','JD(S)','M.V.VEERABHADRAIAH', 60659],
+['TUMKUR','Madhugiri','IND','LAKSHMINARAYANA', 2183],
+['TUMKUR','Madhugiri','BSP','KORAMANGALA MUNIYAPPA,', 1992],
+['TUMKUR','Madhugiri','IND','RAJANNA', 1929],
+['TUMKUR','Madhugiri','BJP','B.SUMITRADEVI', 1741],
+['TUMKUR','Madhugiri','IND','MAHADEVAPPA. N.', 518],
+['TUMKUR','Madhugiri','IND','BHARATHESHA.M.R.', 430],
+['TUMKUR','Madhugiri','IND','K.R.RAJANNA', 421],
+['TUMKUR','Madhugiri','BSRCP','KRISHNAMURTHY M.R.(KRISHNA HALLIKAR)', 273],
+['TUMKUR','Madhugiri','IND','G.NAGENDRA', 252],
+['TUMKUR','Madhugiri','IND','M.N.VENUGOPALA RAO', 243],
+['TUMKUR','Madhugiri','IND','YATHUGONAHALLI C.RANGASWAMY', 239],
+['TUMKUR','Madhugiri','JD(U)','RAMANJAIAH. L.', 197],
+['TUMKUR','Madhugiri','IND','S.H.BHASKAR (GOWDA)', 186],
+['TUMKUR','Madhugiri','IND','SANNEERAPPA', 177],
+['TUMKUR','Madhugiri','BDBRAJP','K.SAROJAMMA', 173],
+['TUMKUR','Madhugiri','IND','THIPPANNA CHOWDARY . L.', 163],
+['TUMKUR','Madhugiri','IND','G.NAGARAJA', 140],
+['TUMKUR','Madhugiri','IND','G.M.NAGARAJU', 110],
+['TUMKUR','Madhugiri','IND','ADHINARAYANAPPA', 109],
+['TUMKUR','Madhugiri','IND','T.VENKATAREDDY', 87],
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

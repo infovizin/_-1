@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+	
+
+['KOPPAL','Kushtagi','BJP','DODDANAGOUDA HANAMAGOUDA PATIL', 44007],
+['KOPPAL','Kushtagi','INC','AMAREGOUDA LINGANAGOUDA PATIL BAYYAPUR', 40970],
+['KOPPAL','Kushtagi','JD(S)','K.SHARANAPPA VAKEELARU', 26691],
+['KOPPAL','Kushtagi','BSRCP','GONAL RAJASHEKAR GOUDA', 17543],
+['KOPPAL','Kushtagi','IND','HIREMATH SANGAMESH SHEKARAYYA', 1743],
+['KOPPAL','Kushtagi','IND','PURADAPPA KANDGAL VAKEELARU', 1496],
+['KOPPAL','Kushtagi','KJP','FAKIRAPPA SOMAPPA CHALAGERI VAKEELARU', 1442],
+['KOPPAL','Kushtagi','IND','LAXMANA DURAGAPPA TALAWAR', 955],
+['KOPPAL','Kushtagi','BSP','SHIVAPUTRAPPA GUMGERI', 833],
+['KOPPAL','Kushtagi','IND','MARIYAPPA BASAPPA MADIWALAR', 822],
+['KOPPAL','Kushtagi','IND','BASAVARAJ NARASAPPA BILKAR HANAMSAGAR', 509],
+['KOPPAL','Kushtagi','IND','ABDUL NAYEEM ABDUL RABSAB', 492],
+['KOPPAL','Kushtagi','CPIM','BASAVARAJ MARIYAPPA BUNNATTI', 384],
+['KOPPAL','Kushtagi','JD(U)','MALLIKARJUNSWAMI V HIREMATH (CHALAGERA)', 359],
+['KOPPAL','Kanakagiri','INC','SHIVARAJ SANGAPPA TANGADAGI', 49451],
+['KOPPAL','Kanakagiri','KJP','BASAVARAJ DADHESUGURU', 44399],
+['KOPPAL','Kanakagiri','BSRCP','BHAVANIMATHA MUKUNDARAO', 28117],
+['KOPPAL','Kanakagiri','BJP','RAMANAYAK LACHAMAPPPA NAYAK LAMANI', 2948],
+['KOPPAL','Kanakagiri','IND','RAMESH KOTI', 1524],
+['KOPPAL','Kanakagiri','IND','VITHOBA BALADASAPPA DASAR', 1418],
+['KOPPAL','Kanakagiri','JD(S)','PRAKASHA. L. RATHOD', 1166],
+['KOPPAL','Kanakagiri','IND','PALAKSHAYYA SHIVAMURTHAYYA HIREMATH', 1080],
+['KOPPAL','Kanakagiri','IND','TIPPANNA V', 1062],
+['KOPPAL','Kanakagiri','CPM','AKKIROTTI HULAGAPPA PAMAPPA', 1028],
+['KOPPAL','Kanakagiri','BSP','SHREEDHAR', 805],
+['KOPPAL','Kanakagiri','CPIM','DYAMAMMA MANKALEPPA CHOUDKI', 751],
+['KOPPAL','Kanakagiri','IND','MOTILAL NAYAK RATHOD', 579],
+['KOPPAL','Kanakagiri','CPI(ML)(L)','M. YESAPPA', 560],
+['KOPPAL','Kanakagiri','IND','NAGARAJA TIPPANNA WADDAR', 558],
+['KOPPAL','Gangawati','JD(S)','IQBAL ANSARI', 60303],
+['KOPPAL','Gangawati','BJP','PARANNA ESHWARAPPA MUNAVALLI', 30514],
+['KOPPAL','Gangawati','INC','H. R. SRINATH', 20248],
+['KOPPAL','Gangawati','KJP','BASAVARAJ PATIL ANVARI', 7058],
+['KOPPAL','Gangawati','BSRCP','PAMPANAGOWDRU POLICE PATEL', 3015],
+['KOPPAL','Gangawati','IND','SHARANABASAPPA.S PAN SHOP', 1642],
+['KOPPAL','Gangawati','CPI(ML)(L)','BHARADVAJ SUBBARAO', 971],
+['KOPPAL','Gangawati','PPOI','VIJAYAKUMAR.J', 843],
+['KOPPAL','Gangawati','BSP','HULUGAPPA DEVERAMANI', 749],
+['KOPPAL','Yelburga','INC','BASAVARAJ RAYARADDY', 52388],
+['KOPPAL','Yelburga','BJP','ACHAR HALAPPA BASAPPA', 35488],
+['KOPPAL','Yelburga','JD(S)','G.T.PAMPAPATI', 12040],
+['KOPPAL','Yelburga','BSRCP','NAVEEN KUMAR. E. GULAGANNANAVAR', 10640],
+['KOPPAL','Yelburga','KJP','C.H. PATIL', 10212],
+['KOPPAL','Yelburga','IND','NAGARAJ KOLAJI', 9888],
+['KOPPAL','Yelburga','IND','SOMASHEKAR T. M', 2018],
+['KOPPAL','Yelburga','IND','SHIVASHANKARAYYA BALIGERIMATH', 1233],
+['KOPPAL','Yelburga','BSP','DURAGAPPA AYYAPPA TALAKERI', 810],
+['KOPPAL','Yelburga','IND','SIDDAPPA HAKKIGUNI', 793],
+['KOPPAL','Yelburga','IND','SHIVASHANKAR LINGARAJ DESAI', 718],
+['KOPPAL','Yelburga','IND','GANIGER MALAKAJAPPA SHIVARUDRAPPA', 501],
+['KOPPAL','Koppal','INC','K.RAGHAVENDRA BASAVARAJ HITNAL', 81062],
+['KOPPAL','Koppal','BJP','KARADI SANGANNA AMARAPPA', 54274],
+['KOPPAL','Koppal','JD(S)','PRADEEP VIRUPAKSHAGOUDA', 6811],
+['KOPPAL','Koppal','KJP','K.M.SYED', 4118],
+['KOPPAL','Koppal','BSRCP','NEKKANTI NAGARAJ', 2609],
+['KOPPAL','Koppal','NCP','SHIVAKUMAR VADERAHALLI', 1333],
+['KOPPAL','Koppal','BSP','HADAPAD NIRMALA MALLIKARJUN', 611],
+['KOPPAL','Koppal','CPIM','MANJUNATH.E.CHAKRASALI', 599],
+
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

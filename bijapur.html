@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+	
+
+['BIJAPUR','Muddebihal','INC','APPAJI URF CHANNABASAVARAJ SHANKARAO NADAGOUD', 34747],
+['BIJAPUR','Muddebihal','KJP','VIMALABAI JAGADEVRAO DESHMUKH', 22545],
+['BIJAPUR','Muddebihal','IND','SHANTHGOUDA SANGANAGOUDA PATIL (NADAHALLI)', 18859],
+['BIJAPUR','Muddebihal','JD(S)','DESAI PRABHU URF PRABHUGOUDA CHANNANNA', 12227],
+['BIJAPUR','Muddebihal','BJP','MALAKENDRAGOUDA BASANAGOUDA PATIL', 9761],
+['BIJAPUR','Muddebihal','BSRCP','NINGAPPAGOUDA SIDDAPAGOUDA BAPPARAGI', 9136],
+['BIJAPUR','Muddebihal','IND','MAHIBOOB SHAMSUDDIN HALLI', 2875],
+['BIJAPUR','Muddebihal','IND','HANAMANTHRAY NINGAPPA BIRADAR', 1869],
+['BIJAPUR','Muddebihal','IND','KORI SHIVASANGAPPA RAMAPPA', 941],
+['BIJAPUR','Muddebihal','IND','YALLAPPA MARIYAPPA HADIMANI', 838],
+['BIJAPUR','Muddebihal','BSP','RAVI GURULINGAPPA SAJJAN', 541],
+['BIJAPUR','Muddebihal','IND','PARUSHURAM ISHWARAPPA MURAL', 387],
+['BIJAPUR','Devar Hippargi','INC','AMINAPPAGOUDA SANGANAGOUDA PATIL', 36231],
+['BIJAPUR','Devar Hippargi','BJP','SOMANAGOUDA. B. PATIL (SASANUR)', 28135],
+['BIJAPUR','Devar Hippargi','KJP','BHIMANAGOUDA (RAJUGOUDA) .B. PATIL', 24707],
+['BIJAPUR','Devar Hippargi','IND','SURESHAGOUDA MUDIGOUDAPPAGOUDA PATIL', 12421],
+['BIJAPUR','Devar Hippargi','JD(S)','RESHMAKOUSAR KHAJABANDENAWAJ PADEKANUR', 8118],
+['BIJAPUR','Devar Hippargi','BSP','YASHAVANT MALAPPA PUJARI', 1069],
+['BIJAPUR','Devar Hippargi','IND','SHASHIDHAR BASANNA', 968],
+['BIJAPUR','Devar Hippargi','WPOI','IRFANULLAH HAFIZULLA MUNASI', 895],
+['BIJAPUR','Devar Hippargi','IND','KANTAPPA (KANTU) SHANKREPPA INCHAGERI', 637],
+['BIJAPUR','Devar Hippargi','BSRCP','A SREENIVASA REDDY', 622],
+['BIJAPUR','Devar Hippargi','JD(U)','DHANASING SUBHASH LAMANI', 550],
+['BIJAPUR','Devar Hippargi','IND','SAJJAN MALLESHAPPA ISHVARAPPA', 545],
+['BIJAPUR','Devar Hippargi','IND','LALASAB RAJESAB KUNTOJI', 347],
+['BIJAPUR','Basavana Bagevadi','INC','SHIVANAND S PATIL', 56329],
+['BIJAPUR','Basavana Bagevadi','BJP','BELLUBBI SANGAPPA KALLAPPA', 36653],
+['BIJAPUR','Basavana Bagevadi','JD(S)','SOMANAGOUDA (APPUGOUDA) B. PATIL', 18136],
+['BIJAPUR','Basavana Bagevadi','KJP','DESAI SANGRAJ ANNASAHEB', 9834],
+['BIJAPUR','Basavana Bagevadi','IND','SIDDAPPA B.GANJI', 1259],
+['BIJAPUR','Basavana Bagevadi','BSP','KATTI MARIYAPPA CHANDRAMAPPA', 1079],
+['BIJAPUR','Basavana Bagevadi','BSRCP','GOPAL SHIVAPPA DHANASHETTY', 1035],
+['BIJAPUR','Basavana Bagevadi','WPOI','NAZIR DUNDASI', 574],
+['BIJAPUR','Basavana Bagevadi','IND','LAXIMBAI SHIVAPPA G PATIL', 540],
+['BIJAPUR','Basavana Bagevadi','IND','VEERANAGOUDA MALLAPPA PARANNAVAR', 513],
+['BIJAPUR','Basavana Bagevadi','IND','GURUSIDDAYYA M SARUR', 337],
+['BIJAPUR','Basavana Bagevadi','IND','ASHOK LAMANI', 277],
+['BIJAPUR','Basavana Bagevadi','IND','IRANNA CHANABASAPPA NIDAGUNDI', 253],
+['BIJAPUR','Babaleshwar','INC','M.B.PATIL', 62061],
+['BIJAPUR','Babaleshwar','JD(S)','PATIL  VIJUGOUDA', 57706],
+['BIJAPUR','Babaleshwar','BJP','M.S.RUDRAGOUDARA', 4067],
+['BIJAPUR','Babaleshwar','KJP','BASAPPA. S. HONAWAD', 2646],
+['BIJAPUR','Babaleshwar','IND','SHASAPPA BHIMARAY HANCHANAL', 2215],
+['BIJAPUR','Babaleshwar','BSP','KAMANNA GANGANALLI', 1042],
+['BIJAPUR','Babaleshwar','IND','SADASHIVAPPA YAMANAPPA HADIMANI', 924],
+['BIJAPUR','Babaleshwar','IND','SANGAPPA GURAPPA INDI', 751],
+['BIJAPUR','Babaleshwar','IND','USMAN BASHA MOULAKASAHEB KURI', 533],
+['BIJAPUR','Babaleshwar','IND','MEHABOOB. H. MALABHODI', 532],
+['BIJAPUR','Babaleshwar','IND','ARUNAKUMAR. H. JAINAPUR', 432],
+['BIJAPUR','Babaleshwar','BSRCP','SHAKIL  MANIYAR', 342],
+['BIJAPUR','Babaleshwar','IND','GOUSAPEERA ABBASALI JAMADAR', 308],
+['BIJAPUR','Babaleshwar','JD(U)','SATTIGER BASAYYA MALLAYYA', 297],
+['BIJAPUR','Babaleshwar','IND','AKKI HUGGI PADMANNA HUCHAPPA', 290],
+['BIJAPUR','Babaleshwar','IND','GUDADAPPA SHIVAPPA JALAMATTI', 202],
+['BIJAPUR','Bijapur City','INC','MAKBUL S BAGAWAN', 48615],
+['BIJAPUR','Bijapur City','JD(S)','BASANAGOUDA R PATIL (YATNAL)', 39235],
+['BIJAPUR','Bijapur City','BJP','APPASAHEB (APPU) MALLAPPA PATTANASHETTI', 26235],
+['BIJAPUR','Bijapur City','KJP','KARIBASAVARAJ BASAVARAJ NAGUR (BABU)', 1054],
+['BIJAPUR','Bijapur City','IND','RAJESH @ RAVI  Y  VALLYAPUR', 595],
+['BIJAPUR','Bijapur City','IND','BHAVI VISHWANATH SATALINGAPPA', 586],
+['BIJAPUR','Bijapur City','IUML','ATTAUR REHAMAN AJIJUL REHAMAN JAHAGIRDAR', 556],
+['BIJAPUR','Bijapur City','IND','PREMANAND HUSANAPPA MASHYAL', 392],
+['BIJAPUR','Bijapur City','IND','AINAPUR VASUNDARA MANOHAR', 357],
+['BIJAPUR','Bijapur City','SDPI','MAHAMMADRAFIQ RAJESAB GURIKAR', 325],
+['BIJAPUR','Bijapur City','WPOI','ABBIVAKAS ABDURAJAK PEERJADE', 314],
+['BIJAPUR','Bijapur City','IND','NIRMALA SHRINIVAS ARAKERI', 201],
+['BIJAPUR','Bijapur City','BSRCP','RAJASHEKHAR S PATIL', 182],
+['BIJAPUR','Bijapur City','SUCI','MALLIKARJUN H T', 167],
+['BIJAPUR','Bijapur City','HJP','KADECHUR KALLAPPA REVENASIDDAPPA', 104],
+['BIJAPUR','Bijapur City','IND','CHANDRU R  KALABURGI', 103],
+['BIJAPUR','Nagthan','INC','RAJU ALAGUR', 45570],
+['BIJAPUR','Nagthan','JD(S)','DEVANAND PHULSING CHAVAN', 44903],
+['BIJAPUR','Nagthan','KJP','KATAKDHONDA VITTHAL DHONDIBA', 24104],
+['BIJAPUR','Nagthan','BJP','NAGENDRA DEVENDRAPPA MAYAVANSHI', 15627],
+['BIJAPUR','Nagthan','IND','KATAKDHOND DEEPAK GANGARAM', 1521],
+['BIJAPUR','Nagthan','IND','SANJEEV PUNDLIK MANE', 1278],
+['BIJAPUR','Nagthan','BSP','SUDHAKAR KANAMADI', 1260],
+['BIJAPUR','Nagthan','IND','NIRMALA SHRINIVAS ARAKERI', 1212],
+['BIJAPUR','Nagthan','IND','PARIMALA MAHADEV KAMBALE', 1141],
+['BIJAPUR','Nagthan','HJP','JAGANNATH RAMCHANDRA KODATE', 643],
+['BIJAPUR','Nagthan','IND','RAHUL TIPPANNA BHASKAR', 628],
+['BIJAPUR','Nagthan','IND','T.K. DASAR', 527],
+['BIJAPUR','Nagthan','JD(U)','BALAJI VADDAR (YATNAL)', 436],
+['BIJAPUR','Nagthan','IND','SHRIKANT DEVENDRAPPA ARAKERI', 435],
+['BIJAPUR','Nagthan','IND','PREMANAND HUSANAPPA MASHYAL', 379],
+['BIJAPUR','Nagthan','IND','MARAGANNA MALAPPA HUNNUR', 360],
+['BIJAPUR','Indi','INC','YASHAVANTARAYAGOUDA VITTALAGOUDA PATIL', 58562],
+['BIJAPUR','Indi','KJP','RAVIKANT SHANKREPPA PATIL', 25260],
+['BIJAPUR','Indi','JD(S)','ANNAPPA  SHIVANINGAPPA KHAINUR', 23173],
+['BIJAPUR','Indi','BJP','SHRISHAILAGOUDA  SHANKREPPA BIRADAR', 15784],
+['BIJAPUR','Indi','IND','DR: BAGALI SARVABHOUMA SATAGOUD', 7414],
+['BIJAPUR','Indi','IND','SUBHASHACHANDRA SUNAGAR', 1264],
+['BIJAPUR','Indi','BSRCP','MANJUNATH SHRISHAIL VANDAL', 1149],
+['BIJAPUR','Indi','BSP','TONTAPUR  DHARMANNA SHIVAYOGAPPA', 1087],
+['BIJAPUR','Indi','BDBRAJP','AZRODDIN HAYACHAND JAHAGIRADAR', 912],
+['BIJAPUR','Indi','IND','GOLLALALINGANAGOUDA PEERAPPAGOUDA JOTAGOND', 849],
+['BIJAPUR','Indi','IND','ARAVIND RUKMABAI KALAKERI', 805],
+['BIJAPUR','Indi','IND','COMMANDER BHEERAPPA BHEEMAPPA KHILARI', 712],
+['BIJAPUR','Indi','IND','TULAJAPPA HANAMANT BYALI', 708],
+['BIJAPUR','Indi','IND','SHASHIKUMAR SOMASHEKHAR MALABAGI', 651],
+['BIJAPUR','Indi','JD(U)','MASALI KAMALAKAR SHARANABASAPPA', 445],
+['BIJAPUR','Sindgi','BJP','BHUSANUR RAMESH BALAPPA', 37834],
+['BIJAPUR','Sindgi','JD(S)','MANAGULI MALLAPPA CHANNAVEERAPPA', 37082],
+['BIJAPUR','Sindgi','INC','SUNAGAR SHARANAPPA TIPPANNA', 27595],
+['BIJAPUR','Sindgi','KJP','PATIL GURANNAGOUDA GOUDAPPAGOUDA', 10523],
+['BIJAPUR','Sindgi','IND','RAFIQ   KANE', 6938],
+['BIJAPUR','Sindgi','IND','SIDDARAMAPPA RUDRAPPA RANJUNAGI', 1540],
+['BIJAPUR','Sindgi','IND','MAHANTESH  BHIMANNA   NAIKODI', 1308],
+['BIJAPUR','Sindgi','JD(U)','DEVAPPAGOUD GURALINGAPPAGOUD   PATIL (CHANDAKAVATE)', 1199],
+['BIJAPUR','Sindgi','BSP','DR.DASTAGIR', 1115],
+['BIJAPUR','Sindgi','NCP','SIDDANNA SHARANAPPA   ISHWARAPPAGOL', 983],
+['BIJAPUR','Sindgi','IND','VISHWAKARMA IRANNA MADIWALAPPA', 677],
+['BIJAPUR','Sindgi','BSRCP','RAJU   TALIKOTI', 530],
+['BIJAPUR','Sindgi','IND','CHINCHOLI SHIVAPPA CHANABASAPPA', 472],
+['BIJAPUR','Sindgi','IND','ASHOK VEERABADRAPPA  GHOLLI', 298],
+['BIJAPUR','Sindgi','SP','HARANAL SANTOSH SHIVAPPA', 261],
+
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

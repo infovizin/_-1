@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+	['BELGAUM','Nippani','BJP','JOLLE SHASHIKALA ANNASAHEB', 81860],
+['BELGAUM','Nippani','INC','KAKASO PANDURANG PATIL', 63198],
+['BELGAUM','Nippani','BSP','SUJIT DINAKAR MHETRI', 1771],
+['BELGAUM','Nippani','IND','DR. CHANDRAKANT BASHETTI KURABETTI', 1545],
+['BELGAUM','Nippani','IND','RAMACHANDRA APPANNA PUJARI', 1232],
+['BELGAUM','Nippani','IND','BABASAHEB BALAGOUDA DESAI', 894],
+['BELGAUM','Nippani','JD(S)','PATIL LAKHAMAGOUD  YALAGONDA', 805],
+['BELGAUM','Nippani','KJP','PATHAN NIYAZ', 691],
+['BELGAUM','Nippani','BSRCP','SUNDAR BABASAHEB PATIL', 258],
+['BELGAUM','Nippani','IND','JITENDRA SUBHASH NERLE', 192],
+['BELGAUM','Nippani','IND','JAYAVANT  MIRAJAKAR', 132],
+['BELGAUM','Nippani','IND','JAY ALIAS JAYAVANT SATAPPA CHOUGULE', 112],
+['BELGAUM','Chikkodi-Sadalga','INC','PRAKASH BABANNA HUKKERI', 102237],
+['BELGAUM','Chikkodi-Sadalga','BJP','BASAVANNI RUDRAPPA  SANGAPPAGOL', 25649],
+['BELGAUM','Chikkodi-Sadalga','BSP','KIWAD NAGESH TUKARAM', 15409],
+['BELGAUM','Chikkodi-Sadalga','JD(S)','DR ANNAPPA MARUTI MAGADUM', 1842],
+['BELGAUM','Chikkodi-Sadalga','IND','RAJU SAMBHA KAMATE', 1139],
+['BELGAUM','Chikkodi-Sadalga','KJP','RAMAGOUDA URP SOMESH IRAGOUDA PATIL', 760],
+['BELGAUM','Chikkodi-Sadalga','IND','BAHUBALI SHAMAGOUDA PATIL', 568],
+['BELGAUM','Chikkodi-Sadalga','LJP','APPASAHEB SHRIPATI KURANE', 494],
+['BELGAUM','Chikkodi-Sadalga','IND','MOHAN GURAPPA MOTANNAVAR', 448],
+['BELGAUM','Chikkodi-Sadalga','BSRCP','SIDDAPPA SHANKAR ITANALE', 315],
+['BELGAUM','Chikkodi-Sadalga','IND','KALAGOUDA BABU KALASAPPAGOAL', 301],
+['BELGAUM','Chikkodi-Sadalga','JD(U)','BHIMAGOUD SHANKAR KHOT', 213],
+['BELGAUM','Athani','BJP','LAXMAN SANGAPPA SAVADI', 74299],
+['BELGAUM','Athani','INC','MAHESH IRANAGOUDA KUMATHALLI', 50528],
+['BELGAUM','Athani','JD(S)','SADASHIV KEDARI BUTALI', 15204],
+['BELGAUM','Athani','KJP','SANGANAGOUD GURUPADAGOUD PATIL', 1580],
+['BELGAUM','Athani','BSP','ANNAPPA SOMANNA AIGALI', 1558],
+['BELGAUM','Athani','IND','RATNAVVA VITTAL TATRI URF PUJARI', 841],
+['BELGAUM','Athani','BSRCP','SHIKHANDHAR HAJISAB MULLA', 750],
+['BELGAUM','Athani','LSP','VASANT YAMANAPPA DALAWAI', 581],
+['BELGAUM','Athani','IND','BASAVARAJ IRAPPA AWATI', 507],
+['BELGAUM','Athani','NCP','GURUNATH BALU BHORI', 442],
+['BELGAUM','Kagwad','BJP','BHARAMGOUD ALAGOUD KAGE', 41784],
+['BELGAUM','Kagwad','JD(S)','SHRIMANT BALASAHEB PATIL', 38897],
+['BELGAUM','Kagwad','INC','KIRANKUMAR TATYAGOUDA PATIL', 33057],
+['BELGAUM','Kagwad','KJP','AJIT BHARAMU CHOUGALE', 8788],
+['BELGAUM','Kagwad','BSP','VIDYADHAR S.  KAMBLE', 2158],
+['BELGAUM','Kagwad','IND','SHOBA BALU TAVADARE', 908],
+['BELGAUM','Kagwad','NCP','SURENDRA PRADHANJI TALWALKAR', 768],
+['BELGAUM','Kagwad','IND','NARASINHA TUKARAM PATIL', 642],
+['BELGAUM','Kagwad','IND','JAYSHREE SAVANT PUJARI', 603],
+['BELGAUM','Kagwad','IND','RAMAPPA  BHEEMAPPA HUDDAR', 493],
+['BELGAUM','Kagwad','IND','BAHUSAB ASHOK NAIK (DHAVALE)', 434],
+['BELGAUM','Kagwad','BSRCP','DIWAKAR RAMACHANDRA POTADAR', 363],
+['BELGAUM','Kagwad','JD(U)','RAJU ANNASAB PATIL', 305],
+['BELGAUM','Kudachi','BSRCP','P.RAJEEV', 71057],
+['BELGAUM','Kudachi','INC','GHATAGE SHAMA BHIMA', 24823],
+['BELGAUM','Kudachi','BJP','MAHENDRA KALLAPPA TAMMANNAVAR', 14310],
+['BELGAUM','Kudachi','KJP','PARASHURAM SANTRAM GADIVADDAR', 1066],
+['BELGAUM','Kudachi','JD(S)','SHANTARAM SAKHARAM SANNAKKI', 1050],
+['BELGAUM','Kudachi','IND','SHRIMANT TUKARAM KADAM', 937],
+['BELGAUM','Kudachi','KaSP','HULLENNAVAR NINGAPPA TAYAPPA', 730],
+['BELGAUM','Kudachi','IND','SHEKHAR SHRIPATI KAMBLE', 598],
+['BELGAUM','Kudachi','BSP','MALLESH RAMAPPA KASTURI', 515],
+['BELGAUM','Kudachi','IND','RAJKUMAR MAHADEV BHOSALE', 289],
+['BELGAUM','Raybag','BJP','AIHOLE DURYODHAN MAHALINGAPPA', 37535],
+['BELGAUM','Raybag','IND','PRADEEP RAMU MALAGI', 36706],
+['BELGAUM','Raybag','INC','KIRANAGI  SUKUMAR PUNDALIK', 30043],
+['BELGAUM','Raybag','JD(S)','BABU SHANKAR BAGEWADI', 7338],
+['BELGAUM','Raybag','KJP','BALASAB SHAMRAO WADDAR', 3983],
+['BELGAUM','Raybag','IND','PRABHAKAR HANAMANT GAGGARI', 2040],
+['BELGAUM','Raybag','BSP','MAYUR SHRAVAN MADALE', 1275],
+['BELGAUM','Raybag','IND','PRAKASH MARUTI WADDAR @ PAWAR', 697],
+['BELGAUM','Raybag','BSRCP','PARIS SHANKAR SINGE', 604],
+['BELGAUM','Raybag','IND','CHANNAPPA JINNAPPA BHIMANNAVAR', 543],
+['BELGAUM','Raybag','IND','GAJENDRA ANNAPPA HONOLE', 469],
+['BELGAUM','Raybag','LJP','KEMPANNA GIRIMALL VITHEKAR', 310],
+['BELGAUM','Raybag','JD(U)','MURAGOD  DUNDAPPA DURGAPPA', 299],
+['BELGAUM','Raybag','NCP','RAJU BHIMARAO KANAGALE', 264],
+['BELGAUM','Hukkeri','BJP','UMESH VISHWANATH KATTI', 81810],
+['BELGAUM','Hukkeri','INC','RAVI BASAVARAJ KARALE', 24484],
+['BELGAUM','Hukkeri','JD(S)','BASAVARAJ KASHAPPA MATAGAR', 19501],
+['BELGAUM','Hukkeri','KJP','NINGAPPA BASANAIK BARIGIDAD', 3058],
+['BELGAUM','Hukkeri','NPP','SURESH KALLAPPA MANAVADDAR', 1780],
+['BELGAUM','Hukkeri','BSP','RAJENDRA BABU MOSHI', 1354],
+['BELGAUM','Hukkeri','BSRCP','VIRUPAKSHI BASAPPA MARENNAVAR', 974],
+['BELGAUM','Arabhavi','BJP','BALACHANDRA LAXMANRAO JARKIHOLI', 99283],
+['BELGAUM','Arabhavi','INC','UTAGI RAMAPPA KAREPPA', 24062],
+['BELGAUM','Arabhavi','KJP','LATUR SURESH MAHALINGAPPA', 11445],
+['BELGAUM','Arabhavi','JD(S)','GURAPPA KALLAPPA HITTANAGI', 3081],
+['BELGAUM','Arabhavi','IND','GURUPUTRA KEMPANNA KULLUR', 2012],
+['BELGAUM','Arabhavi','SKP','GOUDAR SHIVANAGOUDA NINGAPPA', 1527],
+['BELGAUM','Arabhavi','IND','MAHANTAPPA SABANNA GOUDAR', 1388],
+['BELGAUM','Arabhavi','BSP','BASAVANTH IRAPPA VADER', 910],
+['BELGAUM','Arabhavi','BSRCP','BASAVARAJ BASAVANTAPPA B PATIL', 697],
+['BELGAUM','Arabhavi','SJPA','HANAJI ASHOK PANDAPPA', 694],
+['BELGAUM','Gokak','INC','JARKIHOLI RAMESH LAXMANRAO', 79175],
+['BELGAUM','Gokak','JD(S)','ASHOK NINGAYYASWAMI PUJARI', 51170],
+['BELGAUM','Gokak','KJP','UMESH ADIVEPPA NIRWANI', 4366],
+['BELGAUM','Gokak','BJP','VASUDEV MAHADEVAPPA SAVATIKAI', 4293],
+['BELGAUM','Gokak','IND','HALAPPA KALLAPPA VANAGOL', 2047],
+['BELGAUM','Gokak','IND','BHIMASHI JARKIHOLI', 1831],
+['BELGAUM','Gokak','IND','BHIMAPPA SIDDAPPA NAIK', 542],
+['BELGAUM','Gokak','BSRCP','BASAVANNI NINGAPPA KAMBAR', 457],
+['BELGAUM','Gokak','SJPA','RESHMA BABURAO SAMBREKAR', 446],
+['BELGAUM','Yemkanmardi','INC','SATISH LAXMANARAO JARAKIHOLI', 70726],
+['BELGAUM','Yemkanmardi','BJP','ASTAGI MARUTI MALLAPPA', 46376],
+['BELGAUM','Yemkanmardi','JD(S)','SANARAM SIDDAPPA NAIK', 3348],
+['BELGAUM','Yemkanmardi','KJP','DR. YALAGUND BASANAIK NAIK', 2129],
+['BELGAUM','Yemkanmardi','IND','BASAVARAJ  SIDDALINGAPPA  SAYANNAVAR', 1981],
+['BELGAUM','Belgaum Uttar','INC','FAIROZ NURUDDIN SAITH', 45125],
+['BELGAUM','Belgaum Uttar','IND','RENU SUHAS KILLEKAR', 26915],
+['BELGAUM','Belgaum Uttar','BJP','KIRAN MARUTI JADHAV', 17456],
+['BELGAUM','Belgaum Uttar','KJP','SHIVAPUTHRAPPA CHANBASAPPA MALAGI', 15271],
+['BELGAUM','Belgaum Uttar','BSRCP','KUDACHI RAMESH LAXMAN', 3980],
+['BELGAUM','Belgaum Uttar','IND','LATIFKHAN PATHAN', 1367],
+['BELGAUM','Belgaum Uttar','JD(S)','SHRADHA DHARMRAJ', 1277],
+['BELGAUM','Belgaum Uttar','LSP','NAGESH VILAS SAKHARE', 944],
+['BELGAUM','Belgaum Uttar','BSP','MAHENDRA D. DESHPANDE', 851],
+['BELGAUM','Belgaum Uttar','IND','RAVI B. MALAGI', 690],
+['BELGAUM','Belgaum Uttar','JD(U)','CHANDRASHEKHAR GANGAPPA ANGADI', 624],
+['BELGAUM','Belgaum Uttar','IUML','LODHI AIJAZ AHAMED MEHBOOB SAB', 213],
+['BELGAUM','Belgaum Uttar','IND','AKHILA AYUBKHAN PATHAN', 189],
+['BELGAUM','Belgaum Uttar','IND','MOHAMMED RAFIQ B. DESAI', 180],
+['BELGAUM','Belgaum Uttar','HJP','MAGDUM GOUSMOHIUDDIN ISMAIL MAGDUM', 101],
+['BELGAUM','Belgaum Dakshin','IND','SAMBHAJI LAKSHMAN PATIL', 54426],
+['BELGAUM','Belgaum Dakshin','BJP','ABHAY PATIL', 48116],
+['BELGAUM','Belgaum Dakshin','INC','ANIL M. POTDAR', 20536],
+['BELGAUM','Belgaum Dakshin','KJP','S. M. DODAMANI', 5597],
+['BELGAUM','Belgaum Dakshin','JD(S)','BASAVARAJ SHRISHAILAPPA JAVALI', 1324],
+['BELGAUM','Belgaum Dakshin','IND','NETHAJI (BALU) APPAJI MANAGUTKAR', 771],
+['BELGAUM','Belgaum Dakshin','BSP','MALTI A. SAKSENA', 373],
+['BELGAUM','Belgaum Dakshin','BSRCP','MOHSINKHAN NASIRKHAN PATHAN', 367],
+['BELGAUM','Belgaum Dakshin','SHS','HANMANT KRISHNA MAJUKAR', 256],
+['BELGAUM','Belgaum Dakshin','JD(U)','ASHOK VITHAL SANADI', 180],
+['BELGAUM','Belgaum Rural','BJP','SANJAY B PATIL', 38322],
+['BELGAUM','Belgaum Rural','IND','KINEKAR MANOHAR KALLAPPA', 36987],
+['BELGAUM','Belgaum Rural','INC','LAKSHMI RAVINDRA HEBBALKAR', 35811],
+['BELGAUM','Belgaum Rural','IND','ANANDSWAMY GADDADEVARMATH', 17670],
+['BELGAUM','Belgaum Rural','IND','SHIVAJI KEDARI SUNTAKAR', 15759],
+['BELGAUM','Belgaum Rural','KJP','SUNANDA L PATIL', 2290],
+['BELGAUM','Belgaum Rural','JD(S)','ASHOK B GOVEKAR', 1837],
+['BELGAUM','Belgaum Rural','IND','BALASAHEB BHIMAPPA SATTIGERI', 1023],
+['BELGAUM','Belgaum Rural','IND','MALPE NARASINH VANKATESH BHAT', 697],
+['BELGAUM','Belgaum Rural','BSRCP','BALACHANDRA RAMACHANDRA CHAVAN', 637],
+['BELGAUM','Belgaum Rural','IND','JAYASHREE D KHANAPUR', 597],
+['BELGAUM','Belgaum Rural','JD(U)','SIDAGOUD KALAGOUD MODAGI', 429],
+['BELGAUM','Khanapur','IND','ARVIND CHANDRAKANT PATIL', 37055],
+['BELGAUM','Khanapur','INC','RAFIQUE KHATALSAB KHANAPURI', 20903],
+['BELGAUM','Khanapur','IND','DR: ANJALITAI NIMBALKAR', 17686],
+['BELGAUM','Khanapur','BJP','PRALHAD KALLAPPA REMANI', 16021],
+['BELGAUM','Khanapur','JD(S)','BAGAWAN NASIR PAPULSAB', 15052],
+['BELGAUM','Khanapur','KJP','BABURAO GOVIND DESAI', 14502],
+['BELGAUM','Khanapur','IND','VITTAL SOMANNA HALAGEKAR', 3087],
+['BELGAUM','Khanapur','IND','PATIL RAJGOPAL IRAPPA', 2401],
+['BELGAUM','Khanapur','IND','SURESH VITTALRAO DESAI', 1988],
+['BELGAUM','Khanapur','IND','ANTHON ZUVAVA MENDOSSA', 1728],
+['BELGAUM','Khanapur','IND','NAGAPPA(BABURAO) NARAYANA PATIL', 1612],
+['BELGAUM','Khanapur','BSP','ALIMAAKTHAR S NAYIK', 1332],
+['BELGAUM','Khanapur','JD(U)','RAJU KEMPANNA KHATEDAR', 869],
+['BELGAUM','Khanapur','IND','YASHAWANT NIPPAANIKAR', 654],
+['BELGAUM','Kittur','INC','INAMADAR  DANAPPAGOUDA BASANAGOUDA', 53924],
+['BELGAUM','Kittur','BJP','SURESH SHIVARUDRAPPA MARIHAL', 35634],
+['BELGAUM','Kittur','JD(S)','ANAND BALAKRISHNA APPUGOL', 20657],
+['BELGAUM','Kittur','KJP','BABUGOUDA CHINTAMANIGOUDA PATIL', 6850],
+['BELGAUM','Kittur','IND','MAHESH NINGAPPA HUDALI', 1735],
+['BELGAUM','Kittur','IND','BADIGER CHANDRASHEKAR MADIWALAPPA', 1274],
+['BELGAUM','Kittur','BSP','YAMANAPPA GANGAPPA TALAWAR', 1142],
+['BELGAUM','Kittur','SKP','BASAVARAJ RUDRAPPA MOKHASHI', 1089],
+['BELGAUM','Kittur','IND','ANNAPPA MARATHE', 932],
+['BELGAUM','Kittur','IND','MAHANTESH KRISHNA HOTAKAR', 869],
+['BELGAUM','Kittur','BSRCP','ASHOK GURUSHIDDAYYA KAMBI', 868],
+['BELGAUM','Kittur','IND','KASTURI BASANAGOUDA BHAVI', 557],
+['BELGAUM','Kittur','KAP','BUDAYYA B PUJERI', 439],
+['BELGAUM','Bailhongal','KJP','DR|| VISHWANATH IRANAGOUDA PATIL', 40709],
+['BELGAUM','Bailhongal','BJP','JAGADISH C. METGUD', 37088],
+['BELGAUM','Bailhongal','INC','BASAVARAJ SHIVANAND KOUJALGI', 36042],
+['BELGAUM','Bailhongal','JD(S)','SHANKAR B MADALAGI', 9475],
+['BELGAUM','Bailhongal','IND','MADHAV VENKATESH KULKARNI', 1746],
+['BELGAUM','Bailhongal','BSP','VITTAL SIDDAPPA HARIJAN', 975],
+['BELGAUM','Bailhongal','SP','DAYANAND G. CHIKKAMATH', 762],
+['BELGAUM','Saundatti yellamma','BJP','ANAND ALIAS VISHWANATH CHANDRASHEKHAR MAMANI', 46434],
+['BELGAUM','Saundatti yellamma','INC','RAVINDRA BHUPALAPPA YALIGAR', 30392],
+['BELGAUM','Saundatti yellamma','IND','ANANDKUMAR CHOPRA', 29851],
+['BELGAUM','Saundatti yellamma','KJP','VISHWANATH KARABASAPPA MAMANI', 18391],
+['BELGAUM','Saundatti yellamma','JD(S)','D. B. NAIK', 2630],
+['BELGAUM','Saundatti yellamma','IND','MELAGIRI MALLIKARJUNA CHANNAPPA', 1990],
+['BELGAUM','Saundatti yellamma','NCP','ANGADI MAHESH GURAPPA', 1036],
+['BELGAUM','Saundatti yellamma','JD(U)','DESAIGOUDA RUDRAGOUDA PATIL', 969],
+['BELGAUM','Saundatti yellamma','BSRCP','HANAMANTAPPA VIRUPAXAPPA KALLUR', 897],
+['BELGAUM','Saundatti yellamma','BSP','BASAVARAJ SANGAPPA MUDENAGUDI', 555],
+['BELGAUM','Ramdurg','INC','ASHOK MAHADEVAPPA PATTAN', 42310],
+['BELGAUM','Ramdurg','BJP','YADAWAD SHIVALINGAPPA MAHADEVAPPA', 37326],
+['BELGAUM','Ramdurg','JD(S)','PARAPPAGOUDA FAKIRAGOUDA PATIL', 17303],
+['BELGAUM','Ramdurg','KJP','SANGAYYA CHANDRAYYA PANCHAKATIMATH', 16043],
+['BELGAUM','Ramdurg','JD(U)','ARAVIND MAHADEVARAO DALAWAI', 10314],
+['BELGAUM','Ramdurg','IND','SIDDAPPA MARITAMMAPPA ANGADI', 2053],
+['BELGAUM','Ramdurg','NCP','BHARAT PARAGOUDA PATIL', 904],
+['BELGAUM','Ramdurg','BSRCP','RAMESH HANAMANTAPPA HALLI', 895],
+['BELGAUM','Ramdurg','IND','VINAY DATTATREY JOSHI', 721],
+['BELGAUM','Ramdurg','BSP','PANDURANG DEVAPPA NAYAK', 652],
+['BELGAUM','Ramdurg','IND',' ADAPATTI SHRIKANT YAMANAPPA', 611],
+
+
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

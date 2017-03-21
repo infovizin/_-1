@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+	['CHITRADURGA','Molakalmuru','BSRCP','S. THIPPESWAMY', 76827],
+['CHITRADURGA','Molakalmuru','INC','N. Y. GOPALAKRISHNA', 69658],
+['CHITRADURGA','Molakalmuru','JD(S)','DR.OBANNA POOJAR', 4234],
+['CHITRADURGA','Molakalmuru','BJP','DASARI KIRTHI KUMAR', 3227],
+['CHITRADURGA','Molakalmuru','KJP','DHRAKSHAYANAMMA', 1832],
+['CHITRADURGA','Molakalmuru','IND','SANNA MARANNA', 1536],
+['CHITRADURGA','Molakalmuru','CPI','COMMRED PATEL G. PAPANAYAKA', 1438],
+['CHITRADURGA','Molakalmuru','BSP','H. RAMANNA', 950],
+['CHITRADURGA','Molakalmuru','IND','N.R. MALLAIAH SWAMY', 942],
+['CHITRADURGA','Molakalmuru','IND','H. THIMMAIAH', 899],
+['CHITRADURGA','Molakalmuru','IND','D.T. SRINIVASA NAYAKA', 797],
+['CHITRADURGA','Molakalmuru','JD(U)','G.S. BASANNA', 557],
+['CHITRADURGA','Molakalmuru','IND','S.CHANDRANNA', 542],
+['CHITRADURGA','Molakalmuru','IND','D. BORAYYA', 496],
+['CHITRADURGA','Molakalmuru','IND','D. DODDA BORAIAH', 478],
+['CHITRADURGA','Challakere','INC','T RAGHUMURTHY', 60197],
+['CHITRADURGA','Challakere','KJP','K T KUMARASWAMY', 37074],
+['CHITRADURGA','Challakere','JD(S)','P THIPPESWAMY(P.T)', 27373],
+['CHITRADURGA','Challakere','BJP','G P JAYAPALAIAH', 12981],
+['CHITRADURGA','Challakere','BSRCP','L NAGARAJU(NAGANNA)', 4233],
+['CHITRADURGA','Challakere','IND','B HANUMANTHARAYA', 2568],
+['CHITRADURGA','Challakere','BSP','P PALAIAH', 998],
+['CHITRADURGA','Challakere','SP','DEEPA C', 909],
+['CHITRADURGA','Challakere','IND','LAKSHMIDEVI', 813],
+['CHITRADURGA','Challakere','IND','M PALAIAH', 630],
+['CHITRADURGA','Chitradurga','BJP','G.H.THIPPAREDDY', 62228],
+['CHITRADURGA','Chitradurga','JD(S)','BASAVARAJAN (BASANNA)', 35510],
+['CHITRADURGA','Chitradurga','INC','G.S.MANJUNATHA', 30729],
+['CHITRADURGA','Chitradurga','BSRCP','FAYAZUDDIN. K.S.', 23382],
+['CHITRADURGA','Chitradurga','KJP','A.V. UMAPATHI', 3791],
+['CHITRADURGA','Chitradurga','IND','SATHISH', 1993],
+['CHITRADURGA','Chitradurga','IND','C.K.REHAMAN @ CHAND', 1077],
+['CHITRADURGA','Chitradurga','BSP','G.R.PANDURANGA', 796],
+['CHITRADURGA','Chitradurga','IND','GANESHA', 698],
+['CHITRADURGA','Chitradurga','IND','N. SURESH', 657],
+['CHITRADURGA','Chitradurga','RCMP','ISHRATH JAHAN', 513],
+['CHITRADURGA','Chitradurga','NPP','K.S. BASAVARAJA', 418],
+['CHITRADURGA','Chitradurga','PPOI','K.S. MALLIKARJUNA SHETTY', 355],
+['CHITRADURGA','Chitradurga','IND','A. KESHAVAMURTHY', 282],
+['CHITRADURGA','Chitradurga','IND','S. MRUTHYUNJAYAPPA', 273],
+['CHITRADURGA','Chitradurga','JD(U)','H.S. YASHODAMMA', 254],
+['CHITRADURGA','Chitradurga','SP','MAMATHA. K.B.', 208],
+['CHITRADURGA','Chitradurga','IND','ASLAM BASHA', 201],
+['CHITRADURGA','Hiriyur','INC','D.SUDHAKAR', 71661],
+['CHITRADURGA','Hiriyur','JD(S)','A.KRISHNAPPA', 70456],
+['CHITRADURGA','Hiriyur','BSRCP','M.JAYANNA', 6965],
+['CHITRADURGA','Hiriyur','BJP','S.SIDDESH YADAV', 2880],
+['CHITRADURGA','Hiriyur','KJP','M.THIPPESWAMY', 2570],
+['CHITRADURGA','Hiriyur','IND','C.NATARAJA', 1418],
+['CHITRADURGA','Hiriyur','IND','B.T.SHANTHANNA', 1024],
+['CHITRADURGA','Hiriyur','BSP','S.H.KANTHARAJ HULI', 1008],
+['CHITRADURGA','Hiriyur','IND','LAKSHMINARASIMHASWAMY.C.K', 524],
+['CHITRADURGA','Hiriyur','IND','RASHEED UNNISA', 415],
+['CHITRADURGA','Hiriyur','JD(U)','RANGASWAMY', 356],
+['CHITRADURGA','Hiriyur','IND','A.ZAKEER HUSSAIN', 314],
+['CHITRADURGA','Hiriyur','IND','K.V.RAGHU', 288],
+['CHITRADURGA','Hiriyur','IND','M.Y.T. MUNEER.', 275],
+['CHITRADURGA','Hiriyur','SP','R.MOHAN KUMAR YADAV', 243],
+['CHITRADURGA','Hosadurga','INC','B.G. GOVINDAPPA', 58010],
+['CHITRADURGA','Hosadurga','IND','GULIHATTI D. SHEKAR', 37993],
+['CHITRADURGA','Hosadurga','KJP','S. LINGAMURTHY', 37717],
+['CHITRADURGA','Hosadurga','BJP','M. LAKSHMANA', 1866],
+['CHITRADURGA','Hosadurga','IND','K. SHIVANNA', 1190],
+['CHITRADURGA','Hosadurga','BSP','THIMMAPPA K.', 828],
+['CHITRADURGA','Hosadurga','SP','A. CHITTAPPA YADAV', 616],
+['CHITRADURGA','Hosadurga','JD(S)','SUDHABAI MALLESHNAIKA', 615],
+['CHITRADURGA','Hosadurga','JD(U)','SYED ISMAIL', 448],
+['CHITRADURGA','Hosadurga','BSRCP','G. GOVINADARAJU', 406],
+['CHITRADURGA','Hosadurga','IND','K. CHANDRAPPA', 314],
+['CHITRADURGA','Holalkere','INC','H. ANJANEYA', 76856],
+['CHITRADURGA','Holalkere','KJP','M. CHANDRAPPA', 63992],
+['CHITRADURGA','Holalkere','BJP','DEVENDRANAIK H.R.', 7595],
+['CHITRADURGA','Holalkere','JD(S)','K.E.B. MAHADEVAPPA', 3091],
+['CHITRADURGA','Holalkere','BSRCP','H. SRINIVASA', 2912],
+['CHITRADURGA','Holalkere','IND','CHANDRAPPA', 2264],
+['CHITRADURGA','Holalkere','IND','G. SHANTHAPPA', 1591],
+['CHITRADURGA','Holalkere','ANC','T. BASAVARAJAPPA', 1194],
+['CHITRADURGA','Holalkere','IND','CHANDRAPPA B.S.', 670],
+['CHITRADURGA','Holalkere','BSP','G. N. PARAMESH', 620],
+['CHITRADURGA','Holalkere','IND','K.G. ANANTHAMURTHYNAIK', 544],
+['CHITRADURGA','Holalkere','KMP','YOGAMURTHYNAIK R.', 488],
+['CHITRADURGA','Holalkere','IND','V. RAMESH HONNAKALUVE', 393],
+['CHITRADURGA','Holalkere','SP','M. G. SATISHA', 299],
+['CHITRADURGA','Holalkere','NPP','GULIHATTI D. RUDRESH', 246],
+['CHITRADURGA','Holalkere','JD(U)','M. H. SHASHIDHARA', 224],
+
+
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

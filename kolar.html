@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+['KOLAR','Srinivaspur','INC','K.R.RAMESHKUMAR', 83426],
+['KOLAR','Srinivaspur','JD(S)','G.K.VENKATASHIVAREDDY', 79533],
+['KOLAR','Srinivaspur','BJP','V.VENKATEGOWDA', 2379],
+['KOLAR','Srinivaspur','IND','K.S.MALLIKARJUNA', 1005],
+['KOLAR','Srinivaspur','BSP','K.P.NAGARAJA', 756],
+['KOLAR','Srinivaspur','IND','P.C.VENKATASHIVAREDDY', 554],
+['KOLAR','Srinivaspur','BSRCP','M.HARISH', 434],
+['KOLAR','Srinivaspur','JD(U)','V.SRIRAMA', 303],
+['KOLAR','Srinivaspur','KJP','S.V.VENKATACHALAPATHI', 266],
+['KOLAR','Srinivaspur','SAJP','NAYAZ AHMED', 219],
+['KOLAR','Mulbagal','IND','G.MANJUNATHA', 73146],
+['KOLAR','Mulbagal','JD(S)','N. MUNIANJAPPA', 39412],
+['KOLAR','Mulbagal','INC','AMARESH', 11491],
+['KOLAR','Mulbagal','CPI','M.N. AMBARISH', 2450],
+['KOLAR','Mulbagal','BJP','Y. SREENIVASAN PATAPAT', 2376],
+['KOLAR','Mulbagal','IND','V.ADINARAYANA', 1547],
+['KOLAR','Mulbagal','IND','D. VENKATARAVANAPPA', 1289],
+['KOLAR','Mulbagal','IND','G. VENKATARAVANA', 1019],
+['KOLAR','Mulbagal','IND','G. ALANGURU RAMANNA', 1008],
+['KOLAR','Mulbagal','IND','V. NAGARAJ', 774],
+['KOLAR','Mulbagal','IND','V. MARAPPA', 707],
+['KOLAR','Mulbagal','KJP','DODDACHOWDAPPA', 550],
+['KOLAR','Mulbagal','IND','T.M. SHIVANNA', 513],
+['KOLAR','Mulbagal','IND','V. SRINIVASA', 442],
+['KOLAR','Mulbagal','BSRCP','C.K. JAGADISH', 356],
+['KOLAR','Mulbagal','SAJP','P.CHANDRAPPA', 286],
+['KOLAR','Mulbagal','RPI(A)','C. RAMAKRISHNAIAH', 268],
+['KOLAR','Mulbagal','IND','CHALAPATHI', 237],
+['KOLAR','Mulbagal','IND','T.V. BALAKRISHNA', 225],
+['KOLAR','Mulbagal','JD(U)','H.A. LAKSHMAIAH', 207],
+['KOLAR','Mulbagal','IND','N. SRINIVAS', 206],
+['KOLAR','Mulbagal','SKP','RANJITH KUMAR. T.', 191],
+['KOLAR','Kolar gold field','BJP','RAMAKKA .Y', 55014],
+['KOLAR','Kolar gold field','JD(S)','M. BACKTHAVACHALAM', 28992],
+['KOLAR','Kolar gold field','INC','V. SHANKAR', 10218],
+['KOLAR','Kolar gold field','RPI','S. RAJENDIRAN', 9760],
+['KOLAR','Kolar gold field','HJP','V. KALAVATHY', 2501],
+['KOLAR','Kolar gold field','CPM','P. THANGARAJ', 2199],
+['KOLAR','Kolar gold field','ADMK','M. ANBU', 2052],
+['KOLAR','Kolar gold field','IND','RAMAKKA', 951],
+['KOLAR','Kolar gold field','RPI(A)','M. VENKATASWAMY', 832],
+['KOLAR','Kolar gold field','IND','G. LALITHA', 795],
+['KOLAR','Kolar gold field','KJP','R. BHASKARAN', 606],
+['KOLAR','Kolar gold field','BSRCP','V. RAJAPPA', 505],
+['KOLAR','Kolar gold field','BSP','K.R. DEVARAJA', 445],
+['KOLAR','Kolar gold field','BRPP','L.RANGANATH', 430],
+['KOLAR','Kolar gold field','IND','A.KANTHARUBHAN', 382],
+['KOLAR','Kolar gold field','IND','A. SAMPANGI', 374],
+['KOLAR','Kolar gold field','IND','J. SHARMA', 365],
+['KOLAR','Kolar gold field','IND','S. MURALI', 269],
+['KOLAR','Kolar gold field','SAJP','RAMACHANDRAPPA', 251],
+['KOLAR','Kolar gold field','SP','SHIVAKUMAR .M', 183],
+['KOLAR','Kolar gold field','IND','ANBELAGAN', 128],
+['KOLAR','Kolar gold field','IND','RAVI. Y', 122],
+['KOLAR','Bangarapet','INC','S.N.NARAYANASWAMY.K.M', 71570],
+['KOLAR','Bangarapet','BJP','EM NARAYANASWAMY', 43193],
+['KOLAR','Bangarapet','JD(S)','RAMACHANDRA', 22863],
+['KOLAR','Bangarapet','KJP','SHESHU.V', 1242],
+['KOLAR','Bangarapet','IND','SRINIVAS', 850],
+['KOLAR','Bangarapet','LJP','MANJUNATHA J.K', 470],
+['KOLAR','Bangarapet','IND','SRINATH.R.N', 354],
+['KOLAR','Bangarapet','BSRCP','VENKATESH.M. KALAVANCHI', 280],
+['KOLAR','Bangarapet','IND','P.M RAMESHA', 236],
+['KOLAR','Bangarapet','SAJP','K.V SAMPATH KUMAR', 179],
+['KOLAR','Bangarapet','IND','NAGENDRA.C', 175],
+['KOLAR','Bangarapet','SP','K.V SUDARSHAN', 173],
+['KOLAR','Bangarapet','IND','MANJUNATHA.V', 146],
+['KOLAR','Bangarapet','IND','Y.R.PRATHIBHA', 127],
+['KOLAR','Kolar','IND','R. VATHUR PRAKASH', 62957],
+['KOLAR','Kolar','JD(S)','K. SRINIVASA GOWDA', 50366],
+['KOLAR','Kolar','INC','NASEER AHMED', 41510],
+['KOLAR','Kolar','BJP','M.S. ANAND', 1617],
+['KOLAR','Kolar','IND','K.S. SRINIVASAGOWDA', 1147],
+['KOLAR','Kolar','IND','S. MUNIYAPPA', 1056],
+['KOLAR','Kolar','KJP','ABDUL REHAMAN', 1041],
+['KOLAR','Kolar','IND','G. NARAYANAGOWDA', 678],
+['KOLAR','Kolar','IND','SUHAIL DIL NAWAZ', 663],
+['KOLAR','Kolar','IND','N. PRAKASH ALIAS BEGLI PRAKASH', 504],
+['KOLAR','Kolar','IND','SRINIVASA', 474],
+['KOLAR','Kolar','SP','MAHAR PASHA', 359],
+['KOLAR','Kolar','JD(U)','C. THAMMAPPA', 298],
+['KOLAR','Kolar','IND','S. NAGA SHEKAR', 292],
+['KOLAR','Kolar','LSP','C.G. MURALI', 203],
+['KOLAR','Kolar','SAJP','M.S.NARAYANASWAMY', 168],
+['KOLAR','Kolar','IND','AMJAD PASHA', 147],
+['KOLAR','Malur','JD(S)','K.S. MANJUNATHGOWDA', 57645],
+['KOLAR','Malur','IND','KRISSHNAIAH SETTY ES.EN. MALURU', 38876],
+['KOLAR','Malur','INC','CHANNA KESHAVA', 20159],
+['KOLAR','Malur','IND','RAMEGOWDA .G.E', 19480],
+['KOLAR','Malur','IND','S.R.KRISHNAIAH SHETTY', 1283],
+['KOLAR','Malur','IND','KRISHNAIAH SHETTY. H.M.', 898],
+['KOLAR','Malur','BSP','RAVIKUMAR', 838],
+['KOLAR','Malur','IND','MANJUNATH', 803],
+['KOLAR','Malur','IND','MANJUNATHAGOWDA', 774],
+['KOLAR','Malur','IND','K.R. RUDRAPPA', 718],
+['KOLAR','Malur','LJP','M.R.VIJAYKUMAR', 449],
+['KOLAR','Malur','KJP','NARAYANASWAMY', 354],
+['KOLAR','Malur','IND','B.V.NAGESH', 332],
+['KOLAR','Malur','BSRCP','K.JAYALAKSHAMI JAYARAM', 265],
+['KOLAR','Malur','SAJP','M.P.AMARESH', 247],
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

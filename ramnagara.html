@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+		['RAMANAGARAM','Magadi','JD(S)','H.C.BALAKRISHNA', 74821],
+['RAMANAGARAM','Magadi','INC','A.MANJUNATH', 60462],
+['RAMANAGARAM','Magadi','KJP','H.M.KIRSHNAMURTHY', 27143],
+['RAMANAGARAM','Magadi','BJP','C.K.JAGADISH PRASAD', 1604],
+['RAMANAGARAM','Magadi','BDBRAJP','A.G.KRISHNAMURTHY', 1228],
+['RAMANAGARAM','Magadi','IND','M.T.RAVIKUMAR', 1069],
+['RAMANAGARAM','Magadi','IND','V.RAJASHEKSHAR', 869],
+['RAMANAGARAM','Magadi','BSP','JAFFER PASHA', 515],
+['RAMANAGARAM','Magadi','JD(U)','K.RAMESHA', 434],
+['RAMANAGARAM','Magadi','IND','T.HOMBEGOWDA', 392],
+['RAMANAGARAM','Magadi','IND','T.M.GANGAIAH', 297],
+['RAMANAGARAM','Magadi','IND','BALAKRISHNA', 288],
+['RAMANAGARAM','Magadi','IND','N.MANJUNATH', 274],
+['RAMANAGARAM','Magadi','IND','H.L.BALAKRISHNA', 268],
+['RAMANAGARAM','Magadi','IND','R.RANGASWAMI', 217],
+['RAMANAGARAM','Magadi','IND','MAHAMAD APSAR PASHA', 185],
+['RAMANAGARAM','Ramanagaram','JD(S)','H D KUMARA SWAMY', 83447],
+['RAMANAGARAM','Ramanagaram','INC','MARIDEVARU', 58049],
+['RAMANAGARAM','Ramanagaram','BJP','SHIVAMADHU', 1776],
+['RAMANAGARAM','Ramanagaram','SDPI','FAIROZ ALI KHAN', 1368],
+['RAMANAGARAM','Ramanagaram','IND','G P SHANKAREGOWDA', 1140],
+['RAMANAGARAM','Ramanagaram','IND','RAVIKUMAR', 1067],
+['RAMANAGARAM','Ramanagaram','KJP','S R NAGARAJU', 468],
+['RAMANAGARAM','Ramanagaram','IND','MARIDEVARU', 430],
+['RAMANAGARAM','Ramanagaram','BDBRAJP','S. JAYARAM', 302],
+['RAMANAGARAM','Ramanagaram','IND','M.P.MUNAVAR  SHARIF', 227],
+['RAMANAGARAM','Ramanagaram','IND','PUTTASWAMACHARI', 217],
+['RAMANAGARAM','Ramanagaram','BSRCP','H S THEERTHA PRASAD', 214],
+['RAMANAGARAM','Kanakapura','INC','D.K. SHIVAKUMAR', 100007],
+['RAMANAGARAM','Kanakapura','JD(S)','P.G.R SINDHIA', 68583],
+['RAMANAGARAM','Kanakapura','BJP','B.NAGARAJU', 1807],
+['RAMANAGARAM','Kanakapura','BSP','MALLIKARJUNAIAH', 1345],
+['RAMANAGARAM','Kanakapura','BDBRAJP','KALAIAH', 1178],
+['RAMANAGARAM','Kanakapura','IND','SHIVARENUKA', 699],
+['RAMANAGARAM','Kanakapura','IND','K.V. VISHWANATH', 638],
+['RAMANAGARAM','Kanakapura','BSRCP','M.GOVINDARAJU', 453],
+['RAMANAGARAM','Kanakapura','IND','RAMESH D.C', 422],
+['RAMANAGARAM','Kanakapura','KJP','M.MADHU', 357],
+['RAMANAGARAM','Kanakapura','IND','RAMESH', 280],
+['RAMANAGARAM','Kanakapura','IND','K. PUTTA MADEGOWDA', 211],
+['RAMANAGARAM','Kanakapura','IND','J. NATARAJU', 171],
+['RAMANAGARAM','Channapatna','SP','C P YOGESHWARA', 80099],
+['RAMANAGARAM','Channapatna','JD(S)','ANITHA KUMARASWAMY', 73635],
+['RAMANAGARAM','Channapatna','INC','SADATH ALLI KHAN', 8134],
+['RAMANAGARAM','Channapatna','BJP','RAVIKUMAR GOWDA', 1609],
+['RAMANAGARAM','Channapatna','IND','SYED ZULFIKAR MEHDI', 989],
+['RAMANAGARAM','Channapatna','JD(U)','M C V MURTHY', 866],
+['RAMANAGARAM','Channapatna','BSP','V.S.SUJEEVAN KUMAR', 726],
+['RAMANAGARAM','Channapatna','BDBRAJP','SHIVARUDRAIAH', 624],
+['RAMANAGARAM','Channapatna','IND','SUVARNA', 379],
+['RAMANAGARAM','Channapatna','KJP','B NAGARAJ', 373],
+['RAMANAGARAM','Channapatna','IND','M.YOGESH', 290],
+['RAMANAGARAM','Channapatna','ANC','MUZAMIL PASHA', 284],
+['RAMANAGARAM','Channapatna','IND','JAI KISAN S. R', 186],
+['RAMANAGARAM','Channapatna','IND','J.T.PRAKASH', 165],
+['RAMANAGARAM','Channapatna','HJP','ASHRAF', 152],
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','INC','MUNIRATHNA', 71064],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','JD(S)','K.L.R.THIMMANANJAIAH', 52251],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','BJP','M.SRINIVAS', 50726],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','KJP','K.R.VENKATESH GOWDA', 5419],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','JD(U)','DR. PRIYADHARSHINI  IYER. S.V', 1885],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','BSP','GURUMURTHY', 994],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','IND','PRANESH.H.K', 992],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','IND','MANJUNATHA.M', 928],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','IND','SRINIVASA MURTHY', 787],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','IND','MANJU.V.K', 781],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','BSRCP','DR.SANGAMNATH.C.NIDGUNDI', 719],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','IND','V.NARAYANA', 583],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','BDBRAJP','ARUN KUMAR.T.R', 580],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','IND','NAGARAJAPPA.H', 538],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','IND','MARTIN CLIFFORD RODRIGUES', 400],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','IND','INR GOWDA NANDISH', 296],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','KDC','K.A.MOHAN', 294],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','BhJD','SADASHIVA.A.H', 270],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','RPI(A)','NARSINGH PATEL', 260],
+['B.B.M.P(CENTRAL)','Rajarajeshwarinagar','PPIS','P.THENNARASU', 231],
+['B.B.M.P(CENTRAL)','Shivajinagar','INC','R.ROSHAN BAIG', 49649],
+['B.B.M.P(CENTRAL)','Shivajinagar','BJP','NIRMAL SURANA', 28794],
+['B.B.M.P(CENTRAL)','Shivajinagar','JD(S)','ABBAS ALI BOHRA', 5983],
+['B.B.M.P(CENTRAL)','Shivajinagar','KJP','I.R.PERUMAL', 2869],
+['B.B.M.P(CENTRAL)','Shivajinagar','BSP','SHAIK BAHADUR', 581],
+['B.B.M.P(CENTRAL)','Shivajinagar','IND','SHANAWAZ AHMED', 517],
+['B.B.M.P(CENTRAL)','Shivajinagar','IND','M.VISHWANATH', 416],
+['B.B.M.P(CENTRAL)','Shivajinagar','IND','DYANIYAL SANNI', 265],
+['B.B.M.P(CENTRAL)','Shivajinagar','IND','MUKTHAR ALI KHAN', 260],
+['B.B.M.P(CENTRAL)','Shivajinagar','IND','M.MAHADEVA', 259],
+['B.B.M.P(CENTRAL)','Shivajinagar','BSRCP','DR. ASHOK KUMAR XAVIER', 240],
+['B.B.M.P(CENTRAL)','Shivajinagar','JD(U)','RIZWAN ASAD', 177],
+['B.B.M.P(CENTRAL)','Shivajinagar','SAJP','SYED SALEEM', 172],
+['B.B.M.P(CENTRAL)','Shivajinagar','IND','AMEEN ULLA KHAN', 149],
+['B.B.M.P(CENTRAL)','Shivajinagar','IND','K.NARASIMHAN', 134],
+['B.B.M.P(CENTRAL)','Shivajinagar','IND','PRASHANTH.V', 127],
+['B.B.M.P(CENTRAL)','Shivajinagar','NPP','S.K.SUHAIL', 119],
+['B.B.M.P(CENTRAL)','Shivajinagar','IND','G.R.BALAJI', 114],
+['B.B.M.P(CENTRAL)','Shivajinagar','IND','M.PRAKASH', 70],
+['B.B.M.P(CENTRAL)','Shanti Nagar','INC','N.A.HARIS', 54342],
+['B.B.M.P(CENTRAL)','Shanti Nagar','JD(S)','K. VASUDEVA MURTHY', 34155],
+['B.B.M.P(CENTRAL)','Shanti Nagar','BJP','D. VENKATESHMURTHY', 10930],
+['B.B.M.P(CENTRAL)','Shanti Nagar','KJP','R.V. RAMESH YADAV', 911],
+['B.B.M.P(CENTRAL)','Shanti Nagar','NPP','PRABHU BOSCO', 873],
+['B.B.M.P(CENTRAL)','Shanti Nagar','IND','SYED ASLAM', 652],
+['B.B.M.P(CENTRAL)','Shanti Nagar','BSP','N. SHASHIDHAR', 388],
+['B.B.M.P(CENTRAL)','Shanti Nagar','IND','ANTHONY A. SANTHOSH', 322],
+['B.B.M.P(CENTRAL)','Shanti Nagar','IND','BHANU PRAKASH .K', 195],
+['B.B.M.P(CENTRAL)','Shanti Nagar','IND','M. RUBEN BENJAMIN', 187],
+['B.B.M.P(CENTRAL)','Shanti Nagar','IND','K. RAJENDRA', 160],
+['B.B.M.P(CENTRAL)','Shanti Nagar','IND','S. SURESH BABU', 141],
+['B.B.M.P(CENTRAL)','Shanti Nagar','JD(U)','HARINATH V.E', 137],
+['B.B.M.P(CENTRAL)','Shanti Nagar','IND','A.S. RAJAN', 131],
+['B.B.M.P(CENTRAL)','Shanti Nagar','IND','PURUSOTHAMAN D.R.', 86],
+['B.B.M.P(CENTRAL)','Gandhi Nagar','INC','DINESH GUNDU RAO', 54968],
+['B.B.M.P(CENTRAL)','Gandhi Nagar','BJP','P C MOHAN', 32361],
+['B.B.M.P(CENTRAL)','Gandhi Nagar','BSRCP','V.NAGARAJ', 10875],
+['B.B.M.P(CENTRAL)','Gandhi Nagar','JD(S)','SUBHASH BHARANI', 7418],
+['B.B.M.P(CENTRAL)','Gandhi Nagar','ADMK','V A PUGAZHENDI', 3197],
+['B.B.M.P(CENTRAL)','Gandhi Nagar','IND','B.R.RAVI REDDY', 454],
+['B.B.M.P(CENTRAL)','Gandhi Nagar','BSP','SOWMYA', 441],
+['B.B.M.P(CENTRAL)','Gandhi Nagar','SP','NARENDRA JAIN', 282],
+['B.B.M.P(CENTRAL)','Gandhi Nagar','IND','MOHAN KUMAR', 216],
+['B.B.M.P(CENTRAL)','Gandhi Nagar','IND','V M MARIYAPPA', 162],
+['B.B.M.P(CENTRAL)','Gandhi Nagar','IND','MURTHY R', 143],
+['B.B.M.P(CENTRAL)','Gandhi Nagar','JD(U)','M ANANDAN', 115],
+['B.B.M.P(CENTRAL)','Gandhi Nagar','NPP','K PRASANNA', 113],
+['B.B.M.P(CENTRAL)','Gandhi Nagar','IND','GHOUSE MOHIDDEN', 83],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','BJP','S.SURESH KUMAR', 39291],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','INC','R.MANJULA NAIDU', 24524],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','KJP','SHOBHA KARANDLAJE', 20909],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','JD(S)','S.T ANAND', 16794],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','ADMK','MUNISWAMY.K', 1660],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','LSP','RUPA RANI', 880],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','BSRCP','R.HARISHARADHYA', 457],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','BhJD','S.SHOBHA', 385],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','BSP','SOUNDARYAG', 313],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','IND','SHOBHA', 309],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','IND','KESHAV S.HIMALAI', 291],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','IND','R.B SHIVAKUMAR', 259],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','NCP','VISHWANATH.G.P', 253],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','IND','DHANANJAYA.H.H', 187],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','IND','PRASHANTH.S.M', 185],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','IND','RAKSHITH.M', 183],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','SUCI','PRATHIBHA KUMARI.B.S', 182],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','IND','NAGARAJA.H.N', 140],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','BPJP','S.ANITHA GOWDA', 116],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','PPOI','SHARANA GOUD.B', 105],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','JVBP','K.V. SRINIVASAPPA', 96],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','IND','VIJAY KUMAR M K', 85],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','JD(U)','K.T NAGABHUSHAN', 76],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','NPP','LAKSHMANA SHETRU.H', 70],
+['B.B.M.P(CENTRAL)','Rajaji Nagar','IND','P.K PATIL', 52],
+['B.B.M.P(CENTRAL)','Chamrajpet','JD(S)','B.Z.ZAMEER AHMED KHAN', 56339],
+['B.B.M.P(CENTRAL)','Chamrajpet','INC','G.A.BAVA', 26177],
+['B.B.M.P(CENTRAL)','Chamrajpet','BJP','B.V.GANESH', 17720],
+['B.B.M.P(CENTRAL)','Chamrajpet','SDP','USMAN BAIG', 2942],
+['B.B.M.P(CENTRAL)','Chamrajpet','IND','SUBRAMANI.T', 917],
+['B.B.M.P(CENTRAL)','Chamrajpet','KJP','SHAHTAJ KHANAM', 638],
+['B.B.M.P(CENTRAL)','Chamrajpet','IND','M.SHIVA KUMAR', 458],
+['B.B.M.P(CENTRAL)','Chamrajpet','IND','C.B.K. RAMA', 388],
+['B.B.M.P(CENTRAL)','Chamrajpet','IND','ANNAPPA.K', 330],
+['B.B.M.P(CENTRAL)','Chamrajpet','IND','K.MANI', 320],
+['B.B.M.P(CENTRAL)','Chamrajpet','IND','SYED KHADEER', 280],
+['B.B.M.P(CENTRAL)','Chamrajpet','IND','B.V.GANESH', 250],
+['B.B.M.P(CENTRAL)','Chamrajpet','IND','S.N.HARISH NARAYAN', 209],
+['B.B.M.P(CENTRAL)','Chamrajpet','JD(U)','B.S.GOWDA', 161],
+['B.B.M.P(CENTRAL)','Chamrajpet','NPP','SYED ASLAM', 135],
+['B.B.M.P(CENTRAL)','Chamrajpet','IND','AMJAD KHAN', 110],
+['B.B.M.P(CENTRAL)','Chamrajpet','IND','ASIF PASHA', 101],
+['B.B.M.P(CENTRAL)','Chamrajpet','IND','C.B.ABDUL SAB', 79],
+['B.B.M.P(CENTRAL)','Chamrajpet','IND','B.K.ASLAM KHAN', 65],
+['B.B.M.P(CENTRAL)','Chamrajpet','IND','ASGAR-A-MAHEEN.S.M', 60],
+['B.B.M.P(CENTRAL)','Chickpet','INC','R.V. DEVRAJ', 44714],
+['B.B.M.P(CENTRAL)','Chickpet','BJP','UDAY.B.GARUDACHAR', 31655],
+['B.B.M.P(CENTRAL)','Chickpet','JD(S)','M.C. NARAYANA GOWDA', 24382],
+['B.B.M.P(CENTRAL)','Chickpet','SDPI','MUJAHID PASHA.A', 4821],
+['B.B.M.P(CENTRAL)','Chickpet','KJP','KHAMAR TAJ', 953],
+['B.B.M.P(CENTRAL)','Chickpet','IND','M.K. SHANMUGARAJ', 454],
+['B.B.M.P(CENTRAL)','Chickpet','IND','R. NAGARAJA', 396],
+['B.B.M.P(CENTRAL)','Chickpet','IND','S. PADMANABHA', 327],
+['B.B.M.P(CENTRAL)','Chickpet','IND','K. RAVICHANDRA RAO', 258],
+['B.B.M.P(CENTRAL)','Chickpet','IND','R. VASANTH KUMAR', 235],
+['B.B.M.P(CENTRAL)','Chickpet','IND','K.S. BABU', 139],
+['B.B.M.P(CENTRAL)','Chickpet','IND','AMBROSE DMELLO', 133],
+['B.B.M.P(CENTRAL)','Chickpet','IND','ABDUL ALEEM TURABI', 113],
+['B.B.M.P(CENTRAL)','Chickpet','IND','ASGAR A MAHEEN.S.M', 89],
+['B.B.M.P(CENTRAL)','Chickpet','IND','KURAM PASHA', 74],
+['B.B.M.P(CENTRAL)','Chickpet','IND','M. ADHI MULAM', 71],
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

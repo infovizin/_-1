@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+
+['B.B.M.P(NORTH)','K.r.pura','INC','B.A.BASAVARAJA', 106299],
+['B.B.M.P(NORTH)','K.r.pura','BJP','N.S.NANDIESHA REDDY', 82298],
+['B.B.M.P(NORTH)','K.r.pura','JD(S)','RAVI PRAKASH. J', 3955],
+['B.B.M.P(NORTH)','K.r.pura','CPM','GOWRAMMA', 1553],
+['B.B.M.P(NORTH)','K.r.pura','IND','NANDEESHAPPA NAYAKA', 781],
+['B.B.M.P(NORTH)','K.r.pura','IND','R. PAPAIAH REDDY', 776],
+['B.B.M.P(NORTH)','K.r.pura','KJP','R. SATHYA NARAYANA', 583],
+['B.B.M.P(NORTH)','K.r.pura','IND','N. BASAVARAJ', 450],
+['B.B.M.P(NORTH)','K.r.pura','BSP','SRINIVAS N.', 382],
+['B.B.M.P(NORTH)','K.r.pura','IND','C. DEVARAJ', 348],
+['B.B.M.P(NORTH)','K.r.pura','IND','DHANANJAYA GOWDA', 298],
+['B.B.M.P(NORTH)','K.r.pura','JD(U)','ANUPAMA.M.L', 271],
+['B.B.M.P(NORTH)','K.r.pura','IND','FARMAN BASHA', 250],
+['B.B.M.P(NORTH)','K.r.pura','BSRCP','PAIROSA PASHA', 225],
+['B.B.M.P(NORTH)','K.r.pura','IND','HARMAN ROBIN SALDANA', 220],
+['B.B.M.P(NORTH)','K.r.pura','IND','S. CHANDRAKALA', 205],
+['B.B.M.P(NORTH)','K.r.pura','IND','P.UMESHA', 198],
+['B.B.M.P(NORTH)','K.r.pura','IND','GANGADHARA R.', 193],
+['B.B.M.P(NORTH)','K.r.pura','CPI(ML)(L)','P.P.APPANNA', 155],
+['B.B.M.P(NORTH)','K.r.pura','IND','K. SATHYANARAYANA', 137],
+['B.B.M.P(NORTH)','K.r.pura','IND','N. KODANDA REDDY', 130],
+['B.B.M.P(NORTH)','K.r.pura','IND','KESHAV S. HIMALAI', 128],
+['B.B.M.P(NORTH)','K.r.pura','IND','AYUB PASHA', 102],
+['B.B.M.P(NORTH)','K.r.pura','IND','SARALA BAI', 97],
+['B.B.M.P(NORTH)','K.r.pura','IND','SRINIVAS', 84],
+['B.B.M.P(NORTH)','K.r.pura','IND','M. RAMAKRISHNA', 66],
+
+['B.B.M.P(NORTH)','Mahalakshmi Layout','JD(S)','GOPALAIAH .K.', 66127],
+['B.B.M.P(NORTH)','Mahalakshmi Layout','INC','N.L. NARENDRABABU', 50757],
+['B.B.M.P(NORTH)','Mahalakshmi Layout','BJP','S. HARISH', 23545],
+['B.B.M.P(NORTH)','Mahalakshmi Layout','KJP','VEERESH KUMAR .T', 2936],
+['B.B.M.P(NORTH)','Mahalakshmi Layout','LSP','RAJSHREE MURALIDHAR', 1168],
+['B.B.M.P(NORTH)','Mahalakshmi Layout','IND','K.N. SRIDHAR', 967],
+['B.B.M.P(NORTH)','Mahalakshmi Layout','BSP','LOKESH .L.', 669],
+['B.B.M.P(NORTH)','Mahalakshmi Layout','BSRCP','KRISHNA MURTHY', 628],
+['B.B.M.P(NORTH)','Mahalakshmi Layout','IND','VARALAKSHMI', 327],
+['B.B.M.P(NORTH)','Mahalakshmi Layout','IND','C. INDRANI', 205],
+['B.B.M.P(NORTH)','Mahalakshmi Layout','IND','A. RAJA', 167],
+['B.B.M.P(NORTH)','Mahalakshmi Layout','IND','P.K. PATIL', 134],
+['B.B.M.P(NORTH)','Mahalakshmi Layout','IND','MANOHAR .H. AYYANNAVAR', 133],
+['B.B.M.P(NORTH)','Mahalakshmi Layout','IND','DHANANJAYA .R', 86],
+['B.B.M.P(NORTH)','Malleshwaram','BJP','DR. ASHWATH NARAYAN C. N.', 57609],
+['B.B.M.P(NORTH)','Malleshwaram','INC','B. K. SHIVARAM.', 36543],
+['B.B.M.P(NORTH)','Malleshwaram','LSP','DR. MEENAKSHI BHARATH', 7610],
+['B.B.M.P(NORTH)','Malleshwaram','JD(S)','SHWETHA .S', 2827],
+['B.B.M.P(NORTH)','Malleshwaram','KJP','KUMAR .N.', 1910],
+['B.B.M.P(NORTH)','Malleshwaram','IND','S.  SATHYAPRAKASH', 319],
+['B.B.M.P(NORTH)','Malleshwaram','BSP','ESHWARA. H. A', 273],
+['B.B.M.P(NORTH)','Malleshwaram','WPOI','B. T. LALITHA NAIK', 236],
+['B.B.M.P(NORTH)','Malleshwaram','IND','VISHWANAT BHAGAWAT', 190],
+['B.B.M.P(NORTH)','Malleshwaram','BSRCP','MANJUNATH. G (GOWDA)', 183],
+['B.B.M.P(NORTH)','Malleshwaram','SUCI','M. S. PRAKASH', 153],
+['B.B.M.P(NORTH)','Malleshwaram','IND','B. LINGE GOWDA', 125],
+['B.B.M.P(NORTH)','Malleshwaram','IND','H. GIRISH', 95],
+['B.B.M.P(NORTH)','Malleshwaram','IND','N. S. SHIVANNA', 93],
+['B.B.M.P(NORTH)','Malleshwaram','IND','RAJESH. P.', 71],
+['B.B.M.P(NORTH)','Malleshwaram','HND','PRABHAKAR', 62],
+['B.B.M.P(NORTH)','Hebbal','BJP','R. JAGADEESH KUMAR', 38162],
+['B.B.M.P(NORTH)','Hebbal','INC','C.K. ABDUL RAHMAN SHARIEF', 33026],
+['B.B.M.P(NORTH)','Hebbal','JD(S)','ABDUL AZEEM', 25073],
+['B.B.M.P(NORTH)','Hebbal','LSP','SRIDHAR PABBISETTY', 6271],
+['B.B.M.P(NORTH)','Hebbal','KJP','C.MUNIKRISHNA', 5816],
+['B.B.M.P(NORTH)','Hebbal','SDPI','FAKRUDDIN.S', 1473],
+['B.B.M.P(NORTH)','Hebbal','IND','HARISH', 721],
+['B.B.M.P(NORTH)','Hebbal','IND','SHABEER PASHA', 721],
+['B.B.M.P(NORTH)','Hebbal','IND','NAGARAJA SHETTY', 570],
+['B.B.M.P(NORTH)','Hebbal','RCMP','ABDUL BASHEER', 508],
+['B.B.M.P(NORTH)','Hebbal','IND','M.MUNIHANUMAIAH', 477],
+['B.B.M.P(NORTH)','Hebbal','IND','MOHAMMED USMAN SHARIEFF', 335],
+['B.B.M.P(NORTH)','Hebbal','IND','M.MANJUNATH', 281],
+['B.B.M.P(NORTH)','Hebbal','IND','UMA LAKSHMI NARAYAN', 264],
+['B.B.M.P(NORTH)','Hebbal','BPJP','M.VENKATESHA', 246],
+['B.B.M.P(NORTH)','Hebbal','IND','MANJUNATHA.A', 235],
+['B.B.M.P(NORTH)','Hebbal','MPHP','DR.PRABHASHANKAR', 211],
+['B.B.M.P(NORTH)','Hebbal','IND','CHAND PASHA', 191],
+['B.B.M.P(NORTH)','Hebbal','IND','NANDIMANDALAM MADHAVA RAJU', 185],
+['B.B.M.P(NORTH)','Hebbal','IND','SYED MUSTAFA', 183],
+['B.B.M.P(NORTH)','Hebbal','RPI','VINOD.M', 165],
+['B.B.M.P(NORTH)','Hebbal','IND','N.K.RAVIKUMAR', 161],
+['B.B.M.P(NORTH)','Hebbal','IND','R.RAGHU', 152],
+['B.B.M.P(NORTH)','Hebbal','IND','S.K.DHANARAJ', 113],
+['B.B.M.P(NORTH)','Pulakeshinagar','JD(S)','AKHANDA SRINIVAS MURTHY.R', 48995],
+['B.B.M.P(NORTH)','Pulakeshinagar','INC','B.PRASANNA KUMAR', 38796],
+['B.B.M.P(NORTH)','Pulakeshinagar','SDPI','A.HEMALATHA', 5431],
+['B.B.M.P(NORTH)','Pulakeshinagar','BJP','PALANI VELU  K', 4589],
+['B.B.M.P(NORTH)','Pulakeshinagar','IND','M.MURTHY', 684],
+['B.B.M.P(NORTH)','Pulakeshinagar','KJP','SUSHEELA  DEVARAJ', 511],
+['B.B.M.P(NORTH)','Pulakeshinagar','IND','ELUMALAI', 333],
+['B.B.M.P(NORTH)','Pulakeshinagar','RPI(A)','BHAGYA.M', 308],
+['B.B.M.P(NORTH)','Pulakeshinagar','IND','P.M.KRISHNA', 242],
+['B.B.M.P(NORTH)','Pulakeshinagar','ANC','M.RAJA', 167],
+['B.B.M.P(NORTH)','Pulakeshinagar','IND','SUNSTAR.D.JAIRAM', 157],
+['B.B.M.P(NORTH)','Pulakeshinagar','NPP','SUNIL KUMAR  MEGHANATH', 152],
+['B.B.M.P(NORTH)','Pulakeshinagar','IND','C. ERUCHAPPAN', 136],
+['B.B.M.P(NORTH)','Sarvagnanagar','INC','K.J. GEORGE', 69673],
+['B.B.M.P(NORTH)','Sarvagnanagar','BJP','PADMANABHA REDDY', 46820],
+['B.B.M.P(NORTH)','Sarvagnanagar','SDPI','MAHBOOB SHARIFF', 11161],
+['B.B.M.P(NORTH)','Sarvagnanagar','JD(S)','SYED MOHID ALTAF', 7711],
+['B.B.M.P(NORTH)','Sarvagnanagar','KJP','MICHAEL B. FERNANDES', 2223],
+['B.B.M.P(NORTH)','Sarvagnanagar','IND','MODI SAIFULLA', 606],
+['B.B.M.P(NORTH)','Sarvagnanagar','IND','PHILIP M.L', 457],
+['B.B.M.P(NORTH)','Sarvagnanagar','NCP','RAHATH BEE', 376],
+['B.B.M.P(NORTH)','Sarvagnanagar','RCMP','IMRAN SHA', 350],
+['B.B.M.P(NORTH)','Sarvagnanagar','IND','DR.MEER LAYAQ HUSSAIN', 292],
+['B.B.M.P(NORTH)','Sarvagnanagar','JD(U)','REETA. A', 286],
+['B.B.M.P(NORTH)','Sarvagnanagar','NPP','YESU GERARD. P', 269],
+['B.B.M.P(NORTH)','Sarvagnanagar','WPOI','S.M.SHAKIR', 225],
+['B.B.M.P(NORTH)','Sarvagnanagar','ANC','C.KRISHNA MURTHY', 223],
+['B.B.M.P(NORTH)','C.V. Raman Nagar','BJP','S. RAGHU', 53364],
+['B.B.M.P(NORTH)','C.V. Raman Nagar','INC','P. RAMESH', 44945],
+['B.B.M.P(NORTH)','C.V. Raman Nagar','JD(S)','J. HEMALATHA SURESH RAJ', 3174],
+['B.B.M.P(NORTH)','C.V. Raman Nagar','KJP','A. RAVI KUMAR', 1058],
+['B.B.M.P(NORTH)','C.V. Raman Nagar','IND','M. SHIVASHANKAR', 822],
+['B.B.M.P(NORTH)','C.V. Raman Nagar','BSP','B.T. SRINIVAS', 645],
+['B.B.M.P(NORTH)','C.V. Raman Nagar','IND','I. VENKATESH', 573],
+['B.B.M.P(NORTH)','C.V. Raman Nagar','KCVP','N. GOPI', 564],
+['B.B.M.P(NORTH)','C.V. Raman Nagar','JD(U)','NAGENDRA P.', 448],
+['B.B.M.P(NORTH)','C.V. Raman Nagar','IND','I.M.S. MANIVANNAN', 375],
+['B.B.M.P(NORTH)','C.V. Raman Nagar','BSRCP','M.H. CHANDRA SHEKAR', 210],
+
+['B.B.M.P(SOUTH)','Govindraj Nagar','INC','PRIYAKRISHNA', 72654],
+['B.B.M.P(SOUTH)','Govindraj Nagar','BJP','H. RAVINDRA', 30194],
+['B.B.M.P(SOUTH)','Govindraj Nagar','JD(S)','T.M. RANGE GOWDA', 20662],
+['B.B.M.P(SOUTH)','Govindraj Nagar','KJP','P. DODDAIAH', 5227],
+['B.B.M.P(SOUTH)','Govindraj Nagar','IND','HARISH. K', 598],
+['B.B.M.P(SOUTH)','Govindraj Nagar','IND','MAHESH. R', 511],
+['B.B.M.P(SOUTH)','Govindraj Nagar','BSRCP','K. RAJASHEKAR', 499],
+['B.B.M.P(SOUTH)','Govindraj Nagar','IND','RAVINDRA', 324],
+['B.B.M.P(SOUTH)','Govindraj Nagar','SJPA','B.S. VIJAYAKUMAR', 313],
+['B.B.M.P(SOUTH)','Govindraj Nagar','IND','ABHIMANI NARENDRA', 255],
+['B.B.M.P(SOUTH)','Vijay Nagar','INC','M.KRISHNAPPA', 76891],
+['B.B.M.P(SOUTH)','Vijay Nagar','BJP','V.SOMANNA', 44249],
+['B.B.M.P(SOUTH)','Vijay Nagar','JD(S)','B.S. KANYAKUMARI', 4253],
+['B.B.M.P(SOUTH)','Vijay Nagar','KJP','B.S.VAGESH PRASAD', 1791],
+['B.B.M.P(SOUTH)','Vijay Nagar','IND','M.MUKUNDA', 819],
+['B.B.M.P(SOUTH)','Vijay Nagar','LSP','K.S.VANAJAMBA', 778],
+['B.B.M.P(SOUTH)','Vijay Nagar','IND','GANESH SHANBHOGUE', 606],
+['B.B.M.P(SOUTH)','Vijay Nagar','BSP','JAYAKUMAR.C.N', 553],
+['B.B.M.P(SOUTH)','Vijay Nagar','IND','M. KRISHNAPPA', 343],
+['B.B.M.P(SOUTH)','Vijay Nagar','IND','R.RAMESH', 328],
+['B.B.M.P(SOUTH)','Vijay Nagar','IND','M.RAJU', 321],
+['B.B.M.P(SOUTH)','Vijay Nagar','IND','PRASHANTH.N', 267],
+['B.B.M.P(SOUTH)','Vijay Nagar','NPP','MURALIDHARA.D.J', 256],
+['B.B.M.P(SOUTH)','Vijay Nagar','BSRCP','YADAVI.K.M', 231],
+['B.B.M.P(SOUTH)','Vijay Nagar','IND','ZAKIR HUSSAIN KHAN', 212],
+['B.B.M.P(SOUTH)','Vijay Nagar','IND','BALAKRISHNA.R.K.RAJU', 210],
+['B.B.M.P(SOUTH)','Vijay Nagar','IND','SYED FAROOQ', 206],
+['B.B.M.P(SOUTH)','Vijay Nagar','IND','SHAIK SARDAR', 169],
+['B.B.M.P(SOUTH)','Vijay Nagar','IND','ARVIND.B.PATIL', 136],
+['B.B.M.P(SOUTH)','Vijay Nagar','JD(U)','HARSHA MUTALIK', 133],
+['B.B.M.P(SOUTH)','Vijay Nagar','RPI','S.SIDDARAJU', 132],
+['B.B.M.P(SOUTH)','Vijay Nagar','BDBRAJP','C.K.RAVI', 93],
+['B.B.M.P(SOUTH)','Vijay Nagar','IND','SYED SABEER', 83],
+['B.B.M.P(SOUTH)','Vijay Nagar','IND','SYED ULLA HABIB', 73],
+['B.B.M.P(SOUTH)','Vijay Nagar','IND','DR|| SYED THASADUK  AHAMED', 64],
+
+['B.B.M.P(SOUTH)','Basavanagudi','BJP','RAVI SUBRAMANYA.L.A.', 43876],
+['B.B.M.P(SOUTH)','Basavanagudi','JD(S)','K.BAGEGOWDA', 24163],
+['B.B.M.P(SOUTH)','Basavanagudi','INC','B.K.CHANDRASHEKAR', 21588],
+['B.B.M.P(SOUTH)','Basavanagudi','LSP','SHANTHALA DHAMLE', 9071],
+['B.B.M.P(SOUTH)','Basavanagudi','KJP','RAVIKIRAN', 1741],
+['B.B.M.P(SOUTH)','Basavanagudi','IND','SHIVAKUMAR.V.', 528],
+['B.B.M.P(SOUTH)','Basavanagudi','BSP','L.RAMESH', 481],
+['B.B.M.P(SOUTH)','Basavanagudi','IND','K.N.CHANDRASHEKAR', 333],
+['B.B.M.P(SOUTH)','Basavanagudi','LJP','V.NANJUNDA', 286],
+['B.B.M.P(SOUTH)','Basavanagudi','IND','K.N.VENKATESH', 281],
+['B.B.M.P(SOUTH)','Basavanagudi','SUCI','N.RAVI', 253],
+['B.B.M.P(SOUTH)','Basavanagudi','IND','YOGESH', 243],
+['B.B.M.P(SOUTH)','Basavanagudi','IND','DR.NAGESH.M.N.', 200],
+['B.B.M.P(SOUTH)','Basavanagudi','PPOI','T.K.PREMKUMAR', 168],
+['B.B.M.P(SOUTH)','Basavanagudi','IND','GOPAL.K.', 158],
+['B.B.M.P(SOUTH)','Basavanagudi','IND','DR.KODUR VENKATESH', 110],
+['B.B.M.P(SOUTH)','Basavanagudi','JD(U)','N.HEMANTH KUMAR GOWDA', 88],
+['B.B.M.P(SOUTH)','Basavanagudi','IND','ARUNKUMAR.P.', 79],
+['B.B.M.P(SOUTH)','Padmanaba Nagar','BJP','R ASHOKA', 53680],
+['B.B.M.P(SOUTH)','Padmanaba Nagar','INC','L.S.CHETHAN GOWDA', 33557],
+['B.B.M.P(SOUTH)','Padmanaba Nagar','JD(S)','DR.M.R.V.PRASAD', 26272],
+['B.B.M.P(SOUTH)','Padmanaba Nagar','IND','SYED ANSAR', 3531],
+['B.B.M.P(SOUTH)','Padmanaba Nagar','KJP','S.N.SREERAMA', 3089],
+['B.B.M.P(SOUTH)','Padmanaba Nagar','LSP','SUMITRA IYENGAR', 2880],
+['B.B.M.P(SOUTH)','Padmanaba Nagar','IND','RAJKATTE MANJUNATH N', 2386],
+['B.B.M.P(SOUTH)','Padmanaba Nagar','BSP','ABDUL RAZACK KHAN', 1229],
+['B.B.M.P(SOUTH)','Padmanaba Nagar','IND','SYED ZUBAIR', 395],
+['B.B.M.P(SOUTH)','Padmanaba Nagar','IND','WG CDR G.B.ATHRI (RETD)', 335],
+['B.B.M.P(SOUTH)','Padmanaba Nagar','IND','K.C.SRINIVASA', 266],
+['B.B.M.P(SOUTH)','Padmanaba Nagar','IND','T.S.SRIDHAR', 223],
+['B.B.M.P(SOUTH)','Padmanaba Nagar','JD(U)','SANTHOSH G', 203],
+['B.B.M.P(SOUTH)','Padmanaba Nagar','IND','S.LAKSHMI NARAYANA', 168],
+['B.B.M.P(SOUTH)','Padmanaba Nagar','IND','H.C. KRISHNAMURTHY', 139],
+['B.B.M.P(SOUTH)','B.t.m layout','INC','RAMALINGAREDDY', 69712],
+['B.B.M.P(SOUTH)','B.t.m layout','BJP','N. SUDHAKAR', 20664],
+['B.B.M.P(SOUTH)','B.t.m layout','JD(S)','J. RAMESH REDDY', 8346],
+['B.B.M.P(SOUTH)','B.t.m layout','LSP','RAVI KRISHNA REDDY', 6596],
+['B.B.M.P(SOUTH)','B.t.m layout','KJP','SRINIVASA', 1902],
+['B.B.M.P(SOUTH)','B.t.m layout','IND','R. RAVINDRAKUMAR', 1324],
+['B.B.M.P(SOUTH)','B.t.m layout','BSP','HARIRAM .A', 1311],
+['B.B.M.P(SOUTH)','B.t.m layout','IND','MOHAMMED SADIQ', 322],
+['B.B.M.P(SOUTH)','B.t.m layout','BDBRAJP','THYAGARAJ', 309],
+['B.B.M.P(SOUTH)','Jayanagar','BJP','B.N. VIJAYAKUMAR', 43990],
+['B.B.M.P(SOUTH)','Jayanagar','INC','M.C.VENUGOPAL', 31678],
+['B.B.M.P(SOUTH)','Jayanagar','JD(S)','K.S.SAMEEULLA', 12097],
+['B.B.M.P(SOUTH)','Jayanagar','LSP','ROHITH PATEL', 2182],
+['B.B.M.P(SOUTH)','Jayanagar','KJP','RAVIKUMAR.V.', 1457],
+['B.B.M.P(SOUTH)','Jayanagar','IND','MAASTHI ZAKIR ALI KHAN', 745],
+['B.B.M.P(SOUTH)','Jayanagar','IND','LAKSHMINARAYANA.', 667],
+['B.B.M.P(SOUTH)','Jayanagar','IND','SUNIL KUMAR. S', 538],
+['B.B.M.P(SOUTH)','Jayanagar','BSP','SHASHIKALA', 434],
+['B.B.M.P(SOUTH)','Jayanagar','IND','C.K.RAVI CHANDRA', 369],
+['B.B.M.P(SOUTH)','Jayanagar','IND','MANJUNATHA.N', 309],
+['B.B.M.P(SOUTH)','Jayanagar','IND','MAGIC RAMESH', 216],
+['B.B.M.P(SOUTH)','Jayanagar','IND','DR KODUR VENKATESH', 214],
+['B.B.M.P(SOUTH)','Jayanagar','RCMP','MOHAMMED KALEEMULLA', 168],
+['B.B.M.P(SOUTH)','Jayanagar','BSRCP','RAJESH.K.', 157],
+['B.B.M.P(SOUTH)','Jayanagar','IND','MOULA.', 142],
+['B.B.M.P(SOUTH)','Jayanagar','IND','DILIP RAJ', 107],
+['B.B.M.P(SOUTH)','Jayanagar','IND','AJMAL PASHA', 95],
+['B.B.M.P(SOUTH)','Bommanahalli','BJP','SATHISH REDDY.M', 86552],
+['B.B.M.P(SOUTH)','Bommanahalli','INC','NAGABHUSHANA.C', 60700],
+['B.B.M.P(SOUTH)','Bommanahalli','LSP','DR.ASHWIN MAHESH', 11915],
+['B.B.M.P(SOUTH)','Bommanahalli','JD(S)','R.SHARASCHANDRA(BABU)', 10621],
+['B.B.M.P(SOUTH)','Bommanahalli','KJP','B.RAMESH REDDY', 1832],
+['B.B.M.P(SOUTH)','Bommanahalli','IND','YOGESH DEVARAJ', 1161],
+['B.B.M.P(SOUTH)','Bommanahalli','BSP','AFSAR PASHA', 763],
+['B.B.M.P(SOUTH)','Bommanahalli','IND','NAGABHUSHAN.R', 472],
+['B.B.M.P(SOUTH)','Bommanahalli','BSRCP','SRINIVAS.S.T', 433],
+['B.B.M.P(SOUTH)','Bommanahalli','IND','S.N.JAGADISH REDDY', 285],
+
+
+		  	  
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

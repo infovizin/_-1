@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {packages: ['controls']});
+    </script>
+  	  <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['District', 'Constituency', 'Party', 'Candidate', 'Votes'],
+
+		  ['BANGALORE RURAL','Hosakote','INC','M.T.B. NAGARAJ', 85238],
+['BANGALORE RURAL','Hosakote','BJP','B N BACHEGOWDA', 78099],
+['BANGALORE RURAL','Hosakote','JD(S)','V.SRIDHAR', 1304],
+['BANGALORE RURAL','Hosakote','BSP','UPENDRA MADIGA', 474],
+['BANGALORE RURAL','Hosakote','IND','A.N.BACHE GOWDA', 280],
+['BANGALORE RURAL','Hosakote','IND','H.R. SHANKAR', 247],
+['BANGALORE RURAL','Hosakote','IND','N. NAGARAJ (N.T.B)', 225],
+['BANGALORE RURAL','Hosakote','IND','T.V.MANJUNATHA GOWDA', 223],
+['BANGALORE RURAL','Hosakote','IND','B.N.ANANDA', 125],
+['BANGALORE RURAL','Hosakote','IND','M.PREMSAGAR', 92],
+['BANGALORE RURAL','Hosakote','IND','ANANDA .M.G', 88],
+['BANGALORE RURAL','Devanahalli','JD(S)','PILLA MUNISHAMAPPA', 70323],
+['BANGALORE RURAL','Devanahalli','INC','VENKATASWAMY', 68381],
+['BANGALORE RURAL','Devanahalli','BJP','G CHANDRANNA', 9418],
+['BANGALORE RURAL','Devanahalli','BSP','VENKATESH P', 1283],
+['BANGALORE RURAL','Devanahalli','BSRCP','D R NARAYANASWAMY', 1201],
+['BANGALORE RURAL','Devanahalli','KJP','A HANUMANTHAPPA', 929],
+['BANGALORE RURAL','Devanahalli','IND','K S SWAMY', 865],
+['BANGALORE RURAL','Devanahalli','IND','SHIVAPPA M', 419],
+['BANGALORE RURAL','Devanahalli','IND','RAMA NAIK', 297],
+['BANGALORE RURAL','Devanahalli','IND','AKKAYAMMA', 234],
+['BANGALORE RURAL','Devanahalli','IND','D MUNIRAJU', 197],
+['BANGALORE RURAL','Doddaballapur','INC','T.VENKATARAMANAIAH (APPAKARANAHALLI T.VENKATESH)', 38877],
+['BANGALORE RURAL','Doddaballapur','IND','B MUNEGOWDA', 37430],
+['BANGALORE RURAL','Doddaballapur','JD(S)','C.CHANNIGAPPA', 34628],
+['BANGALORE RURAL','Doddaballapur','BJP','J.NARASHIMASWAMY', 32753],
+['BANGALORE RURAL','Doddaballapur','KJP','V.NAGENDRA PRASAD', 1517],
+['BANGALORE RURAL','Doddaballapur','BSP','PURUSHOTHAMA', 1439],
+['BANGALORE RURAL','Doddaballapur','CPM','R CHANDRA THEJASWI', 984],
+['BANGALORE RURAL','Doddaballapur','BSRCP','KUMARA', 674],
+['BANGALORE RURAL','Nelamangala','JD(S)','DR K SRINIVASAMURTHY', 60492],
+['BANGALORE RURAL','Nelamangala','INC','ANJANAMURTHY', 45389],
+['BANGALORE RURAL','Nelamangala','BJP','M V NAGARAJU', 19368],
+['BANGALORE RURAL','Nelamangala','KJP','CHELUVARAJU H P', 9821],
+['BANGALORE RURAL','Nelamangala','BSP','DR C HANUMAIAH', 857],
+['BANGALORE RURAL','Nelamangala','IND','B V SATISHCHANDRA', 646],
+['BANGALORE RURAL','Nelamangala','IND','DR CHOWDAIAH', 480],
+['BANGALORE RURAL','Nelamangala','IND','B C RAMANNA', 456],
+['BANGALORE RURAL','Nelamangala','IND','ANJANAMURTHY', 436],
+['BANGALORE RURAL','Nelamangala','IND','SRINIVASA G M', 319],
+['BANGALORE RURAL','Nelamangala','BSRCP','B RAMAIAH', 288],
+['BANGALORE RURAL','Nelamangala','BDBRAJP','GANGABYLAPPA', 286],
+['BANGALORE RURAL','Nelamangala','IND','PUJAPPA N G', 252],
+['BANGALORE RURAL','Nelamangala','JD(U)','LEPAKSHA S', 210],
+['BANGALORE RURAL','Nelamangala','IND','THIRUMALAIAH', 209],
+['BANGALORE RURAL','Nelamangala','IND','G KUMARA', 155],
+['BANGALORE URBAN','Yelahanka','BJP','S.R. VISHWANATH', 75507],
+['BANGALORE URBAN','Yelahanka','JD(S)','B. CHANDRAPPA', 57110],
+['BANGALORE URBAN','Yelahanka','INC','GOPALAKRISHNA M.N', 52372],
+['BANGALORE URBAN','Yelahanka','KJP','VENUGOPAL RAO', 3736],
+['BANGALORE URBAN','Yelahanka','BSP','ERANNA. G', 1538],
+['BANGALORE URBAN','Yelahanka','JD(U)','NARAYANASWAMY B.M', 933],
+['BANGALORE URBAN','Yelahanka','IND','B. VISHWANATH', 907],
+['BANGALORE URBAN','Yelahanka','RCMP','G.R. PADMASHREE', 678],
+['BANGALORE URBAN','Yelahanka','IND','B. CHANDRAPPA', 669],
+['BANGALORE URBAN','Yelahanka','IND','R. PRAKASH @ ANILRAJ', 631],
+['BANGALORE URBAN','Yelahanka','PPOI','SARITHA S.S', 504],
+['BANGALORE URBAN','Yelahanka','IND','CHANDRAPPA', 397],
+['BANGALORE URBAN','Yelahanka','BSRCP','MAHESH P', 392],
+['BANGALORE URBAN','Yelahanka','IND','K.N. MUNIRAJU', 306],
+['BANGALORE URBAN','Yelahanka','IND','GOPALAKRISHNA H.K', 266],
+['BANGALORE URBAN','Yelahanka','IND','OBANNA', 201],
+
+['BANGALORE URBAN','Byatarayanapura','INC','KRISHNA BYRE GOWDA', 96125],
+['BANGALORE URBAN','Byatarayanapura','BJP','A.RAVI', 63725],
+['BANGALORE URBAN','Byatarayanapura','JD(S)','HANUMANTE GOWDA', 41360],
+['BANGALORE URBAN','Byatarayanapura','KJP','K.MANJUNATH', 1781],
+['BANGALORE URBAN','Byatarayanapura','LSP','YOGAIYAH.V.C', 1268],
+['BANGALORE URBAN','Byatarayanapura','IND','HANUMANTHE GOWDA', 908],
+['BANGALORE URBAN','Byatarayanapura','IND','A.BYREGOWDA', 569],
+['BANGALORE URBAN','Byatarayanapura','ANC','EZAZ PASHA', 523],
+['BANGALORE URBAN','Byatarayanapura','IND','SADIQ BASHA', 497],
+['BANGALORE URBAN','Byatarayanapura','IND','NAGARAJA.M', 321],
+['BANGALORE URBAN','Byatarayanapura','BSRCP','S.VINAYAK SUBRAMANIYA @ S.VINAYAKA SUBRAMANI', 302],
+['BANGALORE URBAN','Byatarayanapura','MPHP','SHANTHA KUMARI', 275],
+['BANGALORE URBAN','Byatarayanapura','IND','ANSAR PASHA', 200],
+['BANGALORE URBAN','Byatarayanapura','IND','D.DEVRAJ', 178],
+['BANGALORE URBAN','Byatarayanapura','AMJP','K.SRIDHAR', 148],
+['BANGALORE URBAN','Byatarayanapura','IND','ABDUL KHADEER', 142],
+['BANGALORE URBAN','Yeshvanthapura','INC','S.T.SOMASHEKAR', 120380],
+['BANGALORE URBAN','Yeshvanthapura','JD(S)','T.N.JAVARAYI GOWDA', 91280],
+['BANGALORE URBAN','Yeshvanthapura','BJP','HL KRISHNAPPA', 12747],
+['BANGALORE URBAN','Yeshvanthapura','BSP','NARASIMAIAH', 1315],
+['BANGALORE URBAN','Yeshvanthapura','JD(U)','M.K. PASHA', 1183],
+['BANGALORE URBAN','Yeshvanthapura','IND','SP SOMASHEKAR', 1126],
+['BANGALORE URBAN','Yeshvanthapura','IND','SEETHARAMU', 682],
+['BANGALORE URBAN','Yeshvanthapura','IND','S NAGENDRA', 506],
+['BANGALORE URBAN','Yeshvanthapura','IND','RAJAMMA', 433],
+['BANGALORE URBAN','Yeshvanthapura','LJP','N SOMASHEKAR', 431],
+['BANGALORE URBAN','Yeshvanthapura','BSRCP','LOKESH HK', 413],
+['BANGALORE URBAN','Yeshvanthapura','IND','R.S.DEEPAK KUMAR', 369],
+['BANGALORE URBAN','Yeshvanthapura','BDBRAJP','MAHADEVA SWAMY B M', 331],
+['BANGALORE URBAN','Yeshvanthapura','IND','T S CHAITHANYA', 319],
+['BANGALORE URBAN','Dasarahalli','BJP','S MUNIRAJU', 57562],
+['BANGALORE URBAN','Dasarahalli','INC','B L SHANKAR', 46734],
+['BANGALORE URBAN','Dasarahalli','JD(S)','ANDANAPPA B.', 43049],
+['BANGALORE URBAN','Dasarahalli','KJP','G MARISWAMY', 18238],
+['BANGALORE URBAN','Dasarahalli','IND','GOVINDEGOWDA M B', 16206],
+['BANGALORE URBAN','Dasarahalli','BSP','R GANGADHAR', 1422],
+['BANGALORE URBAN','Dasarahalli','BSRCP','KEMPARAJU P N', 1331],
+['BANGALORE URBAN','Dasarahalli','IND','K MUNIRAJU', 1174],
+['BANGALORE URBAN','Dasarahalli','IND','R MANJUNATH', 1155],
+['BANGALORE URBAN','Dasarahalli','IND','MANJUNATH N  (KARLE MANJU)', 817],
+['BANGALORE URBAN','Dasarahalli','IND','GOVINDAIAH', 680],
+['BANGALORE URBAN','Dasarahalli','IND','G LAKSHMIKANTHA ACHARYA', 512],
+['BANGALORE URBAN','Dasarahalli','BhJD','Y G NAGARAJ', 374],
+['BANGALORE URBAN','Dasarahalli','IND','M ZUBER AHAMAD', 357],
+['BANGALORE URBAN','Dasarahalli','IND','LAKSHMINARAYANA SINGH', 305],
+['BANGALORE URBAN','Dasarahalli','JD(U)','B K SHOBHABAI', 292],
+['BANGALORE URBAN','Dasarahalli','IND','K MALLIKARJUNA NAIDU', 240],
+['BANGALORE URBAN','Dasarahalli','IND','DEVARAJU H', 219],
+['BANGALORE URBAN','Dasarahalli','IND','UMESH', 215],
+['BANGALORE URBAN','Dasarahalli','IND','M GIRIYAPPA', 205],
+['BANGALORE URBAN','Dasarahalli','IND','A ANTHONI', 171], 
+
+['BANGALORE URBAN','Mahadevapura','BJP','ARVIND LIMBAVALI', 110244],
+['BANGALORE URBAN','Mahadevapura','INC','A.C.SRINIVAS', 104095],
+['BANGALORE URBAN','Mahadevapura','JD(S)','N.GOVARDHAN', 5604],
+['BANGALORE URBAN','Mahadevapura','IND','R.L.SRINIVASA', 1729],
+['BANGALORE URBAN','Mahadevapura','BSRCP','MAYUR PATEL', 1532],
+['BANGALORE URBAN','Mahadevapura','KJP','MUNIYAPPA', 1393],
+['BANGALORE URBAN','Mahadevapura','BSP','VENKATESH.N', 786],
+['BANGALORE URBAN','Mahadevapura','IND','MUNIRAJA.P', 467],
+['BANGALORE URBAN','Mahadevapura','BDBRAJP','M.MANJUNATH', 461],
+['BANGALORE URBAN','Mahadevapura','IND','NAGESH.T', 438],
+['BANGALORE URBAN','Bangalore South','BJP','M. KRISHNAPPA', 102207],
+['BANGALORE URBAN','Bangalore South','JD(S)','R. PRABHAKARA REDDY', 72045],
+['BANGALORE URBAN','Bangalore South','INC','DR.TEJASWINI GOWDA', 63849],
+['BANGALORE URBAN','Bangalore South','KJP','JAGADISH REDDY', 3936],
+['BANGALORE URBAN','Bangalore South','IND','MURALI MOHAN', 1975],
+['BANGALORE URBAN','Bangalore South','BSP','VASANTH', 1363],
+['BANGALORE URBAN','Bangalore South','IND','G.A. GREGORY', 1347],
+['BANGALORE URBAN','Bangalore South','IND','E KRISHNAPPA', 1040],
+['BANGALORE URBAN','Bangalore South','IND','A. CHOWARAPPA', 691],
+['BANGALORE URBAN','Bangalore South','IND','T.N KAMAL', 639],
+['BANGALORE URBAN','Bangalore South','BSRCP','N.S. RAVICHANDRA', 509],
+['BANGALORE URBAN','Bangalore South','IND','K GURURAJ', 407],
+['BANGALORE URBAN','Bangalore South','IND','ASHISH KAPUR', 394],
+['BANGALORE URBAN','Bangalore South','JD(U)','SUNDARAPPA', 335],
+['BANGALORE URBAN','Anekal','INC','SHIVANNA B.', 105464],
+['BANGALORE URBAN','Anekal','BJP','A. NARAYANASWAMY', 65282],
+['BANGALORE URBAN','Anekal','JD(S)','ANEKAL KESHAVA', 7307],
+['BANGALORE URBAN','Anekal','KJP','R. KRISHNAMURTHY', 2369],
+['BANGALORE URBAN','Anekal','CPM','D. MAHADESH', 1923],
+['BANGALORE URBAN','Anekal','BSP','SRINIVASA P.', 1365],
+['BANGALORE URBAN','Anekal','IND','A. NARAYANASWAMY', 1000],
+['BANGALORE URBAN','Anekal','BSRCP','MANJUNATHA', 885],
+['BANGALORE URBAN','Anekal','KRRS','SUKUNDHA V.', 436],
+['BANGALORE URBAN','Anekal','IND','GOPINATHA G.M.', 430],
+		     ]); 
+        
+        // Define category pickers for 'Constituency', 'Region/State'
+              var constituencyPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Constituency',
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false    
+            }
+          }
+        });
+      
+        // Define a bar chart to show 'Population' data.
+        // The bar chart will show _only_ if the user has choosen a value
+        // from both category pickers.
+        var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'chart1',
+          'options': {
+            'width': 600,
+            'height': 300,
+            'chartArea': {top: 0, left: 0, bottom: 0}
+          },
+          // Configure the barchart to use columns 2 (City) and 3 (Population)
+          'view': {'columns': [3, 4]}
+        });
+      
+        // Define a table.
+        // The table shows whatever is selected by the category pickers. It's here
+        // just for reference and debugging.
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart2',
+          'options': {
+            'width': '500px'
+          }
+        });
+      
+        // Create the dashboard.
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+        // Configure the controls so that:
+        // - the 'Country' selection drives the 'Region' one,
+        // - both the 'Country' and 'Region' selection drive the barchart
+        // - both the 'Country' and 'Region' selection drive the table
+       // dashboard.bind(constituencyPicker);
+        dashboard.bind([constituencyPicker], [pieChart, table]);
+        // Draw the dashboard
+        dashboard.draw(data);
+        
+        google.visualization.events.addListener(dashboard, 'ready', function() {
+         // var districtSelectedValues = districtPicker.getState()['selectedValues'];
+          var constituencySelectedValues = constituencyPicker.getState()['selectedValues'];          
+          //if (districtSelectedValues.length == 0 || constituencySelectedValues.length == 0) {
+            if (constituencySelectedValues.length == 0) {
+			document.getElementById('chart1').style.visibility = 'hidden';
+          } else {
+            document.getElementById('chart1').style.visibility = 'visible';            
+          }
+        });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 400px; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width: 400px'>
+            <div style="float: left;" id="chart1"></div>
+            <div style="float: left;" id="chart2"></div>
+            <div style="float: left;" id="chart3"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
